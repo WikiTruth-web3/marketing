@@ -4,7 +4,7 @@ import arweave from "@/assets/icon/Arweave1.svg";
 import dfinity from "@/assets/icon/ICP-Dfinity2.svg";
 import pinata from "@/assets/icon/Pinata.svg";
 import oasis from "@/assets/icon/oasis-1.svg";
-import fourEverLand from "@/assets/icon/4EverLand2.svg";
+import fourEverLand from "@/assets/icon/FourEverland.svg";
 import { Container } from "@/components/Container";
 
 
