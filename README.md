@@ -58,38 +58,6 @@ Run ESLint to check code quality:
 npm run lint
 ```
 
-## 🛠️ Tech Stack
-
-- **React 19** - UI library
-- **Vite 6** - Build tool and dev server
-- **TypeScript** - Type safety
-- **React Router** - Client-side routing
-- **Ant Design** - UI component library
-- **TailwindCSS 4** - Utility-first CSS framework
-- **Three.js** - 3D graphics library
-- **Viem** - Ethereum library for interacting with blockchain
-- **Motion** - Animation library
-- **@xyflow/react** - React Flow for node-based diagrams
-
-## 📁 Project Structure
-
-```
-src/
-├── components/        # Reusable components
-│   ├── base/         # Base components
-│   ├── ui/           # UI components
-│   ├── sections/     # Page sections
-│   └── earth3d/      # 3D Earth visualization components
-├── pages/            # Route-level pages
-├── hooks/            # Custom React hooks
-├── contexts/         # React Context providers
-├── config/          # Configuration files
-├── types/           # TypeScript type definitions
-├── styles/          # Global styles and themes
-├── assets/          # Static assets
-├── lib/             # Utility functions
-└── dapp/            # DApp-specific components and utilities
-```
 
 ## 🎯 Features
 

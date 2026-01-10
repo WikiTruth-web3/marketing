@@ -6,6 +6,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+@font-face {
+  font-family: 'STSong';
+  src: url('/font/STSONG.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Wallpoet';
+  src: url('/font/Wallpoet-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* React Flow */
 .react-flow__edge-path {
   stroke: #6d6d6d !important;

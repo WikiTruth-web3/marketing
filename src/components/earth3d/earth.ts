@@ -32,7 +32,7 @@ export async function createEarth(
 function createSphereMesh(r: number): THREE.Mesh {
     const geometry = new THREE.SphereGeometry(r, 40, 40)
     const material = new THREE.MeshLambertMaterial({
-        color: 0x000000, // Black
+        color: 0x1f1f1f, // #1f1f1f
     })
     return new THREE.Mesh(geometry, material)
 }
