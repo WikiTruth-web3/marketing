@@ -1,5 +1,4 @@
 "use client";
-
 import arweave from "@/assets/icon/Arweave1.svg";
 import dfinity from "@/assets/icon/ICP-Dfinity2.svg";
 import pinata from "@/assets/icon/Pinata.svg";

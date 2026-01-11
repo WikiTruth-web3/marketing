@@ -1,14 +1,28 @@
-import {links} from "./links";
+import {routerLinks} from "./links";
+import { LinkItem } from "@/components/customer/link";
 
-export const mainMenu = [
-    { name: "Home", href: "/" },
-    { name: "Roadmap", href: "/roadmap" },
-    { name: "Blog", href: "/blog" },
-    { name: "Team", href: "/team" },
-    { name: "Docs", href: links.docs },
+export const mainLink: LinkItem[] = [
+    { name: "Home", href: "/" , target: "_self"},
+    { name: "Roadmap", href: "/roadmap" , target: "_self"},
+    { name: "Blog", href: "/blog" , target: "_self"},
+    { name: "Team", href: "/team" , target: "_self"},
+    { name: "Docs", href: routerLinks.docs , target: "_blank"},
 ];
 
-export const dappMenu = {
-    beta: { name:"Beta App", phone: "Beta", href: links.beta },
-    app: { name:"Launch App", phone: "App", href: links.app },
+export const appLink = {
+    description: "We deploy the App on both DNS and IPFS gateway, you can choose the entry according to your needs.",
+    app: { 
+        name:"App.xyz", 
+        phone: ".xyz", 
+        href: routerLinks.app ,
+        description: "Fast, smooth, stable and reliable, deployed on Cloudflare CDN.",
+        disabled: false,
+    },
+    appIpfs: {
+        name:"App.eth",
+        phone: ".eth",
+        href: routerLinks.appIpfs,
+        description: "Deployed on IPFS gateway, decentralized deployment, more secure.",
+        disabled: false,
+    },
 }

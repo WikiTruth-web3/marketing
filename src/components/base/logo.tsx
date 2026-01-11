@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 
-export default function LogoBrand() {
+export default function Logo() {
     const logoSrc = "/logo/logo-2.svg";
     return (
         <Link to="/">

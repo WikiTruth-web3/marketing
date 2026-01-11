@@ -22,18 +22,12 @@ import {
   EyeOff
 } from "lucide-react";
 
-import { links } from "./links";
+import { routerLinks } from "./links";
 
 export interface TruthBoxStep {
   label: string
   desc: string
 }
-
-export interface Partner {
-  name: string
-  logo: string
-}
-
 
 
 export const homeTitle = 'Wiki Truth: '
@@ -59,11 +53,11 @@ export const heroData: Hero = {
   subtitle2: 'Storing, trading, and publicly disclosing the truth of crimes on web3, Unlock the value of truth.',
   primaryCta: {
     text: 'Get Start',
-    link: links.app,
+    link: '', // Not used - opens app link modal via useAppLinkModal hook
   },
   secondaryCta: {
     text: 'Learn More',
-    link: links.docs,
+    link: routerLinks.docs, // open a new tab
   },
 }
 
@@ -270,7 +264,7 @@ export const truthboxData = {
   h5Title: 'Time Limit Mechanism',
   h5Description: 'Each state has a corresponding time limit mechanism. For example, in the selling state, the Truth Box has a 365-day limit, and in the auction state, it has a 30-day limit. The limit can be extended by 30 days with each auction.',
   cta: 'View Mechanism Details',
-  ctaLink: links.docsStatus,
+  ctaLink: routerLinks.docsStatus,
 }
 // ========================Feature List=====================
 export interface Feature {
@@ -314,30 +308,6 @@ export const features: Feature[] = [
   },
 ]
 
-
-// ========================Partners=====================
-export const partners: Partner[] = [
-  {
-    name: '4EverLand',
-    logo: '/assets/icon/4EverLand2.svg',
-  },
-  {
-    name: 'Arweave',
-    logo: '/assets/icon/Arweave.svg',
-  },
-  {
-    name: 'Dfinity',
-    logo: '/assets/icon/ICP-Dfinity.svg',
-  },
-  {
-    name: 'Pinata',
-    logo: '/assets/icon/Pinata.svg',
-  },
-  {
-    name: 'Oasis Sapphire',
-    logo: '/assets/icon/oasis-1.svg',
-  },
-]
 
 export const visionTitle = 'Our Vision'
 export const visionContent = [

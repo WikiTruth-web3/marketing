@@ -6,6 +6,7 @@ import ImageHacker from "../customer/imageHacker";
 import { useEffect, useState } from "react";
 import TitleText from "@/components/base/titleText";
 import { heroData } from "@/content/home";
+import { useAppLinkModal } from "@/contexts/AppLinkModalContext";
 
 // Constants consistent with imageHacker.tsx
 const MAX_WIDTH = 1152; // 6xl
@@ -17,6 +18,7 @@ const DEFAULT_ASPECT_RATIO = 16 / 9;
 
 export default function HeroSection() {
   const [dimensions, setDimensions] = useState({ width: 1152, height: 648, sectionHeight: 648 }); // 默认尺寸
+  const { openModal } = useAppLinkModal();
 
   useEffect(() => {
     // Calculate responsive width and height
@@ -60,7 +62,7 @@ export default function HeroSection() {
   }, []);
 
   const handleGetStart = (): void => {
-    window.open(heroData.primaryCta.link, "_blank");
+    openModal();
   };
   const handleLearnMore = (): void => {
     window.open(heroData.secondaryCta.link, "_blank");
@@ -96,5 +98,4 @@ export default function HeroSection() {
     </section>
   );
 }
-
 

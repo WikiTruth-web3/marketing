@@ -1,4 +1,4 @@
-import { links } from "./links";
+import { socialLinks as links } from "./links";
 
 export const socialLinks = [
     {

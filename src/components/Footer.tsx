@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Container } from "@/components/Container";
-import LogoBrand from "./base/logobrand";
+import LogoBrand from "./base/logo";
 import TextSpan from "./base/textSpan";
 import { FaDiscord, FaTwitter, FaTelegram, FaGithub, FaMailBulk, FaShareAlt } from 'react-icons/fa';
 import ShareModal from "./customer/shareModal";

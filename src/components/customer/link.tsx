@@ -6,6 +6,7 @@ export interface LinkItem {
     name: string;
     href: string;
     icon?: React.ReactNode;
+    target?: string;
 }
 
 export interface LinkListProps {
@@ -27,6 +28,9 @@ const LinkList: React.FC<LinkListProps> = ({ links, activeKey, onLinkClick }) =>
                         to={item.href}
                         className={`px-3 py-1 rounded-lg transition ${activeKey === item.name ? "text-theme font-bold" : "text-white/90 hover:bg-white/12"}`}
                         onClick={() => onLinkClick?.(item.name, item.href)}
+                        // open a new tab
+                        target={item.target}
+                        rel="noopener noreferrer"
                     >
                         {item.icon && <span className="mr-1">{item.icon}</span>}
                         {item.name}

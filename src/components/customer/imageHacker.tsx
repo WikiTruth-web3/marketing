@@ -20,12 +20,12 @@ export default function ImageHacker({ width, height }: ImageHackerProps) {
           // backgroundColor="#000000"
           dropoutStrength={0.1} // 
           interactive  // 
-          distortionStrength={2} // 
+          distortionStrength={3} // 
           distortionRadius={100} // 
           distortionMode="swirl" // 
           followSpeed={0.2} // 
-          jitterStrength={5} // 
-          jitterSpeed={4} // 
+          jitterStrength={3} // 
+          jitterSpeed={3} // 
           // sampleAverage // 
           className="w-full h-auto"
         />

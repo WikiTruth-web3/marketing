@@ -1,4 +1,4 @@
-import { links } from "./links";
+import { socialLinks} from "./links";
 
 export interface TeamMember {
   name: string
@@ -45,4 +45,4 @@ export const teamRecruitmentNeeds = [
   'Community Manager',
   'Media Operator',
 ]
-export const teamContactEmail = links.emailText
+export const teamContactEmail = socialLinks.emailText
