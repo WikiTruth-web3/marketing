@@ -18,4 +18,5 @@ export const socialLinks = {
     discord: 'https://discord.gg/KVDs7CFSr2',
     email: 'mailto:wikitruth@proton.me',
     emailText: 'wikitruth@proton.me',
+    mirror: 'https://paragraph.com/@wikitruth'
 }

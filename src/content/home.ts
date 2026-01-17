@@ -22,7 +22,7 @@ import {
   EyeOff
 } from "lucide-react";
 
-import { routerLinks } from "./links";
+import { routerLinks,socialLinks } from "./links";
 
 export interface TruthBoxStep {
   label: string
@@ -57,7 +57,7 @@ export const heroData: Hero = {
   },
   secondaryCta: {
     text: 'Learn More',
-    link: routerLinks.docs, // open a new tab
+    link: socialLinks.mirror, // open a new tab
   },
 }
 
