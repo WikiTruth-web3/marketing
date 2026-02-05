@@ -1,185 +1,132 @@
-/**
- * Roadmap Data Configuration
- */
+import { PROJECT_NAME } from './project';
+import { Rocket, ShieldCheck, Landmark, Globe, Zap, Users, Lock, Radio } from 'lucide-react';
+import { RoadmapCardProps } from '@/components/customer/RoadmapCard';
 
-// Type Definitions
-export interface RoadmapItem {
-    title: string
-    description: string
-    completed: boolean
-    details?: string[]
-}
+export const roadmapTitle = 'Development Roadmap'
+export const roadmapDescription = `From Proof of Concept to the construction of a global truth network: the evolution of ${PROJECT_NAME.full}.`
 
-export interface RoadmapPhase {
-    id: string
-    name: string
-    subtitle: string
-    description: string
-    items: RoadmapItem[]
-}
-
-// Data Constants
-export const roadmapTitle = 'Roadmap'
-export const roadmapDescription = 'From Proof of Concept to Global Truth Network: The Evolution of WikiTruth.'
-export const roadmapSubtitle = 'Path to Truth'
-export const roadmapIntroduction =
-    'WikiTruth has a grand and long-term vision, which we have divided into four core phases. Each step aims to build a more solid infrastructure for the "Truth Economy".'
-
-export const roadmapPhases: RoadmapPhase[] = [
+export const roadmapPhases: RoadmapCardProps[] = [
     {
-        id: 'genesis',
-        name: 'Phase 1: Genesis',
-        subtitle: 'Prototype & Verification',
-        description: 'Current phase. The core goal is to complete the Minimum Viable Product (MVP) and verify the core game logic.',
+        phase: 'Phase 1',
+        title: 'Genesis',
+        quarter: 'Q3 2025',
+        description: 'Completing the Minimum Viable Product (MVP) and validating core game theory logic.',
+        alignment: 'left',
+        status: 'completed',
         items: [
-            {
-                title: 'Proof of Concept (PoC)',
-                description: 'Completed game theory deduction of the privacy trading market and determined the "increasing secrecy fee" mathematical model.',
-                completed: true,
-            },
-            {
-                title: 'Core Contract Iteration (v1.0 - v1.6)',
-                description: 'Completed core function development and optimization',
-                completed: true,
-                details: [
-                    'Completed `TruthBox` core state machine development.',
-                    'Implemented TEE privacy encryption and decryption logic based on Oasis Sapphire.',
-                    'Introduced SIWE (Sign-In with Ethereum) for seamless identity authentication.',
-                    'Contract slimming and Gas optimization: significantly reduced interaction costs.',
-                ],
-            },
-            {
-                title: 'v1.7 Final Testnet (Current Focus)',
-                description: 'Perfecting testnet functions',
-                completed: false,
-                details: [
-                    '**Multi-currency Payment Integration**: Support mainstream stablecoins like USDT/USDC.',
-                    '**Uniswap V3 Hook**: Implement automated liquidity bootstrapping on the testnet.',
-                    '**EIP-712 Signature Integration**: Implement full off-chain signature and on-chain execution to enhance privacy protection.',
-                ],
-            },
+            'Proof of Concept (PoC): Completed game theory simulation for the privacy marketplace',
+            'Established the "Increasing Secrecy Fee" mathematical model',
+            'TruthBox core state machine development',
         ],
+        icon: Rocket,
+        color: 'primary',
     },
     {
-        id: 'awakening',
-        name: 'Phase 2: Awakening',
-        subtitle: 'Security & Public Beta',
-        description: 'The core goal is to ensure system robustness and security, and establish early community consensus.',
+        phase: 'Phase 2',
+        title: 'Foundation',
+        quarter: 'Q4 2025',
+        description: 'Refining privacy technology and user experience, preparing for public beta.',
+        alignment: 'right',
+        status: 'completed',
         items: [
-            {
-                title: 'Security Audit',
-                description: 'Invite top security companies for code audit',
-                completed: false,
-                details: [
-                    'Invite top security companies (such as CertiK, SlowMist) to audit privacy contracts.',
-                    'Launch Bug Bounty program to invite white hat hackers to attack the testnet.',
-                ],
-            },
-            {
-                title: 'Incentivized Testnet',
-                description: 'Launch test events',
-                completed: false,
-                details: [
-                    'Launch "Truth Miner" campaign to reward early test users and feedback providers.',
-                    'Simulate high concurrency transaction scenarios for stress testing.',
-                ],
-            },
-            {
-                title: 'Multisig Council',
-                description: 'Deploy multisig wallet for emergency permissions',
-                completed: false,
-                details: [
-                    'Deploy Gnosis Safe multisig wallet to manage emergency permissions of the protocol (such as pausing contracts) as a transitional governance solution before DAO establishment.',
-                ],
-            },
-            {
-                title: 'Mainnet Launch',
-                description: 'Officially deploy mainnet',
-                completed: false,
-                details: [
-                    'Officially deploy on Oasis Sapphire mainnet.',
-                    'Genesis Airdrop: Distribute WTRC to early contributors, testnet users, and specific privacy track users.',
-                    'Enable Liquidity Mining: Incentivize core trading pairs like WTRC/ROSE.',
-                ],
-            },
+            'TEE Privacy Encryption: Data protection based on Oasis Sapphire',
+            'SIWE Login: Introducing Sign-In with Ethereum for seamless authentication',
+            'Gas Optimization: Slimming down contracts to reduce interaction costs',
         ],
+        icon: ShieldCheck,
+        color: 'blue',
     },
     {
-        id: 'order',
-        name: 'Phase 3: Order',
-        subtitle: 'DAO Governance & Compliance',
-        description: 'The core goal is to hand over control to the community and solve real-world legal and funding compliance issues.',
+        phase: 'Phase 3',
+        title: 'Testing & Bounties',
+        quarter: 'Q1 2026',
+        description: 'Simulating real transactions in a testnet environment; development of bounty features.',
+        alignment: 'left',
+        status: 'active',
         items: [
-            {
-                title: 'Fully Decentralized Governance (DAO v1.0)',
-                description: 'Launch governance contract',
-                completed: false,
-                details: [
-                    'Launch `Governor` governance contract to enable on-chain voting for parameter adjustments (such as secrecy rates, fees).',
-                    'Introduce **veToken Model**: Users stake WTRC to obtain veWTRC, possessing voting rights and dividend rights, binding long-term interests.',
-                ],
-            },
-            {
-                title: 'Blacklist & Arbitration Court',
-                description: 'Establish decentralized arbitration mechanism',
-                completed: false,
-                details: [
-                    'Establish a decentralized arbitrator mechanism (Kleros mode) to handle false evidence complaints and fund disputes.',
-                    'Implement community-driven blacklist governance to prevent the platform from being used for malicious purposes (such as child pornography, terrorism).',
-                ],
-            },
-            {
-                title: 'Bounty Market Launch',
-                description: 'Allow publishing bounty tasks',
-                completed: false,
-                details: [
-                    'Allow law enforcement agencies or individuals to pledge funds to release bounties, realizing "demand-side" driven evidence mining.',
-                ],
-            },
+            'Bounty System: More complex features with potential for compliance',
+            'EIP-712: Off-chain signatures, on-chain execution',
+            'Uniswap V3 Anchoring: Automated liquidity bootstrapping tests',
         ],
+        icon: Zap,
+        color: 'yellow',
     },
     {
-        id: 'expansion',
-        name: 'Phase 4: Expansion',
-        subtitle: 'Cross-chain & Ecosystem',
-        description: 'The core goal is to break the isolation of public chains and build a global justice alliance.',
+        phase: 'Phase 4',
+        title: 'Awakening & Validation',
+        quarter: 'Q2 2026',
+        description: 'Security audits, incentivized public beta, and validation of bounty features.',
+        alignment: 'right',
+        status: 'upcoming',
         items: [
-            {
-                title: 'Omnichain',
-                description: 'Implement cross-chain functions',
-                completed: false,
-                details: [
-                    'Integrate **LayerZero** or **Chainlink CCIP** protocol.',
-                    'Allow users to directly purchase Truth Boxes on the Oasis chain from other public chains like Ethereum, Solana, BSC, achieving seamless cross-chain funding.',
-                ],
-            },
-            {
-                title: 'AI Verification',
-                description: 'Introduce AI detection function',
-                completed: false,
-                details: [
-                    'Introduce decentralized AI agents to perform preliminary Deepfake detection on uploaded image/video evidence.',
-                ],
-            },
-            {
-                title: 'Legal Defense Fund',
-                description: 'Provide legal aid to whistleblowers',
-                completed: false,
-                details: [
-                    'Use DAO treasury funds to provide offline legal aid and personal protection support for whistleblowers of high-value evidence.',
-                ],
-            },
-            {
-                title: 'WikiTruth API / SDK',
-                description: 'Open data interface',
-                completed: false,
-                details: [
-                    'Open data interfaces to allow third-party media and investigative agencies to access WikiTruth\'s data stream and build richer upper-layer applications (such as news aggregators, reputation query tools).',
-                ],
-            },
+            'Security Audit: Inviting top-tier firms (CertiK/SlowMist) for review',
+            'Bug Bounty: Launching white-hat vulnerability bounty program',
+            'Early Bird Event: Starting early incentive public beta program',
+            'Bounty Validation: Contract validation for bounty features'
         ],
+        icon: ShieldCheck,
+        color: 'green',
+    },
+    {
+        phase: 'Phase 5',
+        title: 'Mainnet',
+        quarter: 'Q3 2026',
+        description: 'Official mainnet deployment and launch of token economics.',
+        alignment: 'left',
+        status: 'upcoming',
+        items: [
+            'Oasis Sapphire Mainnet Deployment',
+            'Genesis Airdrop: Distributing WTRC to early contributors',
+            'Liquidity Mining: Launching WTRC/ROSE pair incentives',
+            'Official testing of bounty features'
+        ],
+        icon: Globe,
+        color: 'primary',
+    },
+    {
+        phase: 'Phase 6',
+        title: 'Order',
+        quarter: 'Q4 2026',
+        description: 'Establishing DAO governance and arbitration mechanisms.',
+        alignment: 'right',
+        status: 'upcoming',
+        items: [
+            'DAO v1.0: Launching parameter adjustment voting system',
+            'veToken: Introducing staking dividend model',
+            'Arbitration Court: Building a decentralized dispute resolution mechanism',
+            'Exploring official judicial collaborations'
+        ],
+        icon: Landmark,
+        color: 'purple',
+    },
+    {
+        phase: 'Phase 7',
+        title: 'Expansion',
+        quarter: 'Q1 2027',
+        description: 'Breaking blockchain silos, introducing AI technology, and a broader ecosystem.',
+        alignment: 'left',
+        status: 'upcoming',
+        items: [
+            'Omnichain Interoperability: Integrating LayerZero/CCIP for cross-chain capabilities',
+            'AI Forgery Detection: Introducing decentralized AI to detect Deepfakes',
+            'Bounty Marketplace: Launching "demand-driven" evidence mining',
+        ],
+        icon: Radio,
+        color: 'orange',
+    },
+    {
+        phase: 'Phase 8',
+        title: 'Ecosystem',
+        quarter: 'Q2 2027',
+        description: 'Building a global justice alliance, opening data and legal support.',
+        alignment: 'right',
+        status: 'upcoming',
+        items: [
+            'Legal Aid Fund: Utilizing treasury funds for offline support',
+            'WikiTruth API: Opening data for third-party application integration',
+            'Global Compliance: Exploring implementation in more jurisdictions',
+        ],
+        icon: Users,
+        color: 'pink',
     },
 ]
-
-export const roadmapNote =
-    '**Note**: This roadmap will be dynamically adjusted based on community feedback, technological evolution, and changes in the regulatory environment. At WikiTruth, the only constant is the pursuit of truth.'

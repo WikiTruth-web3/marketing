@@ -1,31 +1,34 @@
-import { lazy, Suspense } from "react";
-import HeroSection from "@/components/sections/Home_HeroSection";
-import { StickyScrollRevealDemo } from "@/components/sections/Home_CarouselSection";
-import {TechnologySection} from "@/components/sections/Home_Technology";
-import TruthBoxSection from "@/components/sections/Home_TruthBox";
-import FeatureSection from "@/components/sections/Home_FeatureSection";
-import PartnersSection from "@/components/sections/Home_PartnersSection";
-import Thinking from "@/components/sections/Home_Thinking";
-import Bottom from "@/components/sections/Home_Bottom";
+import React from 'react';
+import { HomeHero } from '../components/sections/HomeHero';
+import { HomeStats } from '../components/sections/HomeStats';
+import { HomeIntro } from '../components/sections/HomeIntro';
+import { HomeCarousel } from '../components/sections/HomeCarousel';
+import { HomeSecurity } from '../components/sections/HomeSecurity';
+import { HomeRevenue } from '../components/sections/HomeRevenue';
+import { HomeRevenueDelay } from '../components/sections/HomeRevenue2';
+import { HomeComparison } from '../components/sections/HomeComparison';
+import { HomeFeatures } from '../components/sections/HomeFeatures';
+import { HomePartners } from '../components/sections/HomePartners';
+import { HomeVisionSection } from '../components/sections/HomeVisionSection';
 
-// Lazy load large components to reduce initial bundle size
-const GlobleEarth = lazy(() => import("@/components/sections/Home_GlobleEarth"));
+const Home: React.FC = () => {
+  return (
+    <div className="flex flex-col items-center">
+      <HomeHero />
+      <div className="mt-10">
+        <HomeStats />
+      </div>
+      <HomeIntro />
+      <HomeCarousel />
+      <HomeSecurity />
+      <HomeRevenue />
+      <HomeRevenueDelay />
+      <HomeComparison />
+      <HomeFeatures />
+      <HomePartners />
+      <HomeVisionSection />
+    </div>
+  );
+};
 
-export default function HomePage() {
-    return (
-        <div className="w-full overflow-hidden">
-            <HeroSection />
-            <Suspense fallback={<div className="h-screen" />}>
-                <GlobleEarth />
-            </Suspense>
-            <Thinking />
-            <StickyScrollRevealDemo />
-            <TechnologySection />
-            <TruthBoxSection />
-            <FeatureSection />
-            <PartnersSection />
-            <Bottom />
-        </div>
-    );
-}
-
+export default Home;

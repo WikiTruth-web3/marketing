@@ -1,38 +1,39 @@
-import { lazy, Suspense } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import ConditionalLayout from '@/components/ConditionalLayout'
-import { startIpfsGatewayPolling } from '@/config/ipfsUrl/sync'
-startIpfsGatewayPolling()
+import React from 'react';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Home from '@/pages/Home';
+import Roadmap from '@/pages/Roadmap';
+import Team from '@/pages/Team';
+import Blog from '@/pages/Blog';
 
-// Dynamically import route pages, implement code splitting
-const HomePage = lazy(() => import('@/pages/Home'))
-const BlogPage = lazy(() => import('@/pages/Blog'))
-const TeamPage = lazy(() => import('@/pages/Team'))
-const RoadmapPage = lazy(() => import('@/pages/Roadmap'))
+// Scroll to top on route change wrapper
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
-// Loading placeholder component
-const PageLoader = () => (
-  <div className="flex items-center justify-center min-h-screen">
-    <div className="text-white">Loading...</div>
-  </div>
-)
-
-function App() {
+const App: React.FC = () => {
   return (
-    <>
-      <ConditionalLayout>
-        <Suspense fallback={<PageLoader />}>
+    <HashRouter>
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col font-display matrix-bg selection:bg-primary selection:text-black">
+        <Navbar />
+        <main className="flex-grow pt-24">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/roadmap" element={<RoadmapPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/team" element={<TeamPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/blogs" element={<Blog />} />
           </Routes>
-        </Suspense>
-      </ConditionalLayout>
-    </>
-  )
-}
+        </main>
+        <Footer />
+      </div>
+    </HashRouter>
+  );
+};
 
-export default App
-
+export default App;

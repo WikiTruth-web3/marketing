@@ -1,6 +1,6 @@
 import { 
-  // ChevronLeft, 
-  // ChevronRight, 
+  ChevronLeft, 
+  ChevronRight, 
   Shield, 
   Eye, 
   AlertTriangle, 
@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Users,
   Lock,
+  Coins,
   ArrowRight,
   Zap,
   CreditCard,
@@ -19,9 +20,11 @@ import {
   BarChart3,
   Clock,
   LucideIcon,
-  EyeOff
+  EyeOff,
+  EyeIcon,
+  File
 } from "lucide-react";
-
+import { PROJECT_NAME } from "./project";
 import { routerLinks,socialLinks } from "./links";
 
 export interface TruthBoxStep {
@@ -30,10 +33,7 @@ export interface TruthBoxStep {
 }
 
 
-export const homeTitle = 'Wiki Truth: '
-
 // ========================Hero Area=====================
-
 export interface CTA {
   text: string
   link: string
@@ -42,21 +42,23 @@ export interface CTA {
 export interface Hero {
   title: string
   subtitle: string
-  subtitle2: string
+  description: string
+  features: string[]
   primaryCta: CTA
   secondaryCta: CTA
 }
 
 export const heroData: Hero = {
-  title: 'Wiki Truth',
-  subtitle: 'Building a trustless cornerstone of justice based on complete decentralization',
-  subtitle2: 'Storing, trading, and publicly disclosing the truth of crimes on web3, Unlock the value of truth.',
+  title: PROJECT_NAME.full,
+  subtitle: 'The world\'s first decentralized whistleblower bounty and crime evidence marketplace',
+  description: 'Rewarding justice reporting through token economics, transforming crime truths (evidence) into crypto assets, turning abstract justice into gold coins.',
+  features: ['Anonymous', 'Privacy', 'Censorship-Resistant', 'Security'],
   primaryCta: {
-    text: 'Get Start',
-    link: '', // Not used - opens app link modal via useAppLinkModal hook
+    text: 'Marketplace',
+    link: routerLinks.app
   },
   secondaryCta: {
-    text: 'Learn More',
+    text: 'Learn more',
     link: socialLinks.mirror, // open a new tab
   },
 }
@@ -137,136 +139,93 @@ export const thinkingLink = {
   link: 'https://www.sec.gov/enforcement-litigation/whistleblower-program',
 }
 
+
 // ========================Carousel=====================
 export interface CarouselItem {
   title: string
-  // subtitle?: string
   description: string
-  image: string
   icon: LucideIcon
 }
 
-export const carouselTitle = 'Why We Do This?'
+export const carouselTitle = 'Why We Work on This?'
 
 export const carouselData: CarouselItem[] = [
   {
-      title: "The Justice Crisis of Society",
-      description: "Our society is facing a serious justice crisis. Bad actors collude to monopolize power and information. They manufacture lies, cover up the truth, and destroy justice and morality.",
-      image: '/images/01.jpg',
-      icon: Shield,
+    title: "The Justice Crisis of Society",
+    description: "Our society is facing a severe crisis of justice. Bad actors collude to monopolize power and information, create lies, commit crimes, and conceal the truth.",
+    icon: Shield,
   },
   {
-      title: "The Bad Guys Fear the Truth",
-      description: "The power of bad guys stems from the truth being unknown. No matter how powerful they are, they become vulnerable in the face of truth. The best way to fight them is to expose their crimes.",
-      image: '/images/02.jpg',
-      icon: Eye,
+    title: "The Bad Guys Fear the Truth",
+    description: "The strength of villains stems from the fact that the truth is unknown. No matter how powerful a villain is, they become fragile in the face of truth.",
+    icon: EyeOff,
   },
   {
-      title: "You Know, So You Are in Danger",
-      description: "In fact, those who hold evidence of crimes are in a very dangerous situation. There are conflicts even among bad guys. We suggest: upload the truth you know to Wiki Truth and don't bear all the risks alone.",
-      image: '/images/04.jpg',
-      icon: AlertTriangle,
+    title: "Absolute Zero",
+    description: "The fear of judicial trial forces bad actors to go to any length to reduce the possibility of evidence existing to zero.",
+    icon: Target,
   },
   {
-      title: "No Money No Work",
-      description: "People have no obligation to sacrifice for justice. Are police free? Are judges free? Why should you be free? Money is the basis of survival. If justice cannot generate value, people will avoid it.",
-      image: '/images/05.jpg',
-      icon: DollarSign,
+    title: "You Know, So You Are in Danger",
+    description: `Possessing evidence of a crime is extremely dangerous, even for accomplices. Uploading the truth to ${PROJECT_NAME.full} is also a safety insurance policy for yourself.`,
+    icon: AlertTriangle,
+  },
+  {
+    title: "No Money No Work",
+    description: "Are police or judges free? Why should you be? Money is the foundation of survival. If justice generates no value, people will avoid it.",
+    icon: DollarSign,
   },
 ];
 
 
-// =======================Technology Architecture=================
-export interface TechnologyTab {
+
+// ========================================
+export interface securityTab {
   id: string
-  label: string
   icon: LucideIcon
   title: string
   description: string
-  features: string[]
-  image?: string
 }
 
-export const technologyTitle = 'Security & Privacy Architecture'
-export const technologyDescription = 'Based on Oasis Sapphire privacy blockchain, enabling on-chain encrypted storage and private transactions.'
+export const securityTitle = 'Security & Privacy'
+export const securityDescription = 'Based on the Oasis Sapphire privacy blockchain, implementing storage, encryption, and private transactions to ensure your identity is never exposed.'
 
-export const technologyData = [
+export const securityData = [
+  {
+    id: 'file-save',
+    icon: File,
+    title: 'File Shredding & Storage',
+    description: 'Evidence files are first shredded and then uploaded to decentralized storage networks like IPFS and Arweave.',
+  },
+  {
+    id: 'local-encryption',
+    icon: Lock,
+    title: 'AES256 + ECDH',
+    description: 'Using AES256 + ECDH symmetric encryption, one of the most secure encryption algorithms to date.',
+  },
+  {
+    id: 'sapphire-tee',
+    icon: ShieldCheck,
+    title: 'Oasis Sapphire TEE',
+    description: 'Confidential data is stored in the Oasis Sapphire network\'s TEE (Trusted Execution Environment), based on Intel SGX technology for hardware-level security.',
+  },
     {
-      id: 'local-encryption',
-      label: 'Local Encryption & Storage',
-      icon: Lock,
-      title: 'End-to-End Encryption & Shredded Storage',
-      description:
-      'The evidence file is first shredded and then distributed through IPFS/Arweave to ensure that even IPFS nodes cannot窥探内容。',
-      features: [
-        'Shredded Encryption',
-        'CID Unique Identifier',
-        'IPFS/Arweave Decentralized Storage',
-      ],  
-    },
-    {
-      id: 'sapphire-tee',
-      label: 'On-chain Privacy Computing',
-      icon: ShieldCheck,
-      title: 'Oasis Sapphire TEE Protection',
-      description:
-        'Using Trusted Execution Environment (TEE), decryption keys are stored on-chain in an encrypted state. Even miners cannot access the key content.',
-      features: [
-        'TEE Hardware Level Isolation',
-        'On-chain Key Encapsulation',
-        'Encrypted State Data Processing',
-        'Trustless Privacy',
-      ],
-    },
-    {
-      id: 'anonymous-access',
-      label: 'Anonymous Access Control',
-      icon: EyeOff,
-      title: 'SIWE & Proxy Interaction',
-      description:
-      'By SIWE token and EIP-712 proxy signature authorization, no address interaction record is left, achieving full lifecycle privacy protection.',
-      features: [
-        'SIWE Authentication',
-        'EIP-712 Proxy Signature',
-        'No Privacy Leak Query',
-        'Completely Anonymous Interaction',
-      ],
-    },
-  ] as TechnologyTab[]
+    title: 'Anonymous Privacy',
+    icon: EyeOff,
+    description: 'Relay proxy contracts enable interactions with no on-chain records and untraceability, ensuring absolute anonymity and privacy for whistleblowers.',
+    color: 'blue',
+  },
+] as securityTab[]
 
 
-
-// ========================Truth Box Mechanism=====================
-export const truthDescription='Upload crime evidence, create a secure Truth Box, all information stored on the blockchain.'
-
-export const truthboxData = {
-  title: 'Lifecycle Process',
-  subtitle: 'A time bomb for criminals, an asset for whistleblowers.',
-
-  steps: [
-    {
-      label: 'Storing',
-      desc: 'Encrypted & Secure',
-    },
-    {
-      label: 'Selling',
-      desc: 'Trade Evidence',
-    },
-    {
-      label: 'Auction',
-      desc: 'Market Pricing',
-    },
-    {
-      label: 'Public',
-      desc: 'Truth Revealed',
-    },
-  ] as TruthBoxStep[],
-  h5Title: 'Time Limit Mechanism',
-  h5Description: 'Each state has a corresponding time limit mechanism. For example, in the selling state, the Truth Box has a 365-day limit, and in the auction state, it has a 30-day limit. The limit can be extended by 30 days with each auction.',
-  cta: 'View Mechanism Details',
-  ctaLink: routerLinks.docsStatus,
+// =============================================
+export const data = {
+  title: 'Features',
+  description: '',
+  
 }
-// ========================Feature List=====================
+
+
 export interface Feature {
   title: string
   description: string
@@ -274,43 +233,113 @@ export interface Feature {
   color: string
 }
 
-// Feature List
 export const features: Feature[] = [
-  {
-    title: 'Decentralization',
-    description: 'Immutable, undeletable, censorship-resistant storage (IPFS & Oasis).',
-    icon: Globe,
-    color: 'green',
+    {
+    title: 'Token Economics Driven',
+    description: '(Criminals) purchasing evidence boosts token value, which in turn incentivizes more whistleblowers.',
+    icon: Coins,
+    color: 'origin',
   },
   {
-    title: 'Anonymous Privacy',
-    description: 'EIP712 proxy interaction cuts off the direct physical link between wallet address and on-chain behavior, achieving privacy protection throughout the lifecycle.',
-    icon: EyeOff,
-    color: 'blue',
-  },
-  {
-    title: 'Economic Incentives',
-    description: 'Turn evidence into assets. Sell the truth, get rewarded, and let the market price justice.',
+    title: 'Evidence Assetization',
+    description: 'Transforming evidence into on-chain assets. A closed deal means profit; public disclosure means justice.',
     icon: DollarSign,
     color: 'cyan',
   },
   {
-    title: 'Increasing Secrecy Fee',
-    description: 'By increasing the secrecy fee period by period, the cost of covering up evidence for a long time is raised, forcing criminals to show up or give up covering up the truth.',
+    title: 'Delay Premium',
+    description: 'To conceal the truth long-term, delay fees must be paid, representing an infinitely growing cost.',
     icon: TrendingUp,
     color: 'cyan',
   },
   {
-    title: 'Community Driven',
-    description: 'DAO governance ensures the project runs long-term and decentrally.',
-    icon: Users,
-    color: 'purple',
+    title: 'Inevitable Disclosure',
+    description: 'If delay fees cannot be paid, the evidence content will be automatically disclosed.',
+    icon: Eye,
+    color: 'cyan',
   },
+
 ]
 
+// =======================================================
 
-export const visionTitle = 'Our Vision'
-export const visionContent = [
-  '**WikiTruth** is not just a platform, it is a movement. We are building a **"Crime Evidence Economy"**, where truth is the most valuable asset.',
-  'We believe that by **"Pricing the Truth"**, we can break the spiral of silence. We provide a decentralized, anonymous, and economically incentivized market where whistleblowers can safely disclose criminal acts.',
-]
+
+// TODO: Add a pie chart to enrich the page effect.
+export const incomeExchange = {
+  title: 'Transaction Income',
+  description: 'Once a transaction is successfully completed, the whistleblower can receive up to 97% of the transaction price in a one-time payout.',
+  ratio: '97%'
+}
+
+// TODO: Add a bar chart to enrich the page effect.
+export const incomeDelay = {
+  title: 'Delay Fee Income',
+  description: 'Delay fees grow exponentially every year, providing the whistleblower with a second stream of income.',
+  ratio: '100%~200%',
+  map:[
+    {
+      label: '1st year',
+      value: '$1 million',
+    },
+    {
+      label: '2nd year',
+      value: '$2 million',
+    },
+    {
+      label: '3rd year',
+      value: '$4 million',
+    },
+    {
+      label: '4th year',
+      value: '$8 million',
+    },
+  ]
+
+}
+
+
+
+// =================================================
+// TODO: Add a table comparison chart to enrich the page effect.
+export const marketAdvantages = {
+    title: `Why Choose ${PROJECT_NAME.full}?`,
+    subtitle: `Compared to traditional reporting channels, ${PROJECT_NAME.full} offers a more convenient monetization path and more diverse options.`,
+    comparisons: [
+        {
+            aspect: "Process Transparency",
+            traditional: "Potential for back-door dealings",
+            wikitruth: "Executed by smart contracts, fully transparent",
+        },
+        {
+            aspect: "Revenue Distribution",
+            traditional: "Determined by officials, usually 10-30%",
+            wikitruth: "Minters receive 90~97%",
+        },
+        {
+            aspect: "Processing Time",
+            traditional: "Months to years",
+            wikitruth: "Instant transaction",
+        },
+        {
+            aspect: "Entry Barrier",
+            traditional: "Requires some governmental knowledge, or even hiring professional lawyers",
+            wikitruth: "Only requires creating a Web3 wallet",
+        },
+        {
+            aspect: "Diversity Support",
+            traditional: "Only offers rewards for specific cases",
+            wikitruth: "You can sell any evidence you wish to",
+        },
+
+    ]
+}
+
+
+// =================================================
+export const vision = {
+    title1: 'Constructing a Decentralized',
+    title2: 'Truth Network',
+    description1: 'We envision a world where evidence is immutable, whistleblowers are shielded by cryptography, and justice is an inevitable result of transparency. ',
+    description2: 'Join us in building the infrastructure for the next generation of truth.',
+}
+
