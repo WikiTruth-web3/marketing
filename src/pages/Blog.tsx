@@ -4,7 +4,7 @@ import { BlogHeader } from '@/components/sections/BlogHeader';
 import { CategoryFilter } from '@/components/customer/CategoryFilter';
 import { BlogGrid } from '@/components/sections/BlogGrid';
 import { Pagination } from '@/components/base/Pagination';
-import { BlogPost } from '@/components/customer/BlogCard';
+// import { BlogPost } from '@/components/customer/BlogCard';
 import { postsData, aiResearchData, news, categories } from '@/content/blog';
 
 const Blog: React.FC = () => {
