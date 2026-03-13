@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="1200" alt="Wiki Truth Banner" src="https://github.com/Whistleblower-web3/project-resources/image/banner.jpg" />
+  <img width="1200" alt="Wiki Truth Banner" src="https://github.com/Whistleblower-web3/project-resources/blob/main/image/banner.jpg" />
   
   <h1>Wiki Truth</h1>
   <p><strong>The world's first decentralized whistleblower bounty and crime evidence marketplace.</strong></p>
@@ -20,7 +20,7 @@
 **Wiki Truth** is a revolutionary decentralized platform designed to incentivize the exposure of crime and corruption through token economics. By transforming valuable evidence into secure, on-chain crypto assets, we empower whistleblowers to seek justice while ensuring their absolute safety and anonymity.
 
 <div align="center">
-  <img width="800" alt="Wiki Truth UI Preview" src="https://github.com/Whistleblower-web3/project-resources/image/marketing-ui-home-1.jpg" />
+  <img width="800" alt="Wiki Truth UI Preview" src="https://github.com/Whistleblower-web3/project-resources/blob/main/image/marketing-ui-home-1.jpg" />
   <p><em>Platform Interface Preview</em></p>
 </div>
 
