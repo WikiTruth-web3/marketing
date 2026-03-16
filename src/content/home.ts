@@ -39,11 +39,16 @@ export interface CTA {
   link: string
 }
 
+export interface HeroFeature {
+  icon: LucideIcon
+  text: string
+}
+
 export interface Hero {
   title: string
   subtitle: string
   description: string
-  features: string[]
+  features: HeroFeature[]
   primaryCta: CTA
   secondaryCta: CTA
 }
@@ -52,7 +57,24 @@ export const heroData: Hero = {
   title: PROJECT_NAME.full,
   subtitle: 'The world\'s first decentralized whistleblower bounty and crime evidence marketplace',
   description: 'Rewarding justice reporting through token economics, transforming crime truths (evidence) into crypto assets, turning abstract justice into gold coins.',
-  features: ['Anonymous', 'Privacy', 'Censorship-Resistant', 'Security'],
+  features: [
+    {
+      icon: Shield,
+      text: 'Anonymous',
+    },
+    {
+      icon: EyeOff,
+      text: 'Privacy',
+    },
+    {
+      icon: AlertTriangle,
+      text: 'Censorship-Resistant',
+    },
+    {
+      icon: DollarSign,
+      text: 'Bounty',
+    },
+  ],
   primaryCta: {
     text: 'Marketplace',
     link: routerLinks.app
