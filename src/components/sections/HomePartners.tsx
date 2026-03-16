@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Import logos
-import ArweaveLogo from '@/assets/partnerLogo/Arweave.svg';
-import ICPLogo from '@/assets/partnerLogo/ICP-Dfinity.svg';
+import ArweaveLogo from '@/assets/partnerLogo/Arweave1.svg';
+import ICPLogo from '@/assets/partnerLogo/ICP-Dfinity2.svg';
 import PinataLogo from '@/assets/partnerLogo/Pinata.svg';
 import TheGraphLogo from '@/assets/partnerLogo/TheGraph.svg';
 import OasisLogo from '@/assets/partnerLogo/oasis-network-3.svg';

@@ -26,6 +26,28 @@ body {
   text-shadow: 0 0 10px rgba(174, 19, 236, 0.5);
 }
 
+/* Custom Glow Shadows */
+:root {
+  --matrix-green: #13ec5b;
+  --matrix-blue: #2563eb; /* blue-600 */
+}
+
+.glow-shadow-green {
+  box-shadow: 0 4px 15px rgba(19, 236, 91, 0.3) !important;
+}
+
+.glow-shadow-green-lg {
+  box-shadow: 0 8px 25px rgba(19, 236, 91, 0.5) !important;
+}
+
+.glow-shadow-blue {
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4) !important;
+}
+
+.glow-shadow-blue-lg {
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6) !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -42,4 +64,23 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #472f63;
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-blink {
+  animation: blink 1.5s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

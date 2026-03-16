@@ -13,7 +13,7 @@ import { HomeVisionSection } from '../components/sections/HomeVisionSection';
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <HomeHero />
       <div className="mt-10">
         <HomeStats />
