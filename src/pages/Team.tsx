@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { TeamHero } from '@/components/sections/TeamHero';
-import { TeamGrid } from '@/components/sections/TeamGrid';
+// import { TeamGrid } from '@/components/sections/TeamGrid';
 import { JoinUs } from '@/components/sections/JoinUs';
 
 export default function Team() {
@@ -11,7 +11,7 @@ export default function Team() {
         <div>
             {/* Background Glows */}
             <TeamHero />
-            <TeamGrid />
+            {/* <TeamGrid /> */}
             <JoinUs />
         </div>
 

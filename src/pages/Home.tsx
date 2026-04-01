@@ -7,11 +7,22 @@ import { WhyWeWork } from '../components/sections/WhyWeWork';
 import { TwoIncome } from '../components/sections/TwoIncome';
 import { HomePartners } from '../components/sections/HomePartners';
 import { HomeVisionSection } from '../components/sections/HomeVisionSection';
+import Threads from '@/components/background/Threads/index';
 
 export default function Home() {
     return (
 
-        <div>
+        
+
+        <div className="relative ">
+            <div className="h-screen inset-0 -z-10 fixed overflow-hidden pointer-events-none">
+                <Threads
+                    color={[0.3, 0.5, 0.15]}
+                    amplitude={5}
+                    distance={0}
+                    enableMouseInteraction={false}
+                />
+            </div>
             <HomeHero />
             <BoxSwapDemo />
             <TwoIncome />
