@@ -57,7 +57,7 @@ export default function StatusLabel({
 
     return (
         <div
-            className={`inline-flex items-center justify-center font-mono font-medium whitespace-nowrap rounded-md border ${colorClass} ${sizeClass} ${responsive ? 'sm:text-sm' : ''} ${className}`}
+            className={`inline-flex items-center justify-center font-medium whitespace-nowrap rounded-md border ${colorClass} ${sizeClass} ${responsive ? 'sm:text-sm' : ''} ${className}`}
             title={status}
         >
             {status}
