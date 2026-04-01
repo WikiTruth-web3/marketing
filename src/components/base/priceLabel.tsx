@@ -48,7 +48,7 @@ const PriceLabel: React.FC<PriceLabelProps> = ({
 
     // Build price text
     const priceElement = (
-        <span className={`text-white ${sizeConfig_price[size] || ''} ${className}`}>
+        <span className={`text-primary ${sizeConfig_price[size] || ''} ${className}`}>
             {data.formattedPrice}
         </span>
     );
@@ -62,7 +62,7 @@ const PriceLabel: React.FC<PriceLabelProps> = ({
 
     return (
         <div
-            className={`inline-flex items-end ${responsive ? 'gap-2' : 'gap-1'} font-mono`}
+            className={`inline-flex items-end ${responsive ? 'gap-2' : 'gap-1'} `}
         >
             {unitPosition === 'left' && symbolElement}
             {priceElement}

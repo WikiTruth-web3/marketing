@@ -1,20 +1,11 @@
-import { socialLinks} from "./links";
-import { TeamMemberProps } from "@/components/customer/TeamMember";
-// export interface TeamMemberProps {
-//   name: string
-//   role: string
-//   type: 'blue' | 'green' | 'cyan'
-//   img: string
-//   github?: string
-//   twitter?: string
-//   telegram?: string
-// }
+import { socialLinks } from "./links";
+import { TeamMemberProps } from "@/components/custom/teamMember";
 
-export const team= {
-
- title:'Our Team',
- subtitle:'We are a group of people who do not want to make peace with the darkness.',
- description:'Because our project may face pressure from the traditional world, we have chosen to develop anonymously, but we will choose to reveal our identities once the project has stabilized.'
+export const introductionTeam = {
+  label: 'In Anonymity We Advance',
+  title: 'About Us',
+  subtitle: 'We are a group of people who do not want to make peace with the darkness.',
+  description: 'Because our project may face pressure from the traditional world, we have chosen to develop anonymously, but we will choose to reveal our identities once the project has stabilized.'
 }
 
 export const teamMembers: TeamMemberProps[] = [
@@ -41,9 +32,9 @@ export const teamMembers: TeamMemberProps[] = [
 
 
 // ========================Join Us=====================
-export const teamRecruitment= {
-  title:'Ready to Join Us?',
-  content:'We are looking for like-minded partners to drive the development of Web3 justice. \
+export const teamRecruitment = {
+  title: 'Ready to Join Us?',
+  content: 'We are looking for like-minded partners to drive the development of Web3 justice. \
   If you are interested in our mission, please contact us.',
   needs: [
     'Developers',
@@ -51,5 +42,5 @@ export const teamRecruitment= {
     'Community Manager',
     'Media Operator',
   ],
-  email:socialLinks.emailText
+  email: socialLinks.emailText
 }

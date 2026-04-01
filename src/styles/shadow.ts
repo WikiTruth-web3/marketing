@@ -1,0 +1,1 @@
+export const shadowHover = 'hover:shadow-[0_0_20px_rgba(19,236,91,0.2)]'

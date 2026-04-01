@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+@import "tailwindcss";
+
+@import "./custom.css";
+@import "./animate.css";
+@import "./shadow.css";
+
+@theme {
+  --color-primary: #b8f600;
+  --color-primary-light: #caf076;
+  --color-primary-dim: #91b918ff;
+  --color-primary-dark: #4c6801ff;
+
+  --color-secondary: #5e6948ff;
+  --color-secondary-light: #868f73ff;
+  --color-secondary-dim: #353a30ff;
+  --color-secondary-dark: #292c23ff;
+
+  --color-surface-lowest: #0e0e0e;
+  --color-surface-low: #181818ff;
+  --color-surface: #1f1f1f;
+  --color-surface-high: #2a2a2a;
+  --color-surface-highest: #353535;
+
+  --color-background: #111111ff;
+  --color-background-dim: #0a0a0aff;
+
+  --color-text-body: #cacacaff;
+  --color-text-light: #e6e6e6ff;
+  --color-text-dim: #8f8f8fff;
+  --color-text-dark: #686868ff;
+
+  --color-error: #ffb4ab;
+  --color-warning: #f06102ff;
+  --color-info: #e6cf09ff;
+  --color-success: #8ee41eff;
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-body font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(31, 31, 31, 0.6);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(184, 246, 0, 0.15);
+  }
+  .neon-glow {
+    filter: drop-shadow(0 0 15px rgba(184, 246, 0, 0.4));
+  }
+  .atmospheric-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(184, 246, 0, 0.08) 0%,
+      transparent 70%
+    );
+  }
+}

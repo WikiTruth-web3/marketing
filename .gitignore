@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+dist/
 dist-ssr
 *.local
 
@@ -25,12 +25,14 @@ dist-ssr
 
 .agent/
 .agent/*
+.cursor/
+.cursor/*
 
 .env
 
 log.md
 
-docs
+docs/
 src/content-cn
 src-old
 src-clone

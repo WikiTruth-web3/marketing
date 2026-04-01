@@ -1,16 +1,28 @@
 import React from 'react';
 import { roadmapTitle, roadmapDescription } from '@/content/roadmap';
+import { Container } from '@/components/layout/Container';
+import { Section } from '@/components/layout/Section';
 
 export const RoadmapHero: React.FC = () => {
   return (
-    <section className="max-w-4xl w-full pt-10 pb-12 text-center px-4">
-      <p className="text-primary font-mono text-xs tracking-[0.4em] uppercase mb-4 animate-pulse-soft">The Future is Coded</p>
-      <h1 className="text-white tracking-widest text-5xl md:text-8xl font-bold leading-tight uppercase">
-        {roadmapTitle}
-      </h1>
-      <p className="text-white/50 mt-8 max-w-xl mx-auto text-lg md:text-xl font-light">
-        {roadmapDescription}
-      </p>
-    </section>
+    <Section>
+      <Container className="text-center pt-10 pb-12">
+
+        {/* <div className="max-w-4xl w-full pt-10 pb-12 text-center px-4"> */}
+        <p className="text-primary text-xs tracking-[0.4em] uppercase mb-4 animate-pulse-soft">The Future is Coded</p>
+        <h1 className="text-white tracking-widest text-xl md:text-2xl lg:text-5xl font-bold leading-tight uppercase">
+          {roadmapTitle}
+        </h1>
+        <p className="text-white/50 mt-8 max-w-xl mx-auto text-base md:text-lg font-light">
+          {roadmapDescription}
+        </p>
+        <div className="flex justify-center gap-4 mt-6">
+          <div className="h-px w-12 bg-primary/30 self-center"></div>
+          <span className="text-primary text-xs tracking-widest uppercase">Est. 2025 • Wiki Truth Protocol</span>
+          <div className="h-px w-12 bg-primary/30 self-center"></div>
+        </div>
+        {/* </div> */}
+      </Container>
+    </Section>
   );
 };

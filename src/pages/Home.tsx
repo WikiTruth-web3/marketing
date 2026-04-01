@@ -1,34 +1,26 @@
 import React from 'react';
-import { HomeHero } from '../components/sections/HomeHero';
-import { HomeStats } from '../components/sections/HomeStats';
-import { HomeIntro } from '../components/sections/HomeIntro';
-import { HomeCarousel } from '../components/sections/HomeCarousel';
-import { HomeSecurity } from '../components/sections/HomeSecurity';
-import { HomeRevenue } from '../components/sections/HomeRevenue';
-import { HomeRevenueDelay } from '../components/sections/HomeRevenue2';
-import { HomeComparison } from '../components/sections/HomeComparison';
-import { HomeFeatures } from '../components/sections/HomeFeatures';
+
+import { HomeHero } from '@/components/sections/HomeHero';
+import { GlobalCrimeData } from '../components/sections/GlobalCrimeData';
+import BoxSwapDemo from '@/components/boxSwapDemo';
+import { WhyWeWork } from '../components/sections/WhyWeWork';
+import { TwoIncome } from '../components/sections/TwoIncome';
 import { HomePartners } from '../components/sections/HomePartners';
 import { HomeVisionSection } from '../components/sections/HomeVisionSection';
 
-const Home: React.FC = () => {
-  return (
-    <div className="flex flex-col items-center w-full">
-      <HomeHero />
-      <div className="mt-10">
-        <HomeStats />
-      </div>
-      <HomeIntro />
-      <HomeCarousel />
-      <HomeSecurity />
-      <HomeRevenue />
-      <HomeRevenueDelay />
-      <HomeComparison />
-      <HomeFeatures />
-      <HomePartners />
-      <HomeVisionSection />
-    </div>
-  );
-};
+export default function Home() {
+    return (
 
-export default Home;
+        <div>
+            <HomeHero />
+            <BoxSwapDemo />
+            <TwoIncome />
+            <WhyWeWork />
+            <GlobalCrimeData />
+            <HomePartners />
+
+            <HomeVisionSection />
+        </div>
+
+    );
+}

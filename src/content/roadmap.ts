@@ -1,6 +1,6 @@
 import { PROJECT_NAME } from './project';
 import { Rocket, ShieldCheck, Landmark, Globe, Zap, Users, Lock, Radio } from 'lucide-react';
-import { RoadmapCardProps } from '@/components/customer/RoadmapCard';
+import { RoadmapCardProps } from '@/components/custom/roadmapCard';
 
 export const roadmapTitle = 'Development Roadmap'
 export const roadmapDescription = `From Proof of Concept to the construction of a global truth network: the evolution of ${PROJECT_NAME.full}.`

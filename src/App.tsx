@@ -1,39 +1,29 @@
 import React from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { Header } from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
 import Home from '@/pages/Home';
 import Roadmap from '@/pages/Roadmap';
+import Tech from '@/pages/Tech'
 import Team from '@/pages/Team';
 import Blog from '@/pages/Blog';
 
-// Scroll to top on route change wrapper
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
-
-const App: React.FC = () => {
+export default function App() {
   return (
-    <HashRouter>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col font-display matrix-bg selection:bg-primary selection:text-black">
-        <Navbar />
-        <main className="flex-grow pt-24">
-          <Routes>
+    <div className="flex flex-col w-full mx-auto">
+      <Header />
+      
+      <main className="flex-grow relative overflow-hidden">
+      <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/technology" element={<Tech />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/team" element={<Team />} />
             <Route path="/blogs" element={<Blog />} />
           </Routes>
-        </main>
-        <Footer />
-      </div>
-    </HashRouter>
-  );
-};
+      </main>
 
-export default App;
+      <Footer />
+    </div>
+  );
+}
