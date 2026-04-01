@@ -8,6 +8,7 @@
 
 @theme {
   --color-primary: #b8f600;
+  /* --color-primary-2: rgb(152, 219, 27); */
   --color-primary-light: #caf076;
   --color-primary-dim: #91b918ff;
   --color-primary-dark: #4c6801ff;
@@ -46,7 +47,7 @@
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .glass-panel {
     background: rgba(31, 31, 31, 0.6);
     backdrop-filter: blur(20px);
@@ -62,4 +63,4 @@
       transparent 70%
     );
   }
-}
+} */

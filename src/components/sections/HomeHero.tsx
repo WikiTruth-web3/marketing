@@ -8,6 +8,7 @@ import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
+import Threads from '@/components/background/Threads/index';
 
 export interface CTA {
   text: string
@@ -47,6 +48,7 @@ export const HomeHero: React.FC = () => {
 
   return (
     <Section >
+
       <Container className='mt-10 md:mt-20'>
 
         {/* Grid pattern overlay - using w-full to ensure it covers the desktop properly */}
@@ -84,7 +86,7 @@ export const HomeHero: React.FC = () => {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap gap-4 md:gap-8 items-center border-t border-white/5 pt-6 md:pt-10 mt-8 md:mt-16">
+            <div className="flex flex-wrap gap-4 md:gap-8 items-center border-t border-white/10 pt-6 md:pt-10 mt-8 md:mt-16">
               {heroData.features.map((item, i) => (
                 <div key={i} className="flex items-center gap-1.5 md:gap-2.5 text-white/40 text-xs md:text-sm">
                   <div className="text-primary-dim">

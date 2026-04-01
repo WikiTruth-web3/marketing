@@ -13,7 +13,7 @@ export default function App() {
     <div className="flex flex-col w-full mx-auto">
       <Header />
       
-      <main className="flex-grow relative overflow-hidden">
+      <main >
       <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/technology" element={<Tech />} />
