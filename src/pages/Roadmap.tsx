@@ -8,7 +8,6 @@ import PixelSnow from '@/components/PixelSnow';
 
 export default function Roadmap() {
     return (
-
         <div className="relative ">
             <div className="min-h-screen fixed inset-0 -z-10 overflow-hidden pointer-events-none">
                 <PixelSnow

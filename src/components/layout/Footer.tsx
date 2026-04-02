@@ -1,53 +1,74 @@
-import React from 'react';
-import { Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { Share2 } from 'lucide-react';
+import FooterQuotes from '@/components/custom/footerQuotes';
+import ShareModal from '@/components/modals/shareModal';
+import { socialLinks } from '@/content/social';
+// import { PROJECT_NAME } from '@/content/project';
+import { Brand } from '@/components/base/brand';
 
-export function Footer() {
+const Footer: React.FC = () => {
+  const [isShareOpen, setIsShareOpen] = useState(false);
+
   return (
-    <footer className="bg-surface-dim border-t border-white/10 w-full py-16 px-8 relative overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto relative z-10">
-        <div className="col-span-1 md:col-span-1">
-          <div className="text-lg font-bold font-headline mb-6">
-            OBSIDIAN PULSE
+    <>
+      <footer className="border-t border-white/10 bg-surface-low mt-auto relative z-10">
+        <div className="max-w-7xl mx-auto px-3 md:px-6 py-4 md:py-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+
+            <div className="flex flex-col gap-4 max-w-md">
+              <div className="flex items-center gap-2">
+                {/* <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span> */}
+                <Brand />
+              </div>
+              {/* Quotes Component replacing static description */}
+              <FooterQuotes />
+            </div>
+
+            <div className="flex gap-3">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                  w-8 h-8
+                  flex items-center justify-center 
+                  text-primary-dim hover:text-primary 
+                  transition-all duration-300"
+                  title={item.label}
+                >
+                  <item.icon size={24} />
+                </a>
+              ))}
+
+              <button
+                onClick={() => setIsShareOpen(true)}
+                className="
+                  w-8 h-8
+                  flex items-center justify-center 
+                  text-primary-dim hover:text-primary 
+                  transition-all duration-300"
+                title="Share"
+              >
+                <Share2 size={24} />
+              </button>
+            </div>
           </div>
-          <p className="font-body text-xs uppercase tracking-widest text-[#C3CAAC] leading-relaxed">
-            © 2024 Obsidian Pulse Prop Firm. High-velocity trading for the modern era.
-          </p>
-        </div>
 
-        <div className="space-y-4">
-          <h5 className="text-on-background font-bold text-sm tracking-tight mb-4 uppercase">Platforms</h5>
-          <nav className="flex flex-col gap-3 font-body text-xs uppercase tracking-widest text-[#C3CAAC]">
-            <a className="hover:text-[#BFFF00] transition-opacity duration-300" href="#mt5">MetaTrader 5</a>
-            <a className="hover:text-[#BFFF00] transition-opacity duration-300" href="#ctrader">cTrader</a>
-            <a className="hover:text-[#BFFF00] transition-opacity duration-300" href="#dxtrade">DXTrade</a>
-          </nav>
-        </div>
-
-        <div className="space-y-4">
-          <h5 className="text-on-background font-bold text-sm tracking-tight mb-4 uppercase">Company</h5>
-          <nav className="flex flex-col gap-3 font-body text-xs uppercase tracking-widest text-[#C3CAAC]">
-            <a className="hover:text-[#BFFF00] transition-opacity duration-300" href="#privacy">Privacy Policy</a>
-            <a className="hover:text-[#BFFF00] transition-opacity duration-300" href="#terms">Terms of Service</a>
-            <a className="hover:text-[#BFFF00] transition-opacity duration-300" href="#risk">Risk Disclosure</a>
-            <a className="hover:text-[#BFFF00] transition-opacity duration-300" href="#contact">Contact Support</a>
-          </nav>
-        </div>
-
-        <div className="space-y-4">
-          <h5 className="text-on-background font-bold text-sm tracking-tight mb-4 uppercase">Newsletter</h5>
-          <div className="flex gap-2">
-            <input
-              className="bg-container-highest border-none rounded-lg text-[10px] w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary-container/40 text-on-surface placeholder:text-on-variant/50"
-              placeholder="EMAIL"
-              type="email"
-            />
-            <button className="bg-primary-container text-on-primary-container p-2 rounded-lg hover:opacity-90 transition-opacity">
-              <Send size={16} />
-            </button>
+          <div className="mt-8 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
+            <p>SYSTEM_STATUS: OPTIMAL</p>
+            <p>BLOCK_HEIGHT: 19,234,992</p>
           </div>
-          <p className="text-[10px] text-on-variant/40 mt-2">Get weekly market insights and firm updates.</p>
         </div>
-      </div>
-    </footer>
+      </footer>
+
+      <ShareModal
+        isOpen={isShareOpen}
+        onClose={() => setIsShareOpen(false)}
+      />
+    </>
   );
-}
+};
+
+export default Footer;

@@ -18,7 +18,7 @@ export const Brand: React.FC = () => {
                 </span> */}
                 <ProjectName />
                 <p className="text-white/50 text-xs tracking-wider">
-                    Whistleblower-privacy
+                    Whistleblower-web3
                 </p>
 
             </div>
