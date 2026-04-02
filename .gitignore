@@ -27,8 +27,6 @@ dist-ssr
 .agent/*
 .cursor/
 .cursor/*
-dist/
-dist/*
 
 .env
 
