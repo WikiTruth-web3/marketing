@@ -84,10 +84,10 @@ export const RoadmapCard: React.FC<RoadmapCardProps> = ({
       ${alignment === 'left' ? 'lg:justify-end' : 'lg:order-3 lg:justify-start'}
       `}>
         <div className={`
-          bg-surface
+          bg-surface-high/50
            p-8 rounded-xl max-w-md w-full border-l-4 
           ${colorClasses[color]} shadow-2xl 
-          transition-all hover:bg-surface-low
+          transition-all hover:bg-surface/50
           hover:border hover:border-l-4
           group
           `}
