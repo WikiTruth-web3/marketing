@@ -1,6 +1,10 @@
 import React from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
+// interface Props {
+
+// }
+
 export const Pagination: React.FC = () => {
   return (
     <div className="mt-16 flex items-center justify-center gap-2">
