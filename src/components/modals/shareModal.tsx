@@ -39,19 +39,19 @@ const ShareModal: React.FC<ShareModalProps> = ({
     {
       name: 'Twitter',
       icon: AiOutlineX,
-      color: 'hover:bg-[#1DA1F2]/20 hover:text-[#1DA1F2] hover:border-[#1DA1F2]/50',
+      color: 'hover:bg-cyan-500/20 hover:text-cyan-500 hover:border-cyan-500/50',
       action: () => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(description)}`, '_blank')
     },
     {
       name: 'Telegram',
       icon: PiTelegramLogo,
-      color: 'hover:bg-[#0088cc]/20 hover:text-[#0088cc] hover:border-[#0088cc]/50',
+      color: 'hover:bg-yellow-500/20 hover:text-yellow-500 hover:border-yellow-500/50',
       action: () => window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(description)}`, '_blank')
     },
     {
       name: 'Facebook',
       icon: AiOutlineFacebook,
-      color: 'hover:bg-[#4267B2]/20 hover:text-[#4267B2] hover:border-[#4267B2]/50',
+      color: 'hover:bg-purple-500/20 hover:text-purple-500 hover:border-purple-500/50',
       action: () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank')
     },
     {
@@ -86,9 +86,9 @@ const ShareModal: React.FC<ShareModalProps> = ({
         </div>
 
         {/* Content Preview */}
-        <div className="bg-white/5 rounded-xl p-4 mb-6 border border-white/5">
+        <div className="bg-surface-low rounded-xl p-4 mb-6 border border-white/10">
           <p className="text-white/80 text-sm font-medium mb-1 line-clamp-2">{description}</p>
-          <p className="text-white/40 text-xs font-mono truncate">{url}</p>
+          <p className="text-white/40 text-xs truncate">{url}</p>
         </div>
 
         {/* Action Grid */}
