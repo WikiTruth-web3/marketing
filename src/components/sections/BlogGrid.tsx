@@ -12,7 +12,7 @@ export const BlogGrid: React.FC = () => {
 
   const posts = [...postsData, ...aiResearchData, ...news];
   return (
-    <Section>
+    <Section className='py-5 md:py-10'>
       <Container>
         <div className='flex flex-row justify-between items-center mb-10 border-b border-white/10 pb-10'>
 

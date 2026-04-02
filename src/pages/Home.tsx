@@ -11,9 +11,6 @@ import Threads from '@/components/background/Threads/index';
 
 export default function Home() {
     return (
-
-        
-
         <div className="relative ">
             <div className="h-screen inset-0 -z-10 fixed overflow-hidden pointer-events-none">
                 <Threads

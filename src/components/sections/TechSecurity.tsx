@@ -23,7 +23,7 @@ export const TechSecurity: React.FC = () => {
                         {securityData.map((item, index) => {
                             const Icon = item.icon;
                             return (
-                                <div key={index} className="bg-surface p-6 rounded-xl border border-white/5 hover:bg-surface-low transition-colors">
+                                <div key={index} className="bg-surface-high/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:bg-surface-low transition-colors">
                                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                                         <Icon className="text-primary w-5 h-5" />
                                     </div>

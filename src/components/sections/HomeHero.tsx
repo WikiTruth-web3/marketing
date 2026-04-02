@@ -8,7 +8,6 @@ import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
-import Threads from '@/components/background/Threads/index';
 
 export interface CTA {
   text: string

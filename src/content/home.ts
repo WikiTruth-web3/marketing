@@ -12,7 +12,7 @@ import {
 
 } from "lucide-react";
 import { HomeHeroType } from "@/components/sections/HomeHero";
-import { CrimeDataType } from "@/components/sections/GlobalCrimeData";
+import { CrimeDataType } from "@/types/crime";
 import { PROJECT_NAME } from "./project";
 import { routerLinks, socialLinks } from "./links";
 import { WhyWorkItem } from "@/components/sections/WhyWeWork";

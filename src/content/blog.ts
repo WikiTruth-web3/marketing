@@ -1,4 +1,4 @@
-import { BlogPost } from '@/components/custom/BlogCard';
+import { BlogPost } from '@/components/custom/blogCard';
 import { Shield, Scale, FileText, Activity, Cpu, Globe, MessageSquare } from 'lucide-react';
 
 export interface BlogContent {

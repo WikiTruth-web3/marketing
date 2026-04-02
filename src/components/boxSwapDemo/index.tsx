@@ -35,7 +35,7 @@ const BoxSwapDemo: React.FC = () => {
                 {/* <Subtitle size='lg' className='text-center mb-8 md:mb-12'>BoxSwap Demo</Subtitle> */}
 
                 {/* Main Content */}
-                <div className="bg-surface-low backdrop-blur-xl rounded-2xl p-6 md:p-8 lg:p-12 shadow-2xl border border-white/10 hover:border-primary/30 transition-all duration-500 relative overflow-hidden">
+                <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 lg:p-12 shadow-2xl border border-white/10 hover:border-primary/30 transition-all duration-500 relative overflow-hidden">
 
                     <div className="flex w-full flex-col lg:flex-row gap-8 lg:gap-14">
                         {/* Left Content */}

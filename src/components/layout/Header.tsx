@@ -2,7 +2,7 @@ import React from 'react';
 import { Brand } from '@/components/base/brand';
 import { Button } from '@/components/base/button';
 import NavLinks from '@/components/base/navLinks';
-import { navLinks } from '@/content/links';
+import { navLinks, routerLinks } from '@/content/links';
 import { useScreen } from '@/hooks/screen';
 
 export function Header() {
@@ -16,9 +16,13 @@ export function Header() {
           <NavLinks links={navLinks} className="text-sm" />
         </div>
 
-        {isDesktop ? (<Button >
+        {isDesktop ? (<Button
+          onClick={() => window.open(routerLinks.app, '_blank')}
+        >
           Launch App
-        </Button>) : (<Button >
+        </Button>) : (<Button
+          onClick={() => window.open(routerLinks.app, '_blank')}
+        >
           App
         </Button>)
         }
