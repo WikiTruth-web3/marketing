@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ArrowRight, LucideIcon } from 'lucide-react';
 import { Button } from '@/components/base/button';
 import { heroData } from '@/content/home';
 import { ProjectName } from '../base/projectName';
-import TruthBoxCard from '@/components/custom/truthBoxCard';
+import StackedTruthBoxCarousel from '@/components/custom/stackedTruthBoxCarousel';
 import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { Subtitle } from '../base/subtitle';
@@ -28,20 +28,50 @@ export interface HomeHeroType {
   secondaryCta: CTA
 }
 
-const mockBoxData = {
-  boxId: "8888",
-  title: "Global Financial System Integrity Evidence: Transaction Records & Communications",
-  nftImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60",
-  boxImage: "./nft/boxImage.png",
-  country: "Global",
-  state: "Cyberspace",
-  eventDate: "2024-03-16",
-  price: "50,000",
-  status: "Selling",
-  tokenSymbol: "USDT",
-  tokenDecimals: 6,
-  precision: 2,
-};
+const mockBoxData = [
+  {
+    boxId: "8888",
+    title: "Jeffrey Epstein Case Archive: Flight Logs, Court Filings, and Related Contact Records",
+    nftImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60",
+    boxImage: "./images/case/JeffreyEpstein.jpg",
+    country: "United States",
+    state: "New York",
+    eventDate: "2019-07-06",
+    price: "280,000",
+    status: "Selling",
+    tokenSymbol: "USDT",
+    tokenDecimals: 6,
+    precision: 2,
+  },
+  {
+    boxId: "8889",
+    title: "Boeing Whistleblower Dossier: Safety Reports, Internal Communications, and Hearing Notes",
+    nftImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60",
+    boxImage: "./images/case/Boeing.png",
+    country: "United States",
+    state: "Washington",
+    eventDate: "2024-03-09",
+    price: "35,000",
+    status: "Pending",
+    tokenSymbol: "USDT",
+    tokenDecimals: 6,
+    precision: 2,
+  },
+  {
+    boxId: "8890",
+    title: "Burning Sun / Seungri Case Collection: Chat Logs, Court Timeline, and Media Reports",
+    nftImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
+    boxImage: "./images/case/Seungri.jpeg",
+    country: "South Korea",
+    state: "Seoul",
+    eventDate: "2019-01-29",
+    price: "72,000",
+    status: "Selling",
+    tokenSymbol: "USDT",
+    tokenDecimals: 6,
+    precision: 2,
+  },
+];
 
 export const HomeHero: React.FC = () => {
 
@@ -97,9 +127,10 @@ export const HomeHero: React.FC = () => {
             </div>
           </div>
 
-          <TruthBoxCard
-            data={mockBoxData}
-            className="max-w-[360px] max-h-[500px] "
+          <StackedTruthBoxCarousel
+            cards={mockBoxData}
+            intervalMs={3000}
+            className="max-w-[360px]"
           />
         </div>
       </Container>

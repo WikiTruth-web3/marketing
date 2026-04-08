@@ -39,14 +39,15 @@ const TruthBoxCard: React.FC<TruthBoxCardProps> = ({
     return (
         <div
             className={`flex flex-col items-center w-full bg-surface-low border border-white/5 
+                hover:border-2 hover:border-primary
                 rounded-2xl overflow-hidden shadow-2xl  ${className}`}
             onClick={onClick}
         >
             {/* Image swiper area */}
-            <div className="w-full relative">
+            <div className="w-full aspect-square relative bg-black overflow-hidden">
                 <img
                     src={data.boxImage}
-                    className='w-full'
+                    className='w-full h-full object-cover'
                 >
 
                 </img>
