@@ -9,6 +9,7 @@ import { HomePartners } from '../components/sections/HomePartners';
 import { HomeVisionSection } from '../components/sections/HomeVisionSection';
 import Threads from '@/components/background/Threads/index';
 import CrimeType from '@/components/sections/CrimeType';
+import { Airdrop } from '@/components/sections/Airdrop';
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
             </div>
             <HomeHero />
             <CrimeType/>
+            <Airdrop />
             <BoxSwapDemo />
             <TwoIncome />
             <WhyWeWork />
