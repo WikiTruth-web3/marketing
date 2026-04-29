@@ -14,7 +14,7 @@ export const routerLinks = {
 export const socialLinks = {
     twitter: 'https://x.com/WikiTruthLabs',
     telegram: 'https://t.me/+kKfEGJ6Ua2FhYjI1',
-    github: 'https://github.com/WikiTruth-crypto',
+    github: 'https://github.com/WikiTruth-web3',
     discord: 'https://discord.gg/KVDs7CFSr2',
     email: 'mailto:wikitruth@proton.me',
     emailText: 'wikitruth@proton.me',
