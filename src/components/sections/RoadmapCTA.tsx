@@ -4,8 +4,11 @@ import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { Paragraph } from '../base/paragraph';
 import { Subtitle } from '../base/subtitle';
+import { roadmapCTA } from '@/content/i18n/roadmap';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
-export const RoadmapCTA: React.FC = () => {
+export const RoadmapCTA: React.FC<{ lang: LanguageType }> = ({ lang }) => {
   return (
     <Section>
       <Container>
@@ -13,17 +16,17 @@ export const RoadmapCTA: React.FC = () => {
         <div className="p-[1px] rounded-xl md:rounded-3xl bg-surface-low">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 rounded-3xl bg-background-dark p-12 lg:p-20 border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <div className="flex flex-col gap-5 text-center lg:text-left">
-              <Subtitle size='lg' className='text-text-light'>Ready to join the future of finance?</Subtitle>
+              <Subtitle size='lg' className='text-text-light'>{t(roadmapCTA.title, lang)}</Subtitle>
               <Paragraph className=" max-w-xl font-light">
-                Download our technical whitepaper to learn more about the circuit protocol and our vision for a private, decentralized world.
+                {t(roadmapCTA.description, lang)}
               </Paragraph>
             </div>
             <div className="flex flex-col sm:flex-row gap-5 shrink-0 w-full lg:w-auto">
               <Button variant="primary">
-                View Whitepaper
+                {t(roadmapCTA.whitepaper, lang)}
               </Button>
               <Button variant="outline">
-                Telegram Group
+                {t(roadmapCTA.telegram, lang)}
               </Button>
             </div>
           </div>
@@ -32,3 +35,4 @@ export const RoadmapCTA: React.FC = () => {
     </Section>
   );
 };
+

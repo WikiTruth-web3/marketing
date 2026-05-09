@@ -11,7 +11,7 @@ export interface TeamMemberProps {
   telegram?: string;
 }
 
-export const TeamMember: React.FC<TeamMemberProps> = ({ name, role, img, type, github, twitter, telegram }) => {
+export const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, role, img, type, github, twitter, telegram }) => {
   // CSS filters to simulate the holographic look from the reference
   const filterStyle = {
     blue: 'grayscale(100%) sepia(100%) hue-rotate(190deg) saturate(300%) brightness(0.8) contrast(1.2)',

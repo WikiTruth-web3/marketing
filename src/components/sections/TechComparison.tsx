@@ -1,15 +1,16 @@
 import React from 'react';
-import { comparison } from '@/content/content-en/tech';
-import { Check, X } from 'lucide-react';
+import { comparison } from '@/content/i18n/tech';
 import { Title } from '../base/title';
 import { Paragraph } from '../base/paragraph';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
-export const TechComparison: React.FC = () => {
+export const TechComparison: React.FC<{ lang: LanguageType }> = ({ lang }) => {
   return (
     <section className="w-full max-w-7xl mx-auto px-6 py-24">
       <div className="text-center mb-16">
-        <Title className='mb-2 md:mb-4'>{comparison.title}</Title>
-        <Paragraph size='md' className='max-w-2xl mx-auto text-text-dim'>{comparison.subtitle}</Paragraph>
+        <Title className='mb-2 md:mb-4'>{t(comparison.title, lang)}</Title>
+        <Paragraph size='md' className='max-w-2xl mx-auto text-text-dim'>{t(comparison.subtitle, lang)}</Paragraph>
       </div>
 
       <div className="overflow-x-auto">
@@ -28,18 +29,17 @@ export const TechComparison: React.FC = () => {
               className="grid grid-cols-12 p-3 md:p-6 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors items-center group"
             >
               <div className="col-span-4 pl-4 font-bold group-hover:text-primary-dim transition-colors text-sm md:text-base">
-                {row.aspect}
+                {t(row.aspect, lang)}
               </div>
 
               <div className="col-span-4 text-center text-white/60 relative text-sm md:text-base">
-                {/* Optional: Add X icon for negative framing implicitly, or just text */}
-                {row.traditional}
+                {t(row.traditional, lang)}
               </div>
 
               <div className="col-span-4 text-center text-white font-bold relative">
                 <div className="absolute inset-x-0 -inset-y-6 bg-primary/5 -z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="text-primary-dim text-sm md:text-base">
-                  {row.wikitruth}
+                  {t(row.wikitruth, lang)}
                 </span>
               </div>
             </div>
@@ -49,3 +49,4 @@ export const TechComparison: React.FC = () => {
     </section>
   );
 };
+

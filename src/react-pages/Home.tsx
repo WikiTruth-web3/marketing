@@ -8,7 +8,6 @@ import { TwoIncome } from '../components/sections/TwoIncome';
 import { HomePartners } from '../components/sections/HomePartners';
 import { HomeVisionSection } from '../components/sections/HomeVisionSection';
 import Threads from '@/components/background/Threads/index';
-import CrimeType from '@/components/sections/CrimeType';
 import { Airdrop } from '@/components/sections/Airdrop';
 
 import type { LanguageType } from '@/types/typesDapp/language';
@@ -25,7 +24,6 @@ export default function Home({ lang }: { lang: LanguageType }) {
                 />
             </div>
             <HomeHero lang={lang} />
-            <CrimeType lang={lang} />
             <Airdrop lang={lang} />
             <BoxSwapDemo lang={lang} />
             <TwoIncome lang={lang} />

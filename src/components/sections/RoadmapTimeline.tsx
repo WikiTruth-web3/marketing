@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
 import { RoadmapCard } from '@/components/custom/roadmapCard';
-import { roadmapPhases } from '@/content/content-en/roadmap';
+import { roadmapPhases } from '@/content/i18n/roadmap';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
-export const RoadmapTimeline: React.FC = () => {
+export const RoadmapTimeline: React.FC<{ lang: LanguageType }> = ({ lang }) => {
   // Find the progress indicator
   const activeIndex = useMemo(() => {
     const activeIdx = roadmapPhases.findIndex(p => p.status === 'active');
@@ -46,6 +48,10 @@ export const RoadmapTimeline: React.FC = () => {
             <div key={index} className="relative">
               <RoadmapCard
                 {...phase}
+                phase={t(phase.phase, lang)}
+                title={t(phase.title, lang)}
+                description={t(phase.description, lang)}
+                items={phase.items.map(item => t(item, lang))}
               />
             </div>
           ))}
@@ -54,3 +60,4 @@ export const RoadmapTimeline: React.FC = () => {
     </Section>
   );
 };
+

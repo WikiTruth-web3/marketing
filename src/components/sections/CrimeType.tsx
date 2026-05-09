@@ -1,7 +1,9 @@
 import React from 'react';
 import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
-import { CRIME_TYPES } from '@/content/content-en/crimeType';
+import { CRIME_TYPES } from '@/content/i18n/crimeType';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
 const renderRow = (types: string[], rowKey: string) => (
     <div className="relative overflow-hidden py-2">
@@ -18,21 +20,16 @@ const renderRow = (types: string[], rowKey: string) => (
     </div>
 );
 
-import type { LanguageType } from '@/types/typesDapp/language';
-
 export default function CrimeType({ lang }: { lang: LanguageType }) {
 
-    const half = Math.ceil(CRIME_TYPES.length / 2);
-    const firstRow = CRIME_TYPES.slice(0, half);
-    const secondRow = CRIME_TYPES.slice(half);
+    const localizedCrimes = CRIME_TYPES.map(item => t(item, lang));
+    const half = Math.ceil(localizedCrimes.length / 2);
+    const firstRow = localizedCrimes.slice(0, half);
+    const secondRow = localizedCrimes.slice(half);
 
     return (
         <Section >
             <Container>
-                {/* <h3 className="mb-4 text-center text-base text-text-dim md:text-lg">
-                    Common Crime Categories
-                </h3> */}
-
                 {renderRow(firstRow, 'row-a')}
 
                 <div className="crime-marquee-reverse">
@@ -56,3 +53,4 @@ export default function CrimeType({ lang }: { lang: LanguageType }) {
         </Section>
     );
 }
+

@@ -1,11 +1,13 @@
 import React from 'react';
-import { securityData, securityTitle, securityDescription } from '@/content/content-en/tech';
+import { securityData, securityTitle, securityDescription } from '@/content/i18n/tech';
 import { Title } from '../base/title';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
 import { LucideIcon } from 'lucide-react';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
 export interface securityTab {
   id: string
@@ -14,8 +16,7 @@ export interface securityTab {
   description: string
 }
 
-
-export const TechSecurity: React.FC = () => {
+export const TechSecurity: React.FC<{ lang: LanguageType }> = ({ lang }) => {
     return (
         <Section >
             <Container className='mt-10 md:mt-20'>
@@ -23,8 +24,8 @@ export const TechSecurity: React.FC = () => {
                     {/* Text Side */}
                     <div>
                         <h2 className="text-primary font-mono uppercase tracking-widest text-sm mb-4">Security First</h2>
-                        <Title size='lg' className='mb-2 md:mb-4'>{securityTitle}</Title>
-                        <Paragraph size='md' className='max-w-2xl mx-auto text-text-dim'>{securityDescription}</Paragraph>
+                        <Title size='lg' className='mb-2 md:mb-4'>{t(securityTitle, lang)}</Title>
+                        <Paragraph size='md' className='max-w-2xl mx-auto text-text-dim'>{t(securityDescription, lang)}</Paragraph>
                     </div>
 
                     {/* Features Grid */}
@@ -36,8 +37,8 @@ export const TechSecurity: React.FC = () => {
                                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                                         <Icon className="text-primary w-5 h-5" />
                                     </div>
-                                    <Subtitle size='sm' className='mb-2'>{item.title}</Subtitle>
-                                    <Paragraph size='xs' className='text-text-dim'>{item.description}</Paragraph>
+                                    <Subtitle size='sm' className='mb-2'>{t(item.title, lang)}</Subtitle>
+                                    <Paragraph size='xs' className='text-text-dim'>{t(item.description, lang)}</Paragraph>
                                 </div>
                             );
                         })}
@@ -47,3 +48,4 @@ export const TechSecurity: React.FC = () => {
         </Section>
     );
 };
+
