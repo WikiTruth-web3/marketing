@@ -1,14 +1,12 @@
 
-
 import React from 'react';
 import { RoadmapTimeline } from '@/components/sections/RoadmapTimeline';
 import { RoadmapCTA } from '@/components/sections/RoadmapCTA';
 import { RoadmapHero } from '@/components/sections/RoadmapHero';
-// import Grid from '@/components/background/Grid';
 import Particles from '@/components/background/Particles';
+import type { LanguageType } from '@/types/typesDapp/language';
 
-
-export default function Roadmap() {
+export default function Roadmap({ lang = 'en' }: { lang?: LanguageType }) {
     return (
         <div className="relative ">
             <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -25,10 +23,11 @@ export default function Roadmap() {
                 />
             </div>
             {/* Background Glows */}
-            <RoadmapHero />
-            <RoadmapTimeline />
-            <RoadmapCTA />
+            <RoadmapHero lang={lang} />
+            <RoadmapTimeline lang={lang} />
+            <RoadmapCTA lang={lang} />
         </div>
 
     );
 }
+

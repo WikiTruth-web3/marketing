@@ -1,12 +1,11 @@
-
 import React from 'react';
-
 import { Features } from '@/components/sections/TechFeatures';
 import { TechComparison } from '@/components/sections/TechComparison';
 import { TechSecurity } from '@/components/sections/TechSecurity';
 import CodeRain from '@/components/background/CodeRain';
+import type { LanguageType } from '@/types/typesDapp/language';
 
-export default function Tech() {
+export default function Tech({ lang = 'en' }: { lang?: LanguageType }) {
     return (
 
         <div className="relative">
@@ -28,11 +27,12 @@ export default function Tech() {
                 />
             </div>
             <div className="relative z-10">
-                <TechSecurity />
-                <Features />
-                <TechComparison />
+                <TechSecurity lang={lang} />
+                <Features lang={lang} />
+                <TechComparison lang={lang} />
             </div>
         </div>
 
     );
 }
+

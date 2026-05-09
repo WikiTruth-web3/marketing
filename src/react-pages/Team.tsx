@@ -1,19 +1,17 @@
 
-
 import React from 'react';
 import { TeamHero } from '@/components/sections/TeamHero';
-// import { TeamGrid } from '@/components/sections/TeamGrid';
 import { JoinUs } from '@/components/sections/JoinUs';
+import type { LanguageType } from '@/types/typesDapp/language';
 
-export default function Team() {
+export default function Team({ lang = 'en' }: { lang?: LanguageType }) {
     return (
-
         <div>
             {/* Background Glows */}
-            <TeamHero />
-            {/* <TeamGrid /> */}
-            <JoinUs />
+            <TeamHero lang={lang} />
+            <JoinUs lang={lang} />
         </div>
 
     );
 }
+
