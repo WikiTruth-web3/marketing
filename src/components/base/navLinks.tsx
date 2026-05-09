@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
+import type { LanguageType, LanguageItem } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
+
 
 export interface NavLinkItem {
-  name: string;
+  name: string | LanguageItem;
   href: string;
   target?: string;
 }
@@ -12,8 +15,9 @@ interface NavLinksProps {
   links: NavLinkItem[];
   className?: string;
   currentPath?: string;
-  lang?: string;
+  lang?: LanguageType;
 }
+
 
 function isExternalLink(link: NavLinkItem) {
   return link.target === '_blank' || !link.href.startsWith('/');
@@ -66,7 +70,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ links, className, currentPath = '/'
             rowClass
           )}
         >
-          {link.name}
+          {t(link.name, lang)}
           <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-0.5" />
         </a>
       );
@@ -86,7 +90,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ links, className, currentPath = '/'
           rowClass
         )}
       >
-        {link.name}
+        {t(link.name, lang)}
         {active && !mobile && (
           <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-[0_0_8px_rgba(19,236,91,0.6)]" />
         )}

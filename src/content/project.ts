@@ -4,5 +4,5 @@ export const PROJECT_NAME = {
     lower: 'evidence market',
     start: 'Evidence',
     end: 'Market',
-    row2: 'Whistleblower',
+    row2: 'Whistleblower-web3',
 }

@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 .agent/
+.agents/
 .agent/*
 .cursor/
 .cursor/*
@@ -33,3 +34,5 @@ dist-ssr
 log.md
 
 docs/
+chat/
+vibCoding/

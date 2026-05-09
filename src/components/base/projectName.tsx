@@ -3,7 +3,7 @@ import { PROJECT_NAME } from '@/content/project';
 import { twMerge } from 'tailwind-merge';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>  {
-    className: string
+    className?: string
 }
 
 export const ProjectName: React.FC<Props> = ({className}) => {

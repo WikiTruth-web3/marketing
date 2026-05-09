@@ -11,7 +11,9 @@ import Threads from '@/components/background/Threads/index';
 import CrimeType from '@/components/sections/CrimeType';
 import { Airdrop } from '@/components/sections/Airdrop';
 
-export default function Home() {
+import type { LanguageType } from '@/types/typesDapp/language';
+
+export default function Home({ lang }: { lang: LanguageType }) {
     return (
         <div className="relative ">
             <div className="h-screen inset-0 -z-10 fixed overflow-hidden pointer-events-none">
@@ -22,17 +24,19 @@ export default function Home() {
                     enableMouseInteraction={false}
                 />
             </div>
-            <HomeHero />
-            <CrimeType/>
-            <Airdrop />
-            <BoxSwapDemo />
-            <TwoIncome />
-            <WhyWeWork />
-            <GlobalCrimeData />
-            <HomePartners />
+            <HomeHero lang={lang} />
+            <CrimeType lang={lang} />
+            <Airdrop lang={lang} />
+            <BoxSwapDemo lang={lang} />
+            <TwoIncome lang={lang} />
+            <WhyWeWork lang={lang} />
+            <GlobalCrimeData lang={lang} />
+            <HomePartners lang={lang} />
 
-            <HomeVisionSection />
+            <HomeVisionSection lang={lang} />
+
         </div>
 
     );
 }
+

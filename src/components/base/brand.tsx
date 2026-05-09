@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectName } from './projectName';
+import { PROJECT_NAME } from '@/content/project';
 
 export const Brand: React.FC = () => {
     return (
@@ -18,7 +19,7 @@ export const Brand: React.FC = () => {
                 </span> */}
                 <ProjectName />
                 <p className="text-white/50 text-xs tracking-wider">
-                    Whistleblower-web3
+                    {PROJECT_NAME.row2}
                 </p>
 
             </div>

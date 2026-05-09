@@ -1,15 +1,19 @@
 import React from 'react';
-import { incomeExchange } from '@/content/content-en/home';
+import { incomeExchange } from '@/content/i18n/twoIncome';
+import { globalContent } from '@/content/i18n/global';
 import { PieChart } from '../base/pieChart';
 import { twMerge } from 'tailwind-merge';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
 interface RewardProps {
   className?: string;
+  lang: LanguageType;
 }
 
-export const Reward: React.FC<RewardProps> = ({ className }) => {
+export const Reward: React.FC<RewardProps> = ({ className, lang }) => {
   const ratioValue = parseFloat(incomeExchange.ratio.replace('%', ''));
 
   return (
@@ -25,15 +29,15 @@ export const Reward: React.FC<RewardProps> = ({ className }) => {
         <div className="flex flex-col gap-2">
           <span className="text-primary text-sm tracking-widest uppercase mb-1 flex items-center justify-start gap-2">
             <span className="w-8 h-[1px] bg-primary"></span>
-            High Yield Rewards
+            {t(globalContent.highYieldRewards, lang)}
           </span>
           <Subtitle size='lg' className='text-text-light'>
-            {incomeExchange.title}
+            {t(incomeExchange.title, lang)}
           </Subtitle>
         </div>
 
         <Paragraph >
-          {incomeExchange.description}
+          {t(incomeExchange.description, lang)}
         </Paragraph>
       </div>
 
@@ -45,7 +49,7 @@ export const Reward: React.FC<RewardProps> = ({ className }) => {
         <PieChart
           size={300}
           targetPercentage={ratioValue}
-          label="Distribution"
+          label={t(globalContent.distribution, lang)}
           showPercentage={true}
           className="relative z-10"
         />
@@ -57,3 +61,4 @@ export const Reward: React.FC<RewardProps> = ({ className }) => {
     </div>
   );
 };
+

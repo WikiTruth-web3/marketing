@@ -10,6 +10,9 @@ import FourEverlandLogo from '@/assets/partnerLogo/FourEverland.svg';
 import { Title } from '../base/title';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
+import { globalContent } from '@/content/i18n/global';
 
 const partners = [
   { name: 'Oasis Network', logo: OasisLogo },
@@ -20,12 +23,12 @@ const partners = [
   { name: '4EVERLAND', logo: FourEverlandLogo },
 ];
 
-export const HomePartners: React.FC = () => {
+export const HomePartners: React.FC<{ lang: LanguageType }> = ({ lang }) => {
   return (
     <Section >
       <Container>
         <div className="text-center mb-10">
-          <Title className="uppercase tracking-widest">Powered By / Partners</Title>
+          <Title className="uppercase tracking-widest">{t(globalContent.poweredByPartners, lang)}</Title>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
@@ -43,3 +46,4 @@ export const HomePartners: React.FC = () => {
     </Section>
   );
 };
+

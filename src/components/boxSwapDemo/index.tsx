@@ -9,8 +9,11 @@ import InteractiveStory from './InteractiveStory';
 import { Title } from '../base/title';
 // import { Subtitle } from '../base/subtitle';
 
-const BoxSwapDemo: React.FC = () => {
+import type { LanguageType } from '@/types/typesDapp/language';
+
+const BoxSwapDemo: React.FC<{ lang: LanguageType }> = ({ lang }) => {
     const [status, setStatus] = useState<BoxStatus>('Storing');
+
     const simulation = useBoxSwapSimulation(status, setStatus);
 
     // Calculate current step index for the UI step tracker
