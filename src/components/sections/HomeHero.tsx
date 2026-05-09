@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, LucideIcon } from 'lucide-react';
 import { Button } from '@/components/base/button';
-import { heroData } from '@/content/content-en/home';
+import { heroData } from '@/content/i18n/homeHero';
 import { ProjectName } from '../base/projectName';
 import StackedTruthBoxCarousel from '@/components/custom/stackedTruthBoxCarousel';
 import { Container } from '../layout/Container';
@@ -9,6 +9,8 @@ import { Section } from '../layout/Section';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
 import { mockBoxData } from '@/content/content-en/mockBoxData';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
 export interface CTA {
   text: string
@@ -29,8 +31,7 @@ export interface HomeHeroType {
   secondaryCta: CTA
 }
 
-
-export const HomeHero: React.FC = () => {
+export const HomeHero: React.FC<{ lang: LanguageType }> = ({ lang }) => {
 
   return (
     <Section >
@@ -47,11 +48,11 @@ export const HomeHero: React.FC = () => {
             </div>
 
             <Subtitle size='lg' className='mb-2 md:mb-3 max-w-xl text-center md:text-left'>
-              {heroData.subtitle}
+              {t(heroData.subtitle, lang)}
             </Subtitle>
 
             <Paragraph className='mb-6 md:mb-8 max-w-xl text-center md:text-left text-primary-dim' >
-              {heroData.description}
+              {t(heroData.description, lang)}
             </Paragraph>
 
             {/* CTAs */}
@@ -60,14 +61,14 @@ export const HomeHero: React.FC = () => {
                 onClick={() => window.open(heroData.primaryCta.link, '_blank')}
                 className=" px-5 md:px-8 py-3 md:py-4 flex flex-row md:text-sm lg:text-base"
               >
-                {heroData.primaryCta.text} <ArrowRight className="ml-2 w-5 h-5" />
+                {t(heroData.primaryCta.text, lang)} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
                 onClick={() => window.open(heroData.secondaryCta.link, '_blank')}
                 className="px-5 md:px-8 py-3 md:py-4 flex flex-row md:text-sm lg:text-base"
                 variant='outline'
               >
-                {heroData.secondaryCta.text}
+                {t(heroData.secondaryCta.text, lang)}
               </Button>
             </div>
 
@@ -78,7 +79,7 @@ export const HomeHero: React.FC = () => {
                   <div className="text-primary-dim">
                     <item.icon size={18} />
                   </div>
-                  {item.text}
+                  {t(item.text, lang)}
                 </div>
               ))}
             </div>
@@ -94,3 +95,4 @@ export const HomeHero: React.FC = () => {
     </Section>
   );
 };
+

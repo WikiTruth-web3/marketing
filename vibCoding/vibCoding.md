@@ -2,7 +2,7 @@
 
 ### 1. 项目介绍
 
-这是Wiki Truth 项目的Marketing 页面，主要用于展示项目的核心价值和功能。
+这是Evidence Market 项目的Marketing 页面，主要用于展示项目的核心价值和功能。
 
 ### 2. 项目技术栈
 

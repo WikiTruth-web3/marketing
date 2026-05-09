@@ -1,17 +1,24 @@
 import React from 'react';
-import { incomeDelay } from '@/content/content-en/home';
+import { incomeDelay } from '@/content/i18n/twoIncome';
+import { globalContent } from '@/content/i18n/global';
 import { BarChart } from '../base/barChart';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
 import { twMerge } from 'tailwind-merge';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
 interface DelayFeeProps {
   className?: string;
+  lang: LanguageType;
 }
 
-export const DelayFee: React.FC<DelayFeeProps> = ({ className }) => {
-  // Map the content data to the structure required by BarChart if necessary
-  // incomeDelay.map is already [{ label, value }, ...] which is compatible
+export const DelayFee: React.FC<DelayFeeProps> = ({ className, lang }) => {
+  // Map the content data to translate labels
+  const translatedData = incomeDelay.map.map(item => ({
+    ...item,
+    label: t(item.label, lang)
+  }));
 
   return (
     <div className={twMerge(
@@ -26,15 +33,15 @@ export const DelayFee: React.FC<DelayFeeProps> = ({ className }) => {
         <div className="flex flex-col gap-2">
           <span className="text-primary text-sm tracking-widest uppercase mb-1 flex items-center justify-start gap-2">
             <span className="w-8 h-[1px] bg-primary"></span>
-            Growth Potential
+            {t(globalContent.growthPotential, lang)}
           </span>
           <Subtitle size='lg' className='text-text-light'>
-            {incomeDelay.title}
+            {t(incomeDelay.title, lang)}
           </Subtitle>
         </div>
 
         <Paragraph >
-          {incomeDelay.description}
+          {t(incomeDelay.description, lang)}
         </Paragraph>
       </div>
 
@@ -42,7 +49,7 @@ export const DelayFee: React.FC<DelayFeeProps> = ({ className }) => {
       <div className="w-full relative px-2 py-8 bg-black/20 rounded-2xl border border-white/5 shadow-inner">
 
         <BarChart
-          data={incomeDelay.map}
+          data={translatedData}
           height={250}
           className="relative z-10"
         />
@@ -50,3 +57,4 @@ export const DelayFee: React.FC<DelayFeeProps> = ({ className }) => {
     </div>
   );
 };
+

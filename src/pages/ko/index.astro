@@ -3,11 +3,14 @@ import Layout from '@/layouts/Layout.astro';
 import { Header } from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Home from '@/react-pages/Home';
+
+const lang = (Astro.currentLocale || 'ko') as any;
 ---
-<Layout lang="ko">
-  <Header currentPath="/ko" lang="ko" client:load />
+<Layout lang={lang}>
+  <Header currentPath="/ko" lang={lang} client:load />
   <main class="min-h-screen">
-    <Home client:load />
+    <Home lang={lang} client:load />
   </main>
   <Footer client:visible />
 </Layout>
+

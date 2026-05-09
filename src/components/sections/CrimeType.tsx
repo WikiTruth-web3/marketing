@@ -18,7 +18,10 @@ const renderRow = (types: string[], rowKey: string) => (
     </div>
 );
 
-export default function CrimeType() {
+import type { LanguageType } from '@/types/typesDapp/language';
+
+export default function CrimeType({ lang }: { lang: LanguageType }) {
+
     const half = Math.ceil(CRIME_TYPES.length / 2);
     const firstRow = CRIME_TYPES.slice(0, half);
     const secondRow = CRIME_TYPES.slice(half);

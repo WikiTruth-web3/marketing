@@ -1,24 +1,14 @@
 import React from 'react';
 import { DataCard } from '@/components/custom/dataCard';
-import { crimeData, moreData } from '@/content/content-en/home';
+import { crimeData, moreData } from '@/content/i18n/globalCrimeData';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
-import { ArrowRight, Globe as GlobeIcon, ShieldAlert } from 'lucide-react';
+import { ArrowRight, Globe as GlobeIcon } from 'lucide-react';
 import Globe from '@/components/globeCobe';
+import type { LanguageType } from '@/types/typesDapp/language';
+import { t } from '@/lib/i18nUtils';
 
-import { LucideIcon } from 'lucide-react';
-
-export interface CrimeDataType {
-  icon: LucideIcon | any;
-  label: string;
-  value: string;
-  description: string;
-  link: string;
-  color: string;
-  bgColor?: string;
-}
-
-export const GlobalCrimeData: React.FC = () => {
+export const GlobalCrimeData: React.FC<{ lang: LanguageType }> = ({ lang }) => {
   return (
     <Section className="relative overflow-hidden">
       {/* Background radial glow */}
@@ -31,9 +21,9 @@ export const GlobalCrimeData: React.FC = () => {
               {crimeData && crimeData.map((stat, index) => (
                 <DataCard
                   key={index}
-                  label={stat.label}
+                  label={t(stat.label, lang)}
                   value={stat.value}
-                  sub={stat.description}
+                  sub={t(stat.description, lang)}
                   icon={stat.icon}
                   color={stat.color}
                   link={stat.link}
@@ -47,8 +37,6 @@ export const GlobalCrimeData: React.FC = () => {
           </div>
         </div>
 
-
-
         <div className="flex justify-center  ">
           <a
             href={moreData.link}
@@ -58,7 +46,7 @@ export const GlobalCrimeData: React.FC = () => {
           >
             <span className="text-primary/60 text-sm flex items-center gap-2 group-hover:text-primary transition-colors">
               <GlobeIcon size={16} className="group-hover:rotate-45 transition-transform" />
-              {moreData.title}: {moreData.website}
+              {t(moreData.title, lang)}: {moreData.website}
             </span>
             <ArrowRight size={16} className="text-primary/20 group-hover:text-primary group-hover:translate-x-1 transition-all" />
           </a>
@@ -67,3 +55,4 @@ export const GlobalCrimeData: React.FC = () => {
     </Section>
   );
 };
+

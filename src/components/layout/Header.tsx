@@ -2,16 +2,19 @@ import React from 'react';
 import { Brand } from '@/components/base/brand';
 import { Button } from '@/components/base/button';
 import NavLinks from '@/components/base/navLinks';
-import { navLinks,} from '@/content/content-en/navLinks';
+import { navLinks } from '@/content/i18n/navLinks';
 import { routerLinks } from '@/content/links';
 import { useScreen } from '@/hooks/screen';
+import type { LanguageType } from '@/types/typesDapp/language';
+
 
 interface HeaderProps {
   currentPath?: string;
-  lang?: string;
+  lang?: LanguageType;
 }
 
 export function Header({ currentPath = '/', lang = 'en' }: HeaderProps) {
+
   const { isDesktop } = useScreen();
 
   const handleLangChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
