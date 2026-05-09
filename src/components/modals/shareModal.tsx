@@ -8,7 +8,7 @@ import {
 } from 'react-icons/ai';
 
 import { createPortal } from 'react-dom';
-import { introInSocial } from '@/content/social';
+import { introContent } from '@/content/content-en/intro';
 
 interface ShareModalProps {
   isOpen: boolean;
@@ -21,7 +21,7 @@ const ShareModal: React.FC<ShareModalProps> = ({
   isOpen,
   onClose,
   url = typeof window !== 'undefined' ? window.location.href : '',
-  description = introInSocial.description
+  description = introContent.description
 }) => {
   if (!isOpen) return null;
 

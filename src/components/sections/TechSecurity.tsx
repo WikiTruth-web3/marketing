@@ -1,10 +1,19 @@
 import React from 'react';
-import { securityData, securityTitle, securityDescription } from '@/content/tech';
+import { securityData, securityTitle, securityDescription } from '@/content/content-en/tech';
 import { Title } from '../base/title';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
+import { LucideIcon } from 'lucide-react';
+
+export interface securityTab {
+  id: string
+  icon: LucideIcon
+  title: string
+  description: string
+}
+
 
 export const TechSecurity: React.FC = () => {
     return (

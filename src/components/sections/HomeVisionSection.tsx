@@ -1,6 +1,6 @@
 import React from 'react';
 import { Network } from 'lucide-react';
-import { vision } from '@/content/home';
+import { vision } from '@/content/content-en/home';
 
 export const HomeVisionSection: React.FC = () => {
   return (

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Share2 } from 'lucide-react';
-import FooterQuotes from '@/components/custom/footerQuotes';
 import ShareModal from '@/components/modals/shareModal';
-import { socialLinks } from '@/content/social';
-// import { PROJECT_NAME } from '@/content/project';
+import { socialLinkData } from '@/content/social';
 import { Brand } from '@/components/base/brand';
 
 const Footer: React.FC = () => {
@@ -21,11 +19,10 @@ const Footer: React.FC = () => {
                 <Brand />
               </div>
               {/* Quotes Component replacing static description */}
-              <FooterQuotes />
             </div>
 
             <div className="flex gap-3">
-              {socialLinks.map((item) => (
+              {socialLinkData.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { roadmapTitle, roadmapDescription } from '@/content/roadmap';
+import { roadmapTitle, roadmapDescription } from '@/content/content-en/roadmap';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 

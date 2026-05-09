@@ -1,6 +1,6 @@
 import React from 'react';
 import { Terminal } from 'lucide-react';
-import { teamRecruitment } from '@/content/team';
+import { teamRecruitment } from '@/content/content-en/team';
 import { Container } from "../layout/Container";
 import { Section } from "../layout/Section";
 import { Button } from '../base/button';

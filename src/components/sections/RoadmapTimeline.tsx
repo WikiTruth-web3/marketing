@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { RoadmapCard } from '@/components/custom/roadmapCard';
-import { roadmapPhases } from '@/content/roadmap';
+import { roadmapPhases } from '@/content/content-en/roadmap';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 

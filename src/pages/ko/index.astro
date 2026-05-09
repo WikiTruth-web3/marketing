@@ -1,0 +1,13 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Home from '@/react-pages/Home';
+---
+<Layout lang="ko">
+  <Header currentPath="/ko" lang="ko" client:load />
+  <main class="min-h-screen">
+    <Home client:load />
+  </main>
+  <Footer client:visible />
+</Layout>

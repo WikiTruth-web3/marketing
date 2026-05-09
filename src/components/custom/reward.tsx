@@ -1,5 +1,5 @@
 import React from 'react';
-import { incomeExchange } from '@/content/home';
+import { incomeExchange } from '@/content/content-en/home';
 import { PieChart } from '../base/pieChart';
 import { twMerge } from 'tailwind-merge';
 import { Subtitle } from '../base/subtitle';

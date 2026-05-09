@@ -1,5 +1,5 @@
 import React from 'react';
-import { comparison } from '@/content/tech';
+import { comparison } from '@/content/content-en/tech';
 import { Check, X } from 'lucide-react';
 import { Title } from '../base/title';
 import { Paragraph } from '../base/paragraph';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { thinking, thinkingLink } from '@/content/home';
+import { thinking, thinkingLink } from '@/content/content-en/home';
 import { ArrowRight, Quote } from 'lucide-react';
 import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
