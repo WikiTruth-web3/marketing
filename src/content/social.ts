@@ -1,10 +1,9 @@
 import { socialLinks as links } from "./links";
 import {FaTelegramPlane} from 'react-icons/fa';
-import {PROJECT_NAME} from "./project";
 import { AiOutlineDiscord, AiOutlineX, AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
 
 
-export const socialLinks = [
+export const socialLinkData = [
     {
         name: 'twitter',
         icon: AiOutlineX,
@@ -36,8 +35,3 @@ export const socialLinks = [
         label: 'Email'
     },
 ];
-
-
-export const introInSocial = {
-    description: `${PROJECT_NAME.full} is a decentralized "whistleblower bounty" and "crime evidence" trading market. Here, you can buy and sell evidence of crimes, and earn rewards for providing valuable information.`,
-}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { whyWorkData, whyWorkTitle } from '@/content/home';
+import { whyWorkData, whyWorkTitle } from '@/content/content-en/home';
 import { FeatureItem } from '../custom/featureItem';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';

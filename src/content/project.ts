@@ -1,8 +1,8 @@
 
 export const PROJECT_NAME = {
-    full: 'Wiki Truth',
-    lower: 'wiki truth',
-    start: 'Wiki',
-    end: 'Truth',
+    full: 'Evidence Market',
+    lower: 'evidence market',
+    start: 'Evidence',
+    end: 'Market',
     row2: 'Whistleblower',
 }

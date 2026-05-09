@@ -1,5 +1,5 @@
 import React from 'react';
-import { incomeDelay } from '@/content/home';
+import { incomeDelay } from '@/content/content-en/home';
 import { BarChart } from '../base/barChart';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';

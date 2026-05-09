@@ -1,25 +1,7 @@
 import React from 'react';
 import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
-
-const CRIME_TYPES: string[] = [
-    'Homicide', 'Manslaughter', 'Assault', 'Battery', 'Kidnapping', 'False Imprisonment',
-    'Domestic Violence', 'Stalking', 'Harassment', 'Sexual Assault', 'Rape', 'Child Abuse',
-    'Human Trafficking', 'Forced Labor', 'Organ Trafficking', 'Extortion', 'Blackmail',
-    'Robbery', 'Armed Robbery', 'Burglary', 'Home Invasion', 'Theft', 'Shoplifting',
-    'Auto Theft', 'Vandalism', 'Arson', 'Fraud', 'Insurance Fraud', 'Tax Evasion',
-    'Money Laundering', 'Bribery', 'Corruption', 'Embezzlement', 'Insider Trading',
-    'Ponzi Scheme', 'Forgery', 'Counterfeiting', 'Identity Theft', 'Credit Card Fraud',
-    'Cybercrime', 'Phishing', 'Malware Distribution', 'Ransomware', 'Data Breach',
-    'Unauthorized Access', 'DDoS Attack', 'Crypto Scam', 'Market Manipulation',
-    'Drug Trafficking', 'Drug Manufacturing', 'Illegal Possession of Narcotics',
-    'Arms Trafficking', 'Illegal Weapons Possession', 'Smuggling', 'Contraband Trade',
-    'Environmental Crime', 'Illegal Dumping', 'Wildlife Trafficking', 'Poaching',
-    'Illegal Logging', 'War Crime', 'Crime Against Humanity', 'Genocide',
-    'Terrorism', 'Financing Terrorism', 'Election Fraud', 'Perjury', 'Obstruction of Justice',
-    'Witness Tampering', 'Contempt of Court', 'Public Disorder', 'Riot', 'Hate Crime',
-    'Intellectual Property Theft', 'Piracy', 'Trademark Infringement', 'Patent Infringement',
-];
+import { CRIME_TYPES } from '@/content/content-en/crimeType';
 
 const renderRow = (types: string[], rowKey: string) => (
     <div className="relative overflow-hidden py-2">

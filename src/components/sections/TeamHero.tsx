@@ -3,10 +3,10 @@ import { Section } from "../layout/Section";
 import { Title } from "../base/title";
 import { Subtitle } from "../base/subtitle";
 import { Paragraph } from "../base/paragraph";
-import { introductionTeam } from "@/content/team";
+import { introductionTeam } from "@/content/content-en/team";
 import Aurora from '@/components/background/Aurora/index';
 import { TeamMember } from '../custom/teamMember';
-import { teamMembers } from '@/content/team';
+import { teamMembers } from '@/content/content-en/team';
 
 export function TeamHero() {
     return (

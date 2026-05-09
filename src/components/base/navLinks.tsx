@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
@@ -12,19 +11,20 @@ export interface NavLinkItem {
 interface NavLinksProps {
   links: NavLinkItem[];
   className?: string;
+  currentPath?: string;
+  lang?: string;
 }
 
 function isExternalLink(link: NavLinkItem) {
   return link.target === '_blank' || !link.href.startsWith('/');
 }
 
-const NavLinks: React.FC<NavLinksProps> = ({ links, className }) => {
+const NavLinks: React.FC<NavLinksProps> = ({ links, className, currentPath = '/', lang = 'en' }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location.pathname]);
+  }, [currentPath]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -35,7 +35,18 @@ const NavLinks: React.FC<NavLinksProps> = ({ links, className }) => {
     return () => window.removeEventListener('keydown', onKey);
   }, [isOpen]);
 
-  const isActive = (path: string) => location.pathname === path;
+  const prefix = lang === 'en' ? '' : `/${lang}`;
+  
+  const getHref = (href: string) => {
+    if (href === '/') return prefix === '' ? '/' : prefix;
+    return `${prefix}${href}`;
+  };
+
+  const isActive = (path: string) => {
+    const fullPath = getHref(path);
+    if (fullPath === '/') return currentPath === '/';
+    return currentPath.startsWith(fullPath);
+  };
 
   const renderLink = (link: NavLinkItem, mobile?: boolean, onNavigate?: () => void) => {
     const external = isExternalLink(link);
@@ -61,11 +72,13 @@ const NavLinks: React.FC<NavLinksProps> = ({ links, className }) => {
       );
     }
 
+    const fullHref = getHref(link.href);
     const active = isActive(link.href);
+    
     return (
-      <Link
+      <a
         key={`${link.name}-${link.href}`}
-        to={link.href}
+        href={fullHref}
         onClick={onNavigate}
         className={twMerge(
           'text-[13px] font-medium tracking-wider transition-all relative py-1',
@@ -77,7 +90,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ links, className }) => {
         {active && !mobile && (
           <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-[0_0_8px_rgba(19,236,91,0.6)]" />
         )}
-      </Link>
+      </a>
     );
   };
 

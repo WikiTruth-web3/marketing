@@ -6,7 +6,7 @@ import { CardPrimary } from '../base/cardPrimary';
 import { Card } from '../base/card';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
-import { features } from '@/content/tech';
+import { features } from '@/content/content-en/tech';
 import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 

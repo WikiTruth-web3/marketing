@@ -1,0 +1,13 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Roadmap from '@/react-pages/Roadmap';
+---
+<Layout lang="zh">
+  <Header currentPath="/zh/roadmap" lang="zh" client:load />
+  <main class="min-h-screen">
+    <Roadmap client:load />
+  </main>
+  <Footer client:visible />
+</Layout>
