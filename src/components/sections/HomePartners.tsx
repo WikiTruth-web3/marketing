@@ -1,12 +1,4 @@
 import React from 'react';
-
-// Import logos
-import ArweaveLogo from '@/assets/partnerLogo/Arweave1.svg';
-import ICPLogo from '@/assets/partnerLogo/ICP-Dfinity2.svg';
-import PinataLogo from '@/assets/partnerLogo/Pinata.svg';
-import TheGraphLogo from '@/assets/partnerLogo/TheGraph.svg';
-import OasisLogo from '@/assets/partnerLogo/oasis-network-3.svg';
-import FourEverlandLogo from '@/assets/partnerLogo/FourEverland.svg';
 import { Title } from '../base/title';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
@@ -15,12 +7,12 @@ import { t } from '@/lib/i18nUtils';
 import { globalContent } from '@/content/i18n/global';
 
 const partners = [
-  { name: 'Oasis Network', logo: OasisLogo },
-  { name: 'Arweave', logo: ArweaveLogo },
-  { name: 'ICP', logo: ICPLogo },
-  { name: 'The Graph', logo: TheGraphLogo },
-  { name: 'Pinata', logo: PinataLogo },
-  { name: '4EVERLAND', logo: FourEverlandLogo },
+  { name: 'Oasis Network', logo: '/partnerLogo/oasis-network-3.svg' },
+  { name: 'Arweave', logo: '/partnerLogo/Arweave1.svg' },
+  { name: 'ICP', logo: '/partnerLogo/ICP-Dfinity2.svg' },
+  { name: 'The Graph', logo: '/partnerLogo/TheGraph.svg' },
+  { name: 'Pinata', logo: '/partnerLogo/Pinata.svg' },
+  { name: '4EVERLAND', logo: '/partnerLogo/FourEverland.svg' },
 ];
 
 export const HomePartners: React.FC<{ lang: LanguageType }> = ({ lang }) => {

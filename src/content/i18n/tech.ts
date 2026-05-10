@@ -48,11 +48,11 @@ export const securityData = [
   {
     id: 'anonymous-privacy',
     icon: EyeOff,
-    title: { en: 'Anonymous Privacy', zh: '匿名隐私', ko: '익명 프라이버시' },
+    title: { en: 'ERC2771 Meta Transactions', zh: 'ERC2771元交易', ko: 'ERC2771 메타 트랜잭션' },
     description: { 
-      en: 'Relay proxy contracts enable interactions with no on-chain records and untraceability, ensuring absolute anonymity and privacy for whistleblowers.', 
-      zh: '中继代理合约实现交互，实现链上无记录、不可追踪，保证吹哨人的绝对匿名和隐私。', 
-      ko: '릴레이 프록시 컨트랙트를 통해 온체인 기록이 없고 추적이 불가능한 상호작용이 가능하며, 제보자의 절대적인 익명성과 프라이버시를 보장합니다.' 
+      en: 'Through ERC2771 standard meta transactions, the relay proxy contract achieves on-chain non-record and untraceable status, ensuring the absolute anonymity and privacy of whistleblowers.', 
+      zh: '通过ERC2771标准元交易，中继代理合约实现链上无记录、不可追踪，保证吹哨人的绝对匿名和隐私。', 
+      ko: 'ERC2771 표준 메타 트랜잭션을 통해 릴레이 프록시 컨트랙트는 온체인 기록이 남지 않아 추적이 불가능한 상호작용을 가능하게 하여 제보자의 절대적인 익명성과 프라이버시를 보장합니다.' 
     },
     color: 'blue',
   },
@@ -146,11 +146,17 @@ export const comparison = {
         zh: "需要具备一定的政务知识，甚至还需要聘请专业律师", 
         ko: "어느 정도의 행정 지식이 필요하거나 전문 변호사 고용이 필요할 수도 있음" 
       },
-      wikitruth: { en: "Only requires creating a Web3 wallet", zh: "仅需创建 Web3 钱包即可", ko: "Web3 지갑 생성만 필요함" },
+      wikitruth: { 
+        en: "Access the website to upload evidence", 
+        zh: "访问网站即可上传证据", 
+        ko: "웹사이트 방문만으로 증거 업로드 가능" },
     },
     {
       aspect: { en: "Diversity Support", zh: "多样性支持", ko: "다양성 지원" },
-      traditional: { en: "Only offers rewards for specific cases", zh: "仅对特定的案件发布奖赏", ko: "특정 사건에 대해서만 보상 제공" },
+      traditional: { 
+        en: "Only offers rewards for specific cases", 
+        zh: "仅对特定的案件发布奖赏", 
+        ko: "특정 사건에 대해서만 보상 제공" },
       wikitruth: { en: "You can sell any evidence you wish to", zh: "可以出售任何你想出售的证据", ko: "원하는 어떤 증거도 판매 가능" },
     },
   ]

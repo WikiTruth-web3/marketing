@@ -12,24 +12,6 @@ import { mockBoxData } from '@/content/content-en/mockBoxData';
 import type { LanguageType } from '@/types/typesDapp/language';
 import { t } from '@/lib/i18nUtils';
 
-export interface CTA {
-  text: string
-  link: string
-}
-
-export interface HeroFeature {
-  icon: LucideIcon
-  text: string
-}
-
-export interface HomeHeroType {
-  title: string
-  subtitle: string
-  description: string
-  features: HeroFeature[]
-  primaryCta: CTA
-  secondaryCta: CTA
-}
 
 export const HomeHero: React.FC<{ lang: LanguageType }> = ({ lang }) => {
 
@@ -48,12 +30,16 @@ export const HomeHero: React.FC<{ lang: LanguageType }> = ({ lang }) => {
             </div>
 
             <Subtitle size='lg' className='mb-2 md:mb-3 max-w-xl text-center md:text-left'>
-              {t(heroData.subtitle, lang)}
+              {t(heroData.subheadline, lang)}
             </Subtitle>
 
-            <Paragraph className='mb-6 md:mb-8 max-w-xl text-center md:text-left text-primary-dim' >
-              {t(heroData.description, lang)}
-            </Paragraph>
+            {heroData.description.length > 1 ? heroData.description.map((item, i) => (
+              <Paragraph className='mb-6 md:mb-8 max-w-xl text-center md:text-left text-primary-dim' key={i}>
+                {t(item, lang)}
+              </Paragraph>
+            )) : <Paragraph className='mb-6 md:mb-8 max-w-xl text-center md:text-left text-primary-dim' >
+              {t(heroData.description[0], lang)}
+            </Paragraph>}
 
             {/* CTAs */}
             <div className="flex flex-row items-center gap-5">

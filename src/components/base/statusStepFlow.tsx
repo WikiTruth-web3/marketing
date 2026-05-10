@@ -1,20 +1,6 @@
 "use client"
 
-import React, { useCallback, useMemo, useEffect } from 'react';
-import {
-    ReactFlow,
-    Node,
-    Edge,
-    Controls,
-    Background,
-    useNodesState,
-    useEdgesState,
-    addEdge,
-    Position,
-    NodeTypes,
-    Handle
-} from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
+import React, { useCallback, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 import StatusLabel from './statusLabel';
 import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
@@ -24,60 +10,21 @@ export interface StatusStepFlowProps {
     status: BoxStatus;
     listedMode: 'Selling' | 'Auctioning';
     className?: string;
-    size?: 'sm' | 'md' | 'lg';
     responsive?: boolean;
-    showControls?: boolean;
-    showBackground?: boolean;
-    draggable?: boolean;
     fixedSize?: boolean;
-
 }
-
-// Simple custom node component, with  handles
-const StatusNode = ({ data }: { data: any }) => {
-    return (
-        <div className="relative">
-            <Handle
-                type="target"
-                position={Position.Left}
-                style={{ background: '#555' }}
-            />
-            <StatusLabel
-                status={data.status}
-                size={data.size}
-                responsive={data.responsive}
-                disabled={!data.isActive}
-            />
-            <Handle
-                type="source"
-                position={Position.Right}
-                style={{ background: '#555' }}
-            />
-        </div>
-    );
-};
-
-// Node type definition
-const nodeTypes: NodeTypes = {
-    statusNode: StatusNode
-};
 
 const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
     status = 'Storing',
     listedMode = 'Selling',
     className,
-    size = 'md',
     responsive = true,
-    showControls = false,
-    showBackground = true,
-    draggable = false,
     fixedSize = false
 }) => {
-    // Check if the status is activated
+    // Check if the status is activated based on the current path
     const isStatusActive = useCallback((checkStatus: BoxStatus): boolean => {
         if (!status) return false;
 
-        // Define status path
         const statusPaths: Record<BoxStatus, BoxStatus[]> = {
             'Storing': ['Storing'],
             'Selling': ['Storing', 'Selling'],
@@ -93,239 +40,147 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
         return activePath.includes(checkStatus);
     }, [status, listedMode]);
 
-    // Get node position configuration based on size
-    const getPositions = useCallback(() => {
-        const positionConfigs = {
-            sm: {
-                storing: { x: 0, y: 40 },
-                selling: { x: 120, y: 20 },
-                auctioning: { x: 120, y: 60 },
-                paid: { x: 240, y: 40 },
-                inSecrecy: { x: 360, y: 20 },
-                refunding: { x: 360, y: 60 },
-                published: { x: 480, y: 40 }
-            },
+    // Logical node positions based on size
+    const positions = useMemo(() => {
+        const configs = {
             md: {
                 storing: { x: 0, y: 60 },
                 selling: { x: 150, y: 30 },
                 auctioning: { x: 150, y: 90 },
                 paid: { x: 300, y: 60 },
-                inSecrecy: { x: 450, y: 30 },
+                delaying: { x: 450, y: 30 },
                 refunding: { x: 450, y: 90 },
                 published: { x: 600, y: 60 }
             },
-            lg: {
-                storing: { x: 0, y: 80 },
-                selling: { x: 200, y: 40 },
-                auctioning: { x: 200, y: 120 },
-                paid: { x: 400, y: 80 },
-                inSecrecy: { x: 600, y: 40 },
-                refunding: { x: 600, y: 120 },
-                published: { x: 800, y: 80 }
-            }
         };
+        return configs.md;
+    }, []);
 
-        return positionConfigs[size] || positionConfigs.md;
-    }, [size]);
+    // Mapping node status names to position keys
+    const nodeStatusMap: Record<string, keyof typeof positions> = {
+        'Storing': 'storing',
+        'Selling': 'selling',
+        'Auctioning': 'auctioning',
+        'Paid': 'paid',
+        'Delaying': 'delaying',
+        'Refunding': 'refunding',
+        'Published': 'published'
+    };
 
-    const buildNodes = useCallback((): Node[] => {
-        const positions = getPositions();
-        return [
-            {
-                id: 'storing',
-                position: positions.storing,
-                data: {
-                    status: 'Storing' as BoxStatus,
-                    isActive: isStatusActive('Storing'),
-                    isCurrent: status === 'Storing',
-                    size,
-                    responsive
-                },
-                type: 'statusNode'
-            },
-            {
-                id: 'selling',
-                position: positions.selling,
-                data: {
-                    status: 'Selling' as BoxStatus,
-                    isActive: isStatusActive('Selling'),
-                    isCurrent: status === 'Selling',
-                    size,
-                    responsive
-                },
-                type: 'statusNode'
-            },
-            {
-                id: 'auctioning',
-                position: positions.auctioning,
-                data: {
-                    status: 'Auctioning' as BoxStatus,
-                    isActive: isStatusActive('Auctioning'),
-                    isCurrent: status === 'Auctioning',
-                    size,
-                    responsive
-                },
-                type: 'statusNode'
-            },
-            {
-                id: 'paid',
-                position: positions.paid,
-                data: {
-                    status: 'Paid' as BoxStatus,
-                    isActive: isStatusActive('Paid'),
-                    isCurrent: status === 'Paid',
-                    size,
-                    responsive
-                },
-                type: 'statusNode'
-            },
-            {
-                id: 'inSecrecy',
-                position: positions.inSecrecy,
-                data: {
-                    status: 'Delaying' as BoxStatus,
-                    isActive: isStatusActive('Delaying'),
-                    isCurrent: status === 'Delaying',
-                    size,
-                    responsive
-                },
-                type: 'statusNode'
-            },
-            {
-                id: 'refunding',
-                position: positions.refunding,
-                data: {
-                    status: 'Refunding' as BoxStatus,
-                    isActive: isStatusActive('Refunding'),
-                    isCurrent: status === 'Refunding',
-                    size,
-                    responsive
-                },
-                type: 'statusNode'
-            },
-            {
-                id: 'published',
-                position: positions.published,
-                data: {
-                    status: 'Published' as BoxStatus,
-                    isActive: isStatusActive('Published'),
-                    isCurrent: status === 'Published',
-                    size,
-                    responsive
-                },
-                type: 'statusNode'
-            }
-        ];
-    }, [getPositions, isStatusActive, status, size, responsive]);
+    // Calculate bounding box for SVG viewBox and relative positioning
+    const bounds = useMemo(() => {
+        const xs = Object.values(positions).map(p => p.x);
+        const ys = Object.values(positions).map(p => p.y);
+        const minX = Math.min(...xs);
+        const maxX = Math.max(...xs);
+        const minY = Math.min(...ys);
+        const maxY = Math.max(...ys);
+        
+        // Add padding to ensure labels are not clipped (approximate label dimensions)
+        const paddingX = 60; 
+        const paddingY = 30;
+        
+        return {
+            x: minX - paddingX,
+            y: minY - paddingY,
+            width: (maxX - minX) + paddingX * 2,
+            height: (maxY - minY) + paddingY * 2
+        };
+    }, [positions]);
 
-    // Minimal edge configuration - remove all custom styles
-    const initialEdges: Edge[] = useMemo(() => [
-        {
-            id: 'storing-selling',
-            source: 'storing',
-            target: 'selling'
-        },
-        {
-            id: 'storing-auctioning',
-            source: 'storing',
-            target: 'auctioning'
-        },
-        {
-            id: 'selling-paid',
-            source: 'selling',
-            target: 'paid'
-        },
-        {
-            id: 'auctioning-paid',
-            source: 'auctioning',
-            target: 'paid'
-        },
-        {
-            id: 'paid-inSecrecy',
-            source: 'paid',
-            target: 'inSecrecy'
-        },
-        {
-            id: 'paid-refunding',
-            source: 'paid',
-            target: 'refunding'
-        },
-        {
-            id: 'inSecrecy-published',
-            source: 'inSecrecy',
-            target: 'published'
-        },
-        {
-            id: 'refunding-published',
-            source: 'refunding',
-            target: 'published'
-        }
+    // Define connections between nodes
+    const edges = useMemo(() => [
+        { from: 'Storing', to: 'Selling' },
+        { from: 'Storing', to: 'Auctioning' },
+        { from: 'Selling', to: 'Paid' },
+        { from: 'Auctioning', to: 'Paid' },
+        { from: 'Paid', to: 'Delaying' },
+        { from: 'Paid', to: 'Refunding' },
+        { from: 'Delaying', to: 'Published' },
+        { from: 'Refunding', to: 'Published' },
+        // Special long connection mentioned in the previous iteration
+        { from: 'Storing', to: 'Published' },
     ], []);
 
-    // Use React Flow official recommended status management
-    const [nodes, setNodes, onNodesChange] = useNodesState(buildNodes());
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    // Helper to generate an orthogonal path with rounded corners
+    const getRoundedPath = (x1: number, y1: number, x2: number, y2: number, radius = 12) => {
+        if (Math.abs(y1 - y2) < 1) return `M ${x1} ${y1} L ${x2} ${y2}`;
 
-    // When status/listedMode/size/responsive changes, synchronize the node activation state
-    useEffect(() => {
-        setNodes(buildNodes());
-    }, [buildNodes, setNodes]);
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+        const xMid = x1 + dx / 2;
+        
+        // Horizontal -> Vertical -> Horizontal routing
+        const r = Math.min(radius, Math.abs(dx) / 2, Math.abs(dy) / 2);
+        const signY = Math.sign(dy);
 
-    // Connection processing function
-    const onConnect = useCallback(
-        (params: any) => setEdges((eds: Edge[]) => addEdge(params, eds)),
-        []
-    );
-
-    // Get container height based on size
-    const getContainerHeight = useCallback(() => {
-        const heightConfigs = {
-            sm: '80px',
-            md: '120px',
-            lg: '160px'
-        };
-        return heightConfigs[size] || heightConfigs.md;
-    }, [size]);
-
-    // Get container width based on size
-    const getContainerWidth = useCallback(() => {
-        const widthConfigs = {
-            sm: '720px',
-            md: '920px',
-            lg: '1120px'
-        };
-        return widthConfigs[size] || widthConfigs.md;
-    }, [size]);
+        return `M ${x1} ${y1} L ${xMid - r} ${y1} Q ${xMid} ${y1}, ${xMid} ${y1 + r * signY} L ${xMid} ${y2 - r * signY} Q ${xMid} ${y2}, ${xMid + r} ${y2} L ${x2} ${y2}`;
+    };
 
     return (
-        <div className={twMerge("bg-background ", className)} style={{ height: fixedSize ? getContainerHeight() : '100%', width: fixedSize ? getContainerWidth() : '100%', position: 'relative', overflow: 'hidden' }}>
-            <ReactFlow
-                key={`flow-${edges.length}-${nodes.length}`}
-                nodes={nodes}
-                edges={edges}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                onConnect={onConnect}
-                nodeTypes={nodeTypes}
-                fitView
-                fitViewOptions={{ padding: 0.3 }}
-                nodesDraggable={draggable}
-                nodesConnectable={false}
-                elementsSelectable={false}
-                panOnDrag={false}
-                zoomOnScroll={false}
-                zoomOnPinch={false}
-                zoomOnDoubleClick={false}
-                preventScrolling={false}
-                proOptions={{
-                    hideAttribution: true
-                }}
+        <div 
+            className={twMerge(
+                "relative w-full overflow-hidden flex justify-center items-center", 
+                "h-[200px]",
+                className)} 
+        >
+            {/* SVG Layer for connectors - fixed size for internal drawing */}
+            <svg 
+                className="absolute inset-0 w-[350px] h-[200px] pointer-events-none left-1/2 -translate-x-1/2"
+                viewBox={`${bounds.x} ${bounds.y} ${bounds.width} ${bounds.height}`}
+                preserveAspectRatio="xMidYMid meet"
             >
-                {showBackground && <Background />}
-                {showControls && <Controls />}
-            </ReactFlow>
+                {edges.map((edge, i) => {
+                    const fromPos = positions[nodeStatusMap[edge.from]];
+                    const toPos = positions[nodeStatusMap[edge.to]];
+                    if (!fromPos || !toPos) return null;
+
+                    const isActive = isStatusActive(edge.from as BoxStatus) && isStatusActive(edge.to as BoxStatus);
+
+                    return (
+                        <path
+                            key={i}
+                            d={getRoundedPath(fromPos.x, fromPos.y, toPos.x, toPos.y)}
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            className={isActive ? "text-primary/60" : "text-white/10"}
+                        />
+                    );
+                })}
+            </svg>
+
+            {/* HTML Layer for StatusLabels */}
+            <div className="absolute inset-0 pointer-events-none flex justify-center items-center">
+                <div className="relative w-[350px] h-[200px]">
+                    {Object.entries(nodeStatusMap).map(([statusName, posKey]) => {
+                        const pos = positions[posKey];
+                        const isActive = isStatusActive(statusName as BoxStatus);
+                        
+                        // Calculate percentage positions relative to the viewBox bounds
+                        const left = ((pos.x - bounds.x) / bounds.width) * 100;
+                        const top = ((pos.y - bounds.y) / bounds.height) * 100;
+
+                        return (
+                            <div
+                                key={statusName}
+                                className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+                                style={{ left: `${left}%`, top: `${top}%` }}
+                            >
+                                <StatusLabel
+                                    status={statusName}
+                                    disabled={!isActive}
+                                    size='md'
+                                    responsive={responsive}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
         </div>
     );
 };
 
-export default StatusStepFlow; 
+export default StatusStepFlow;
+ 

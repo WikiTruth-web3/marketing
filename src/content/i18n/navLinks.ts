@@ -9,6 +9,7 @@ export interface NavLink {
 
 export const navLinks: NavLink[] = [
     { name: { en: "Home", zh: "首页", ko: "홈" }, href: "/", target: "_self" },
+    { name: { en: "Demo", zh: "演示", ko: "데모" }, href: "/demo", target: "_self" },
     { name: { en: "Tech", zh: "技术", ko: "기술" }, href: "/technology", target: "_self" },
     { name: { en: "Roadmap", zh: "路线图", ko: "로드맵" }, href: "/roadmap", target: "_self" },
     { name: { en: "Team", zh: "团队", ko: "팀" }, href: "/team", target: "_self" },
