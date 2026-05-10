@@ -2,13 +2,24 @@ import React from 'react';
 
 import { HomeHero } from '@/components/sections/HomeHero';
 import { GlobalCrimeData } from '../components/sections/GlobalCrimeData';
-import BoxSwapDemo from '@/components/boxSwapDemo';
 import { WhyWeWork } from '../components/sections/WhyWeWork';
 import { TwoIncome } from '../components/sections/TwoIncome';
 import { HomePartners } from '../components/sections/HomePartners';
-import { HomeVisionSection } from '../components/sections/HomeVisionSection';
+// import { HomeVisionSection } from '../components/sections/HomeVisionSection';
 import Threads from '@/components/background/Threads/index';
-import { Airdrop } from '@/components/sections/Airdrop';
+// import { Airdrop } from '@/components/sections/Airdrop';
+
+// New Sections from Content Planning
+import { HomeProblem } from '@/components/sections/HomeProblem';
+import { HomeSolution } from '@/components/sections/HomeSolution';
+import { HomeCoreFeatures } from '@/components/sections/HomeCoreFeatures';
+
+import { HomeWhyThisMatters } from '@/components/sections/HomeWhyThisMatters';
+import { HomeUseCases } from '@/components/sections/HomeUseCases';
+import { HomePhilosophy } from '@/components/sections/HomePhilosophy';
+import { HomeCTA } from '@/components/sections/HomeCTA';
+import { HomeCoreProducts } from '@/components/sections/HomeCoreProducts';
+
 
 import type { LanguageType } from '@/types/typesDapp/language';
 
@@ -24,17 +35,30 @@ export default function Home({ lang }: { lang: LanguageType }) {
                 />
             </div>
             <HomeHero lang={lang} />
-            <Airdrop lang={lang} />
-            <BoxSwapDemo lang={lang} />
+            <HomeCoreProducts lang={lang} />
+            
+            <HomeProblem lang={lang} />
+            <HomeSolution lang={lang} />
+            
+            {/* <Airdrop lang={lang} /> */}
+            
+            <HomeCoreFeatures lang={lang} />
             <TwoIncome lang={lang} />
+            
+            <HomeWhyThisMatters lang={lang} />
+            <HomeUseCases lang={lang} />
+            
             <WhyWeWork lang={lang} />
             <GlobalCrimeData lang={lang} />
+            
+            <HomePhilosophy lang={lang} />
             <HomePartners lang={lang} />
+            {/* <HomeVisionSection lang={lang} /> */}
+            
+            {/* <HomeCTA lang={lang} /> */}
 
-            <HomeVisionSection lang={lang} />
 
         </div>
 
     );
 }
-

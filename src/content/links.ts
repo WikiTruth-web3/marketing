@@ -5,6 +5,7 @@ export const routerLinks = {
     website: 'https://wikitruth.xyz',
     appIpfs: 'https://app.wikitruth.eth.limo',
     app: 'https://app.wikitruth.xyz',
+    createBox: 'https://app.wikitruth.xyz/create',
     // beta: 'https://app.wikitruth.xyz',
     blogs: 'https://blog.wikitruth.xyz',
     docs: 'https://docs.wikitruth.xyz',
