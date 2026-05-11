@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
 import { Section } from '../layout/Section';
-import { LIFECYCLE_STEPS } from './constants';
 import { useBoxSwapSimulation } from './useBoxSwapSimulation';
+
 import EvidenceViewer from './EvidenceViewer';
 import InteractiveStory from './InteractiveStory';
 import { Title } from '../base/title';
@@ -11,29 +11,23 @@ import { Title } from '../base/title';
 
 import type { LanguageType } from '@/types/typesDapp/language';
 
+import useBoxState from './boxState';
+import useStoryState from './storyState';
+
 const BoxSwapDemo: React.FC<{ lang: LanguageType }> = ({ lang }) => {
-    const [status, setStatus] = useState<BoxStatus>('Storing');
+    const { box, status, updateStatus, listedMode, updateListedMode, updateBox } = useBoxState();
+    const { story } = useStoryState(status);
 
-    const simulation = useBoxSwapSimulation(status, setStatus);
+    const simulation = useBoxSwapSimulation(status, box, updateBox);
 
-    // Calculate current step index for the UI step tracker
-    let stepIndex = 0;
-    if (status === 'Storing') stepIndex = 0;
-    else if (status === 'Selling' || status === 'Auctioning') stepIndex = 1;
-    else if (status === 'Paid') stepIndex = 3;
-    else if (status === 'Delaying') stepIndex = 4;
-    else if (status === 'Published') stepIndex = 5;
 
-    // Build steps dynamically if auctioning
-    const currentSteps = [...LIFECYCLE_STEPS];
-    if (status === 'Auctioning') {
-        currentSteps[1] = currentSteps[2]; // Swap selling text to auctioning text in UI
-    }
+
+
 
     return (
         <Section>
             <Container >
-                <Title className='text-text-light text-center '>Truth Box Swap Demo</Title>
+                <Title className='text-text-light text-center '>Evidence Box Swap Demo</Title>
 
                 {/* <Subtitle size='lg' className='text-center mb-8 md:mb-12'>BoxSwap Demo</Subtitle> */}
 
@@ -43,7 +37,10 @@ const BoxSwapDemo: React.FC<{ lang: LanguageType }> = ({ lang }) => {
                     <div className="flex w-full flex-col lg:flex-row gap-8 lg:gap-14">
                         {/* Left Content */}
                         <div className="flex-1 lg:max-w-2xl">
-                            <EvidenceViewer status={status} />
+                            <EvidenceViewer
+                                status={status}
+                                box={box}
+                            />
                         </div>
 
                         {/* Divider */}
@@ -53,10 +50,16 @@ const BoxSwapDemo: React.FC<{ lang: LanguageType }> = ({ lang }) => {
                         <div className="flex-1 lg:max-w-xl flex flex-col ">
                             <InteractiveStory
                                 status={status}
-                                setStatus={setStatus}
+                                setStatus={updateStatus}
+                                updateListedMode={updateListedMode}
+                                listedMode={listedMode}
+                                story={story}
+                                box={box}
                                 simulation={simulation}
                             />
+
                         </div>
+
                     </div>
                 </div>
             </Container>
