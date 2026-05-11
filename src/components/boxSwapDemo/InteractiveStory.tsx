@@ -6,11 +6,16 @@ import StatusLabel from '@/components/base/statusLabel';
 import StatusStep from '@/components/custom/statusStep';
 import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
 import TimerBar from './TimerBar';
-import { STORY_CONTENT } from './constants';
+
 
 interface InteractiveStoryProps {
     status: BoxStatus;
+    listedMode: string;
     setStatus: (status: BoxStatus) => void;
+    updateListedMode: (mode: 'Selling' | 'Auctioning' | 'N/A') => void;
+
+    story: { title: string; desc: string };
+    box: any;
     simulation: {
         progress: number;
         daysLeft: number;
@@ -24,18 +29,16 @@ interface InteractiveStoryProps {
     };
 }
 
-const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, setStatus, simulation }) => {
-    const story = STORY_CONTENT[status] || { title: '', desc: '' };
+const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode, setStatus, updateListedMode, story, box, simulation }) => {
     const { progress, daysLeft, totalReward, lastAddedReward, showFlash, basePrice, currentBid, finalPrice, setFinalPrice } = simulation;
+
 
     return (
         <div className="w-full space-y-2 md:space-y-4 lg:space-y-6">
             <StatusLabel status={status as any} />
             <StatusStep
                 status={status as any}
-                listedMode={status === 'Auctioning' ? 'Auctioning' : 'Selling'}
-                size="sm"
-                enableHorizontalScroll={true}
+                listedMode={listedMode}
             />
 
             {status === 'Delaying' && (
@@ -46,13 +49,14 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, setStatus, 
                         </Paragraph>
                         {showFlash && (
                             <span className="text-green-400 font-bold animate-bounce whitespace-nowrap">
-                                +{lastAddedReward} BTC !
+                                +{lastAddedReward} {box.tokenSymbol} !
                             </span>
                         )}
                     </div>
                     <TimerBar progress={progress} daysLeft={daysLeft} />
-                    <div className="mt-3 text-right font-mono font-bold text-lg text-green-500 transition-all">
-                        Total Reward: {totalReward} BTC
+                    <div className="mt-3 flex justify-between items-center font-mono font-bold text-green-500">
+                        <span className="text-xs opacity-70 italic">Accumulated Gross Income:</span>
+                        <span className="text-lg">{(box.purchaseIncome + box.delayIncome).toFixed(2)} {box.tokenSymbol}</span>
                     </div>
                 </div>
             )}
@@ -68,24 +72,33 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, setStatus, 
                     <div className="flex flex-col gap-3 mt-6">
                         <div className="flex flex-col gap-2 mb-2 p-4 bg-surface-low rounded-lg border border-white/10">
                             <Paragraph size='sm' className='text-text-dim'>
-                                We sell this box for: <span className="font-bold text-primary">10 BTC</span>
+                                We sell this box for: <span className="font-bold text-primary">{box.price} {box.tokenSymbol}</span>
                             </Paragraph>
+
                         </div>
 
                         <div className='flex flex-row gap-2'>
 
                             <Button variant="primary" onClick={() => {
                                 setFinalPrice(basePrice);
+                                updateListedMode('Selling');
                                 setStatus('Selling');
                             }}>
                                 Sell
                             </Button>
-                            <Button variant="outline" onClick={() => setStatus('Auctioning')}>
+                            <Button variant="outline" onClick={() => {
+                                updateListedMode('Auctioning');
+                                setStatus('Auctioning');
+                            }}>
                                 Auction
                             </Button>
-                            <Button variant="secondary" onClick={() => setStatus('Published')}>
+                            <Button variant="secondary" onClick={() => {
+                                updateListedMode('N/A');
+                                setStatus('Published');
+                            }}>
                                 Publish
                             </Button>
+
                         </div>
                     </div>
                 )}
@@ -94,7 +107,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, setStatus, 
                     <div className="flex flex-col justify-center items-center py-6 space-y-3">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                         <Paragraph className=" text-sm">
-                            Listed at a fixed price of <span className="font-bold text-primary font-mono">{finalPrice} BTC</span>, waiting for buyers...
+                            Listed at a fixed price of <span className="font-bold text-primary font-mono">{finalPrice} {box.tokenSymbol}</span>, waiting for buyers...
                         </Paragraph>
                     </div>
                 )}
@@ -102,7 +115,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, setStatus, 
                 {status === 'Auctioning' && (
                     <div className="flex flex-col items-center py-6 space-y-3 bg-surface-light rounded-lg border border-orange-500/30">
                         <div className="animate-bounce text-3xl font-black text-orange-500 font-mono">
-                            {currentBid} BTC
+                            {currentBid} {box.tokenSymbol}
                         </div>
                         <Paragraph className="text-orange-400/80 animate-pulse text-sm">
                             All kinds of black and gray industries are bidding...
@@ -113,7 +126,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, setStatus, 
                 {status === 'Paid' && (
                     <div className="flex flex-col items-center py-6 space-y-3 bg-green-500/10 rounded-lg border border-green-500/30">
                         <div className="text-2xl font-bold text-green-500 font-mono">
-                            Completed: {finalPrice} BTC
+                            Completed: {finalPrice} {box.tokenSymbol}
                         </div>
                         <Paragraph className=" animate-pulse text-sm">
                             The buyer's funds are locked in the smart contract, waiting for extraction and confirmation...
@@ -124,16 +137,37 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, setStatus, 
                 {status === 'Published' && (
                     <div className="flex flex-col gap-3 mt-6 items-center">
                         <div className="text-4xl mb-2">🎉📰⚖️</div>
-                        <div className="bg-success/10 border border-success/30 rounded-lg p-4 w-full text-center mb-4">
-                            <Paragraph className="text-success mb-1">Your total reward for this whistleblowing</Paragraph>
-                            <div className="text-xl md:text-2xl lg:text-4xl font-black text-success">{totalReward} <span className="text-lg">BTC</span></div>
+                        <div className="bg-success/10 border border-success/30 rounded-lg p-4 w-full mb-4">
+                            <div className="space-y-3 p-2">
+                                <div className="flex justify-between text-sm border-b border-success/20 pb-2">
+                                    <span className="text-success/70">Purchase Income</span>
+                                    <span className="font-mono text-success">{box.purchaseIncome.toFixed(2)} {box.tokenSymbol}</span>
+                                </div>
+                                <div className="flex justify-between text-sm border-b border-success/20 pb-2">
+                                    <span className="text-success/70">Delay Income</span>
+                                    <span className="font-mono text-success">{box.delayIncome.toFixed(2)} {box.tokenSymbol}</span>
+                                </div>
+                                <div className="flex justify-between text-sm border-b border-success/20 pb-2">
+                                    <span className="text-success/70">Service Fee (3%)</span>
+                                    <span className="font-mono text-red-400">-{((box.purchaseIncome + box.delayIncome) * 0.03).toFixed(2)} {box.tokenSymbol}</span>
+                                </div>
+                                <div className="flex justify-between pt-2">
+                                    <span className="font-bold text-success">Total Net Reward</span>
+                                    <span className="text-xl font-black text-success">{box.totalReward.toFixed(2)} {box.tokenSymbol}</span>
+                                </div>
+                            </div>
                         </div>
-                        <Button type="primary" size="large" onClick={() => setStatus('Storing')}>
+                        <Button variant='primary' onClick={() => {
+                            updateListedMode('N/A');
+                            setStatus('Storing');
+                        }}>
                             Restart Story
                         </Button>
+
                     </div>
                 )}
             </div>
+
 
             <div className="mt-8 p-4 bg-info/10 rounded-lg text-info text-xs md:text-sm border border-info/20">
                 <strong>Storytelling Mode: </strong>

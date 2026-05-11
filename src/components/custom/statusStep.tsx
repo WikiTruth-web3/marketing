@@ -2,80 +2,71 @@
 
 import React, { useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
-import StatusStepFlow from '@/components/base/statusStepFlow';
 import { BoxStatus, } from '@/types/typesDapp/contracts/truthBox';
-import StatusLabel from '../base/statusLabel';
+import NFTWorkflowFlow from '../custom/statusStep/index';
+
+/**
+ * The status step
+ * 1. [Storing, Selling/Auctioning, Paid, Delaying/Refunding, Published]
+ * 2. [Storing, Published]
+ */
 
 interface StatusStepProps {
     status: BoxStatus;
-    listedMode?: string;
+    listedMode?: string; 
+    requestRefundTimestamp?: string | number; 
     className?: string;
-    size?: 'sm' | 'md' | 'lg';
-    responsive?: boolean;
-    showBackground?: boolean;
-    showIndicator?: boolean;
-    enableHorizontalScroll?: boolean;
 }
 
 const StatusStep: React.FC<StatusStepProps> = ({
     status,
-    listedMode,
+    listedMode, // selling or auctioning or null
+    requestRefundTimestamp,  // null = Delaying
     className,
-    size = 'md',
-    responsive = true,
 }) => {
+    const getActivePath = () => {
+        const mode = listedMode?.toLowerCase()
+        const branch = requestRefundTimestamp ? "refunding" : "delaying"
 
-    // Return different inner container styles based on whether scrolling is enabled
-    const getInnerContainerStyle = () => {
-        return {
-            width: '100%',
-            overflow: 'hidden' as const
-        };
-    };
+        // 1. Storing (Root)
+        if (status === "Storing") return ["storing"]
 
-    // If listedMode != 'Auctioning', then equals 'Selling'
-    const getListedMode = () => {
-        if (listedMode !== 'Auctioning') {
-            return 'Selling';
+        // 2. Mid States (Selling / Auctioning)
+        if (status === "Selling") return ["storing", "selling"]
+        if (status === "Auctioning") return ["storing", "auctioning"]
+
+        // 3. Paid
+        if (status === "Paid") {
+            return mode ? ["storing", mode, "paid"] : ["storing", "paid"]
         }
-        return listedMode;
-    };
 
-    // Determine content container style based on whether scrolling is enabled
-    const getContentStyle = () => {
+        // 4. Branch States (Refunding / Delaying)
+        if (status === "Refunding") {
+            return mode ? ["storing", mode, "paid", "refunding"] : ["storing", "paid", "refunding"]
+        }
+        if (status === "Delaying") {
+            return mode ? ["storing", mode, "paid", "delaying"] : ["storing", "paid", "delaying"]
+        }
 
-        return {
-            width: '100%',
-            height: '100%'
-        };
-    };
+        // 5. Final State (Published)
+        if (status === "Published") {
+            // Shortcut case: Storing -> Published
+            if (!mode) return ["storing", "published"]
+            // Full path case: Storing -> Mode -> Paid -> Branch -> Published
+            return ["storing", mode, "paid", branch, "published"]
+        }
+
+        // 6. Error/Special state
+        if (status === "Blacklisted") return ["storing", "blacklisted"]
+
+        return ["storing"]
+    }
 
     return (
-        <div
-            className={twMerge(
-                "bg-background relative",
-                className
-            )}
-            style={{ width: '100%', position: 'relative' }}
-        >
-            {/* Inner scroll container */}
-            <div
-                className={twMerge(
-                    "status-step-flow-container" // Apply scroll bar style
-                )}
-                style={getInnerContainerStyle()}
-            >
-                <div style={getContentStyle()}>
-                    <StatusStepFlow
-                        status={status}
-                        listedMode={getListedMode()}
-                        responsive={responsive}
-                    />
-                </div>
-            </div>
-
+        <div className={twMerge("w-full rounded-xl border border-white/20 bg-black", className)}>
+            <NFTWorkflowFlow activePath={getActivePath()} />
         </div>
-    );
-};
+    )
+}
 
 export default StatusStep;
