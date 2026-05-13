@@ -1,6 +1,6 @@
 import type { LanguageItem } from "@/types/typesDapp/language";
 
-export const boxSwapDemo = {
+export const content = {
     title: {
         en: 'Evidence Box Swap Demo',
         zh: '证据盒子流转演示',

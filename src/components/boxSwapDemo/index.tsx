@@ -14,7 +14,7 @@ import type { LanguageType } from '@/types/typesDapp/language';
 import useBoxState from './boxState';
 import useStoryState from './storyState';
 import { t } from '@/lib/i18nUtils';
-import { boxSwapDemo } from '@/content/i18n/boxSwapDemo';
+import { content } from '@/components/boxSwapDemo/content';
 
 const BoxSwapDemo: React.FC<{ lang: LanguageType }> = ({ lang }) => {
     const { box, status, updateStatus, listedMode, updateListedMode, updateBox } = useBoxState();
@@ -30,7 +30,7 @@ const BoxSwapDemo: React.FC<{ lang: LanguageType }> = ({ lang }) => {
     return (
         <Section>
             <Container >
-                <Title className='text-text-light text-center '>{t(boxSwapDemo.title, lang)}</Title>
+                <Title className='text-text-light text-center '>{t(content.title, lang)}</Title>
 
 
                 {/* <Subtitle size='lg' className='text-center mb-8 md:mb-12'>BoxSwap Demo</Subtitle> */}

@@ -4,7 +4,6 @@ import { HomeHero } from '@/components/sections/HomeHero';
 import { GlobalCrimeData } from '../components/sections/GlobalCrimeData';
 import { WhyWeWork } from '../components/sections/WhyWeWork';
 import { HomePartners } from '../components/sections/HomePartners';
-// import { HomeVisionSection } from '../components/sections/HomeVisionSection';
 import Threads from '@/components/background/Threads/index';
 // import { Airdrop } from '@/components/sections/Airdrop';
 
@@ -16,7 +15,6 @@ import { HomeCoreFeatures } from '@/components/sections/HomeCoreFeatures';
 import { HomeWhyThisMatters } from '@/components/sections/HomeWhyThisMatters';
 import { HomeUseCases } from '@/components/sections/HomeUseCases';
 import { HomePhilosophy } from '@/components/sections/HomePhilosophy';
-// import { HomeCTA } from '@/components/sections/HomeCTA';
 import { HomeCoreProducts } from '@/components/sections/HomeCoreProducts';
 
 
@@ -42,7 +40,6 @@ export default function Home({ lang }: { lang: LanguageType }) {
             {/* <Airdrop lang={lang} /> */}
             
             <HomeCoreFeatures lang={lang} />
-            {/* <TwoIncome lang={lang} /> */}
             
             <HomeWhyThisMatters lang={lang} />
             <HomeUseCases lang={lang} />
@@ -52,9 +49,6 @@ export default function Home({ lang }: { lang: LanguageType }) {
             
             <HomePhilosophy lang={lang} />
             <HomePartners lang={lang} />
-            {/* <HomeVisionSection lang={lang} /> */}
-            
-            {/* <HomeCTA lang={lang} /> */}
 
 
         </div>
