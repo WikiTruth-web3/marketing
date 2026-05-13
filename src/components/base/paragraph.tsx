@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 
 
-interface Props extends React.ParagraphHTMLAttributes<HTMLParagraphElement> {
+interface Props extends React.HTMLAttributes<HTMLParagraphElement> {
 
     children: React.ReactNode;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';

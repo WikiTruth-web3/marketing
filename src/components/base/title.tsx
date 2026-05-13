@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 
 
-interface Props extends React.h1HTMLAttributes<HTMLElement> {
+interface Props extends React.HTMLAttributes<HTMLElement> {
 
     children: React.ReactNode;
     size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';

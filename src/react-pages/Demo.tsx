@@ -1,6 +1,7 @@
 
 import Grid from '@/components/background/Grid';
 import React from 'react';
+import { TwoIncome } from '../components/sections/TwoIncome';
 import type { LanguageType } from '@/types/typesDapp/language';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import BoxSwapDemo from '@/components/boxSwapDemo';
@@ -29,6 +30,7 @@ export default function Demo({ lang }: { lang: LanguageType }) {
             <HowItWorks lang={lang} />
 
             <BoxSwapDemo lang={lang} />
+            <TwoIncome lang={lang} />
             
 
 

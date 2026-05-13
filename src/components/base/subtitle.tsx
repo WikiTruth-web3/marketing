@@ -2,16 +2,11 @@ import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-
-
-interface Props extends React.h3HTMLAttributes<HTMLElement> {
-
+interface Props extends React.HTMLAttributes<HTMLElement> {
     children: React.ReactNode;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     className?: string;
-
 }
-
 
 export const Subtitle: React.FC<Props> = ({ children, className, size = 'md' }) => {
 

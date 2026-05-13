@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react"
 import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+import type { LanguageItem } from "@/types/typesDapp/language";
 
 const testBox = {
     boxId: '9999',

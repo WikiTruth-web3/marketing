@@ -18,31 +18,34 @@ export const HomeHero: React.FC<{ lang: LanguageType }> = ({ lang }) => {
   return (
     <Section >
 
-      <Container className='mt-10 md:mt-20'>
+      <Container className='mt-15 md:mt-20'>
 
         {/* Grid pattern overlay - using w-full to ensure it covers the desktop properly */}
-        <div className="relative w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+        <div className="relative w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-12">
           {/* Left: Text content */}
-          <div className={`w-full flex flex-col items-center md:items-start`}>
+          <div className={`w-full flex flex-col gap-6 md:gap-8 lg:gap-10`}>
 
-            <div className='mb-6 md:mb-8'>
-              <ProjectName className='text-5xl md:text-7xl' />
-            </div>
+            <ProjectName className='text-5xl md:text-7xl' />
 
-            <Subtitle size='lg' className='mb-2 md:mb-3 max-w-xl text-center md:text-left'>
+            <div className='w-full flex flex-col gap-4 md:gap-6 lg:gap-7'>
+
+            <Subtitle size='lg' className='max-w-xl '>
               {t(heroData.subheadline, lang)}
             </Subtitle>
 
-            {heroData.description.length > 1 ? heroData.description.map((item, i) => (
-              <Paragraph className='mb-6 md:mb-8 max-w-xl text-center md:text-left text-primary-dim' key={i}>
-                {t(item, lang)}
-              </Paragraph>
-            )) : <Paragraph className='mb-6 md:mb-8 max-w-xl text-center md:text-left text-primary-dim' >
-              {t(heroData.description[0], lang)}
-            </Paragraph>}
+            <div className='flex flex-col gap-1 md:gap-2'>
+
+              {heroData.description.length > 1 ? heroData.description.map((item, i) => (
+                <Paragraph className='max-w-xl text-white/60' key={i}>
+                  {t(item, lang)}
+                </Paragraph>
+              )) : <Paragraph className='max-w-xl text-white/60' >
+                {t(heroData.description[0], lang)}
+              </Paragraph>}
+            </div>
 
             {/* CTAs */}
-            <div className="flex flex-row items-center gap-5">
+            <div className=" w-full flex flex-row items-center gap-5">
               <Button
                 onClick={() => window.open(heroData.primaryCta.link, '_blank')}
                 className=" px-5 md:px-8 py-3 md:py-4 flex flex-row md:text-sm lg:text-base"
@@ -57,9 +60,10 @@ export const HomeHero: React.FC<{ lang: LanguageType }> = ({ lang }) => {
                 {t(heroData.secondaryCta.text, lang)}
               </Button>
             </div>
+            </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap gap-4 md:gap-8 items-center border-t border-white/10 pt-6 md:pt-10 mt-8 md:mt-16">
+            <div className="flex flex-wrap gap-2 md:gap-4 items-center border-t border-white/10 pt-6 md:pt-10">
               {heroData.features.map((item, i) => (
                 <div key={i} className="flex items-center gap-1.5 md:gap-2.5 text-white/40 text-xs md:text-sm">
                   <div className="text-primary-dim">
@@ -71,11 +75,13 @@ export const HomeHero: React.FC<{ lang: LanguageType }> = ({ lang }) => {
             </div>
           </div>
 
-          <StackedTruthBoxCarousel
-            cards={mockBoxData}
-            intervalMs={3000}
-            className="max-w-[360px]"
-          />
+          <div className="w-full flex justify-center md:justify-end scale-75 sm:scale-90 md:scale-100 origin-center md:origin-right">
+            <StackedTruthBoxCarousel
+              cards={mockBoxData}
+              intervalMs={3000}
+            />
+          </div>
+
         </div>
       </Container>
     </Section>

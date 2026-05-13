@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { BoxStatus, } from '@/types/typesDapp/contracts/truthBox';
-import NFTWorkflowFlow from '../custom/statusStep/index';
+import NFTWorkflowFlow from './nftWorkflowFlow/index';
 
 /**
  * The status step
