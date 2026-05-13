@@ -3,13 +3,18 @@ import { Paragraph } from '@/components/base/paragraph';
 import { Subtitle } from '@/components/base/subtitle'
 import ImageSwiper from '@/components/custom/imageSwiper';
 import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+import { t } from '@/lib/i18nUtils';
+import { boxSwapDemo } from '@/content/i18n/boxSwapDemo';
+import type { LanguageType } from '@/types/typesDapp/language';
 
 interface EvidenceViewerProps {
     status: BoxStatus;
     box: any;
+    lang: LanguageType;
 }
 
-const EvidenceViewer: React.FC<EvidenceViewerProps> = ({ status, box }) => {
+const EvidenceViewer: React.FC<EvidenceViewerProps> = ({ status, box, lang }) => {
+
     const isRevealed = status === 'Published';
 
     const imagesToShow = isRevealed ? [box.judgingImage, box.prisonImage] : [box.boxImage, box.nftImage];
@@ -19,18 +24,18 @@ const EvidenceViewer: React.FC<EvidenceViewerProps> = ({ status, box }) => {
             <div className="w-full space-y-2 md:space-y-4 lg:space-y-6">
                 <div className='flex justify-between w-full'>
                     <div className='flex flex-row gap-2 items-baseline '>
-                        <Paragraph size='sm' className='text-text-dim'>Box ID:</Paragraph>
+                        <Paragraph size='sm' className='text-text-dim'>{t(boxSwapDemo.viewer.boxId, lang)}</Paragraph>
                         <Paragraph className='text-white'>{box.boxId}</Paragraph>
                     </div>
 
                     <div className='flex flex-row gap-2 items-baseline '>
-                        <Paragraph size='sm' className='text-text-dim'>Whistleblower:</Paragraph>
+                        <Paragraph size='sm' className='text-text-dim'>{t(boxSwapDemo.viewer.whistleblower, lang)}</Paragraph>
                         <Paragraph className='text-primary'>{box.whistleblower}</Paragraph>
                     </div>
                 </div>
 
                 <div className='flex flex-row gap-2 items-baseline '>
-                    <Paragraph size='sm' className='text-text-dim'>Creation Time:</Paragraph>
+                    <Paragraph size='sm' className='text-text-dim'>{t(boxSwapDemo.viewer.creationTime, lang)}</Paragraph>
                     <Paragraph size='sm'>{box.createDate}</Paragraph>
                 </div>
             </div>
@@ -40,7 +45,7 @@ const EvidenceViewer: React.FC<EvidenceViewerProps> = ({ status, box }) => {
                 className='w-full'
             />
 
-            <Subtitle size='sm' >{box.title}</Subtitle>
+            <Subtitle size='sm' >{t(boxSwapDemo.viewer.operationShadow, lang)}</Subtitle>
 
             <div className="flex flex-row justify-between">
                 <Paragraph size='xs'>{box.country} {box.state} </Paragraph>
@@ -49,7 +54,7 @@ const EvidenceViewer: React.FC<EvidenceViewerProps> = ({ status, box }) => {
             <hr className="border-white/10 " />
             <div className="space-y-2">
                 <Paragraph size='xs' className="italic backdrop-blur-sm p-4 bg-black/20 rounded-lg">
-                    "{box.description}"
+                    "{t(boxSwapDemo.viewer.description, lang)}"
                 </Paragraph>
             </div>
         </div>
