@@ -7,7 +7,7 @@ import StatusStep from '@/components/custom/statusStep';
 import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
 import TimerBar from './TimerBar';
 import { t } from '@/lib/i18nUtils';
-import { boxSwapDemo } from '@/content/i18n/boxSwapDemo';
+import { content } from '@/components/boxSwapDemo/content';
 import type { LanguageType } from '@/types/typesDapp/language';
 
 
@@ -40,8 +40,8 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
     return (
         <div className="w-full space-y-2 md:space-y-4 lg:space-y-6">
             <div className="mt-8 p-4 bg-info/10 rounded-lg text-info text-xs md:text-sm border border-info/20">
-                <strong>{t(boxSwapDemo.labels.simulationMode.title, lang)}</strong>
-                {t(boxSwapDemo.labels.simulationMode.desc, lang)}
+                <strong>{t(content.labels.simulationMode.title, lang)}</strong>
+                {t(content.labels.simulationMode.desc, lang)}
             </div>
             <StatusLabel status={status as any} />
             <StatusStep
@@ -54,7 +54,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                 <div className="bg-surface p-4 rounded-xl border border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
                     <div className="flex justify-between items-center mb-2">
                         <Paragraph >
-                            {t(boxSwapDemo.story.delaying.paying, lang)}
+                            {t(content.story.delaying.paying, lang)}
                         </Paragraph>
                         {showFlash && (
                             <span className="text-green-400 font-bold animate-bounce whitespace-nowrap">
@@ -64,7 +64,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                     </div>
                     <TimerBar progress={progress} daysLeft={daysLeft} />
                     <div className="mt-3 flex justify-between items-center font-mono font-bold text-green-500">
-                        <span className="text-xs opacity-70 italic">{t(boxSwapDemo.story.delaying.grossIncome, lang)}</span>
+                        <span className="text-xs opacity-70 italic">{t(content.story.delaying.grossIncome, lang)}</span>
                         <span className="text-lg">{(box.purchaseIncome + box.delayIncome).toFixed(2)} {box.tokenSymbol}</span>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                     <div className="flex flex-col gap-3 mt-6">
                         <div className="flex flex-col gap-2 mb-2 p-4 bg-surface-low rounded-lg border border-white/10">
                             <Paragraph size='sm' className='text-text-dim'>
-                                {t(boxSwapDemo.labels.sellInfo, lang)} <span className="font-bold text-primary">{box.price} {box.tokenSymbol}</span>
+                                {t(content.labels.sellInfo, lang)} <span className="font-bold text-primary">{box.price} {box.tokenSymbol}</span>
                             </Paragraph>
 
                         </div>
@@ -93,19 +93,19 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                                 updateListedMode('Selling');
                                 setStatus('Selling');
                             }}>
-                                {t(boxSwapDemo.labels.sell, lang)}
+                                {t(content.labels.sell, lang)}
                             </Button>
                             <Button variant="outline" onClick={() => {
                                 updateListedMode('Auctioning');
                                 setStatus('Auctioning');
                             }}>
-                                {t(boxSwapDemo.labels.auction, lang)}
+                                {t(content.labels.auction, lang)}
                             </Button>
                             <Button variant="secondary" onClick={() => {
                                 updateListedMode('N/A');
                                 setStatus('Published');
                             }}>
-                                {t(boxSwapDemo.labels.publish, lang)}
+                                {t(content.labels.publish, lang)}
                             </Button>
 
                         </div>
@@ -116,7 +116,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                     <div className="flex flex-col justify-center items-center py-6 space-y-3">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                         <Paragraph className=" text-sm">
-                            {t(boxSwapDemo.story.selling.status, lang)} <span className="font-bold text-primary font-mono">{finalPrice} {box.tokenSymbol}</span>, {t(boxSwapDemo.story.selling.waiting, lang)}
+                            {t(content.story.selling.status, lang)} <span className="font-bold text-primary font-mono">{finalPrice} {box.tokenSymbol}</span>, {t(content.story.selling.waiting, lang)}
                         </Paragraph>
                     </div>
                 )}
@@ -127,7 +127,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                             {currentBid} {box.tokenSymbol}
                         </div>
                         <Paragraph className="text-orange-400/80 animate-pulse text-sm">
-                            {t(boxSwapDemo.story.auctioning.bidding, lang)}
+                            {t(content.story.auctioning.bidding, lang)}
                         </Paragraph>
                     </div>
                 )}
@@ -135,10 +135,10 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                 {status === 'Paid' && (
                     <div className="flex flex-col items-center py-6 space-y-3 bg-green-500/10 rounded-lg border border-green-500/30">
                         <div className="text-2xl font-bold text-green-500 font-mono">
-                            {t(boxSwapDemo.story.paid.completed, lang)} {finalPrice} {box.tokenSymbol}
+                            {t(content.story.paid.completed, lang)} {finalPrice} {box.tokenSymbol}
                         </div>
                         <Paragraph className=" animate-pulse text-sm">
-                            {t(boxSwapDemo.story.paid.locked, lang)}
+                            {t(content.story.paid.locked, lang)}
                         </Paragraph>
                     </div>
                 )}
@@ -149,19 +149,19 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                         <div className="bg-success/10 border border-success/30 rounded-lg p-4 w-full mb-4">
                             <div className="space-y-3 p-2">
                                 <div className="flex justify-between text-sm border-b border-success/20 pb-2">
-                                    <span className="text-success/70">{t(boxSwapDemo.labels.purchaseIncome, lang)}</span>
+                                    <span className="text-success/70">{t(content.labels.purchaseIncome, lang)}</span>
                                     <span className="font-mono text-success">{box.purchaseIncome.toFixed(2)} {box.tokenSymbol}</span>
                                 </div>
                                 <div className="flex justify-between text-sm border-b border-success/20 pb-2">
-                                    <span className="text-success/70">{t(boxSwapDemo.labels.delayIncome, lang)}</span>
+                                    <span className="text-success/70">{t(content.labels.delayIncome, lang)}</span>
                                     <span className="font-mono text-success">{box.delayIncome.toFixed(2)} {box.tokenSymbol}</span>
                                 </div>
                                 <div className="flex justify-between text-sm border-b border-success/20 pb-2">
-                                    <span className="text-success/70">{t(boxSwapDemo.labels.serviceFee, lang)}</span>
+                                    <span className="text-success/70">{t(content.labels.serviceFee, lang)}</span>
                                     <span className="font-mono text-red-400">-{((box.purchaseIncome + box.delayIncome) * 0.03).toFixed(2)} {box.tokenSymbol}</span>
                                 </div>
                                 <div className="flex justify-between pt-2">
-                                    <span className="font-bold text-success">{t(boxSwapDemo.labels.netReward, lang)}</span>
+                                    <span className="font-bold text-success">{t(content.labels.netReward, lang)}</span>
                                     <span className="text-xl font-black text-success">{box.totalReward.toFixed(2)} {box.tokenSymbol}</span>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@ const InteractiveStory: React.FC<InteractiveStoryProps> = ({ status, listedMode,
                             updateListedMode('N/A');
                             setStatus('Storing');
                         }}>
-                            {t(boxSwapDemo.labels.restart, lang)}
+                            {t(content.labels.restart, lang)}
                         </Button>
 
                     </div>
