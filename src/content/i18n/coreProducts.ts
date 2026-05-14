@@ -3,7 +3,7 @@ import {
   Target,
 } from "lucide-react";
 import { routerLinks } from "../links";
-import type { LanguageItem } from "@/types/typesDapp/language";
+// import type { LanguageItem } from "@/types/typesDapp/language";
 
 export const coreProductsSection = {
   title: {

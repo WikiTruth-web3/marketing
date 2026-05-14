@@ -1,16 +1,18 @@
 ---
-import '@/styles/index.css';
+import "@/styles/index.css";
+
+import DomainBanner from "@/components/layout/DomainBanner.astro";
 
 interface Props {
-	title?: string;
+  title?: string;
   description?: string;
   lang?: string;
 }
 
-const { 
-  title = "Wiki Truth | Anonymous Whistleblowing, Privacy & Evidence Rewards",
-  description = "Report crime anonymously and reduce identity risk. Wiki Truth is a decentralized truth market on Oasis Sapphire: mint sensitive leads as Truth Boxes, trade criminal evidence, delayed-disclosure economics that make cover-ups costly, and sustainable on-chain rewards for whistleblowers.",
-  lang = "en"
+const {
+  title = "Evidence Market | Anonymous Whistleblowing, Privacy & Evidence Rewards",
+  description = "Report crime anonymously and reduce identity risk. Evidence Market is a decentralized truth market on Oasis Sapphire: mint sensitive leads as Truth Boxes, trade criminal evidence, delayed-disclosure economics that make cover-ups costly, and sustainable on-chain rewards for whistleblowers.",
+  lang = "en",
 } = Astro.props;
 ---
 
@@ -26,12 +28,12 @@ const {
     <meta name="description" content={description} />
     <meta
       name="keywords"
-      content="whistleblower rewards, anonymous reporting, crime reporting privacy, Oasis Sapphire, Truth Box, decentralized truth market, evidence marketplace, delayed disclosure, whistleblower protection, 匿名举报,举报人保护,悬赏证据,真相市场,익명 제보,범죄 신고,내부고발자 보호,제보 보상,匿名通報,内部告発,告発者保護,通報報奨金,Anonyme Hinweise,Whistleblower-Schutz,Hinweisprämie,denuncia anónima,protección del denunciante,recompensa por evidencias,denúncia anônima,proteção ao denunciante,recompensa por denúncias"
+      content="whistleblower rewards, anonymous reporting, crime reporting privacy, Oasis Sapphire, Truth Box, decentralized truth market, evidence marketplace, delayed disclosure, whistleblower protection, 匿名举报,举报人保护,悬赏证据,真相市场,익명 제보,범죄 신고,내부고발자 보호,제보 보상,匿名通報,内部告発,告发者保護,通報報奨金,Anonyme Hinweise,Whistleblower-Schutz,Hinweisprämie,denuncia anónima,protección del denunciante,recompensa por evidencias,denúncia anônima,proteção ao denunciante,recompensa por denúncias"
     />
-    <link rel="canonical" href="https://wikitruth.xyz/" />
+    <link rel="canonical" href="https://evidencemarket.org/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://wikitruth.xyz/" />
+    <meta property="og:url" content="https://evidencemarket.org/" />
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
@@ -55,25 +57,44 @@ const {
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://wikitruth.xyz/#website",
-            "name": "Wiki Truth",
-            "alternateName": ["Wiki Truth", "真相市场", "维基真相", "위키 트루스", "ウィキ・トゥルース", "Whistleblower-web3", "Wikileaks web3"],
-            "url": "https://wikitruth.xyz/",
-            "inLanguage": ["en", "zh-CN", "ko-KR", "ja-JP", "de-DE", "es-ES", "pt-BR", "pt-PT"],
+            "@id": "https://evidencemarket.org/#website",
+            "name": "Evidence Market",
+            "alternateName": [
+              "Evidence Market",
+              "证据市场",
+              "匿名吹哨人",
+              "匿名举报平台",
+              "위키 트루스",
+              "ウィ키・トゥルース",
+              "Whistleblower-web3",
+              "Wikileaks web3"
+            ],
+            "url": "https://evidencemarket.org/",
+            "inLanguage": [
+              "en",
+              "zh-CN",
+              "ko-KR",
+              "ja-JP",
+              "de-DE",
+              "es-ES",
+              "pt-BR",
+              "pt-PT"
+            ],
             "description": "Decentralized whistleblower incentives and criminal-evidence marketplace on Oasis Sapphire. Users can anonymously mint sensitive evidence as Truth Boxes, trade them, and benefit from delayed-disclosure economics with sustainable anonymous rewards."
           },
           {
             "@type": "SoftwareApplication",
-            "name": "Wiki Truth",
+            "name": "Evidence Market",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
-            "url": "https://wikitruth.xyz/"
+            "url": "https://evidencemarket.org/"
           }
         ]
       }
     </script>
   </head>
   <body>
+    <DomainBanner lang={lang} />
     <div class="flex flex-col w-full mx-auto">
       <slot />
     </div>

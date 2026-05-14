@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+import { BoxStatus } from '@/types/typesDapp/contracts/evidenceBox';
 
 export const useBoxSwapSimulation = (
     status: BoxStatus,

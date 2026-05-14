@@ -39,7 +39,7 @@ export const TechComparison: React.FC<{ lang: LanguageType }> = ({ lang }) => {
               <div className="col-span-4 text-center text-white font-bold relative">
                 <div className="absolute inset-x-0 -inset-y-6 bg-primary/5 -z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="text-primary-dim text-sm md:text-base">
-                  {t(row.wikitruth, lang)}
+                  {t(row.evidenceMarket, lang)}
                 </span>
               </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Paragraph } from '@/components/base/paragraph';
 import { Subtitle } from '@/components/base/subtitle'
 import ImageSwiper from '@/components/custom/imageSwiper';
-import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+import { BoxStatus } from '@/types/typesDapp/contracts/evidenceBox';
 import { t } from '@/lib/i18nUtils';
 import { content } from '@/components/boxSwapDemo/content';
 import type { LanguageType } from '@/types/typesDapp/language';

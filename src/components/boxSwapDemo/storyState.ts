@@ -1,4 +1,4 @@
-import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+import { BoxStatus } from '@/types/typesDapp/contracts/evidenceBox';
 import { content } from '@/components/boxSwapDemo/content';
 import { t } from '@/lib/i18nUtils';
 import type { LanguageType } from '@/types/typesDapp/language';

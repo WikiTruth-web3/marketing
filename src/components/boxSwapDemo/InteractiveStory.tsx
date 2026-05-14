@@ -4,7 +4,7 @@ import { Subtitle } from '@/components/base/subtitle';
 import { Button } from '@/components/base/button';
 import StatusLabel from '@/components/base/statusLabel';
 import StatusStep from '@/components/custom/statusStep';
-import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+import { BoxStatus } from '@/types/typesDapp/contracts/evidenceBox';
 import TimerBar from './TimerBar';
 import { t } from '@/lib/i18nUtils';
 import { content } from '@/components/boxSwapDemo/content';

@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { BoxStatus, } from '@/types/typesDapp/contracts/truthBox';
+import { BoxStatus, } from '@/types/typesDapp/contracts/evidenceBox';
 import NFTWorkflowFlow from './nftWorkflowFlow/index';
 
 /**

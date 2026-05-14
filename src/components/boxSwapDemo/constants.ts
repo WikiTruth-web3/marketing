@@ -1,4 +1,4 @@
-import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+// import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
 
 export const LIFECYCLE_STEPS = [
     { status: 'Storing', label: 'Minted' },

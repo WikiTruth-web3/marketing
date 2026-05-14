@@ -1,5 +1,5 @@
 
-import React from 'react';
+// import React from 'react';
 import { TeamHero } from '@/components/sections/TeamHero';
 import { JoinUs } from '@/components/sections/JoinUs';
 import type { LanguageType } from '@/types/typesDapp/language';
