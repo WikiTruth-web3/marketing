@@ -2,12 +2,12 @@
 import Layout from '@/layouts/Layout.astro';
 import { Header } from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Team from '@/react-pages/Team';
+import TeamPage from '@/react-pages/Team';
 ---
 <Layout lang="en">
   <Header currentPath="/team" lang="en" client:load />
   <main class="min-h-screen">
-    <Team lang="en" client:load />
+    <TeamPage lang="en" client:load />
   </main>
   <Footer client:visible />
 </Layout>

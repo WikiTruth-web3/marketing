@@ -2,12 +2,12 @@
 import Layout from '@/layouts/Layout.astro';
 import { Header } from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Demo from '@/react-pages/Demo';
+import DemoPage from '@/react-pages/Demo';
 ---
 <Layout lang="zh">
-  <Header currentPath="/demo" lang="zh" client:load />
+  <Header currentPath="/zh/demo" lang="zh" client:load />
   <main class="min-h-screen">
-    <Demo lang="zh" client:load />
+    <DemoPage lang="zh" client:load />
   </main>
   <Footer client:visible />
 </Layout>

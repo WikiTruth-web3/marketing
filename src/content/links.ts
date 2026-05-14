@@ -1,15 +1,13 @@
 
-
-
 export const routerLinks = {
-    website: 'https://wikitruth.xyz',
-    appIpfs: 'https://app.wikitruth.eth.limo',
-    app: 'https://app.wikitruth.xyz',
-    createBox: 'https://app.wikitruth.xyz/create',
-    // beta: 'https://app.wikitruth.xyz',
-    blogs: 'https://blog.wikitruth.xyz',
-    docs: 'https://docs.wikitruth.xyz',
-    docsStatus: 'https://docs.wikitruth.xyz/status',
+    website: 'https://evidencemarket.org',
+    appIpfs: 'https://app.evidencemarket.eth.limo',
+    app: 'https://app.evidencemarket.org',
+    createBox: 'https://app.evidencemarket.org/create',
+    // beta: 'https://app.evidencemarket.org',
+    blogs: 'https://blog.evidencemarket.org',
+    docs: 'https://docs.evidencemarket.org',
+    docsStatus: 'https://docs.evidencemarket.org/status',
 }
 
 export const socialLinks = {

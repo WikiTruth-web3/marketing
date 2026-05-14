@@ -2,12 +2,12 @@
 import Layout from '@/layouts/Layout.astro';
 import { Header } from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Roadmap from '@/react-pages/Roadmap';
+import RoadmapPage from '@/react-pages/Roadmap';
 ---
 <Layout lang="ko">
   <Header currentPath="/ko/roadmap" lang="ko" client:load />
   <main class="min-h-screen">
-    <Roadmap lang="ko" client:load />
+    <RoadmapPage lang="ko" client:load />
   </main>
   <Footer client:visible />
 </Layout>

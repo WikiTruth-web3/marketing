@@ -1,0 +1,61 @@
+---
+import { routerLinks } from "@/content/links";
+
+const messages = {
+  en: "You are visiting a mirror site. Please use the official domain: ",
+  zh: "您当前正在访问镜像站点，请使用官方域名：",
+  ko: "현재 미러 사이트를 방문 중입니다. 공식 도메인을 사용해 주세요: ",
+};
+
+const { lang = "en" } = Astro.props;
+const message = messages[lang as keyof typeof messages] || messages.en;
+---
+
+<div
+  id="domain-banner"
+  class="hidden w-full bg-primary py-2 px-4 text-center text-primary-dark font-bold text-sm cursor-pointer hover:brightness-110 transition-all z-[600] relative"
+>
+  <div class="container mx-auto flex items-center justify-center gap-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-external-link"
+      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path
+        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+      ></path></svg
+    >
+    <span>{message}</span>
+    <span class="underline decoration-2 underline-offset-4"
+      >{routerLinks.website}</span
+    >
+  </div>
+</div>
+
+<script define:vars={{ officialDomain: routerLinks.website }}>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("domain-banner");
+    const currentHostname = window.location.hostname;
+    const officialHostname = new URL(officialDomain).hostname;
+
+    // Check if current domain is not the official one
+    // Also ignore localhost for development
+    if (
+      banner &&
+      currentHostname !== officialHostname &&
+      !currentHostname.includes("127.0.0.1")
+    ) {
+      banner.classList.remove("hidden");
+      banner.addEventListener("click", () => {
+        window.location.href = officialDomain;
+      });
+    }
+  });
+</script>

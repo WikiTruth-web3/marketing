@@ -21,9 +21,9 @@ export const roadmapTitle: LanguageItem = {
 };
 
 export const roadmapDescription: LanguageItem = {
-    en: `From Proof of Concept to the construction of a global truth network: the evolution of ${PROJECT_NAME.full}.`,
-    zh: `从概念验证到全球真相网络的构建：${PROJECT_NAME.full} 的演进之路。`,
-    ko: `개념 증명에서 글로벌 진실 네트워크 구축까지: ${PROJECT_NAME.full}의 진화 과정.`
+    en: `From Proof of Concept to the construction of a global evidence network: the evolution of ${PROJECT_NAME.full}.`,
+    zh: `从概念验证到全球证据网络的构建：${PROJECT_NAME.full} 的演进之路。`,
+    ko: `개념 증명에서 글로벌 증거 네트워크 구축까지: ${PROJECT_NAME.full}의 진화 과정.`
 };
 
 export const roadmapPhases: RoadmapPhaseI18n[] = [
@@ -50,9 +50,9 @@ export const roadmapPhases: RoadmapPhaseI18n[] = [
                 ko: '"비밀 유지 비용 증액" 수학적 모델 수립' 
             },
             { 
-                en: 'TruthBox core state machine development', 
-                zh: 'TruthBox 核心状态机开发', 
-                ko: 'TruthBox 핵심 상태 머신 개발' 
+                en: 'Evidence Box core state machine development', 
+                zh: 'Evidence Box 核心状态机开发', 
+                ko: 'Evidence Box 핵심 상태 머신 개발' 
             },
         ],
         icon: Rocket,
@@ -277,9 +277,9 @@ export const roadmapPhases: RoadmapPhaseI18n[] = [
                 ko: '법률 구조 기금: 오프라인 지원을 위한 재무 자금 활용' 
             },
             { 
-                en: 'WikiTruth API: Opening data for third-party application integration', 
-                zh: 'WikiTruth API: 开放数据供第三方应用接入', 
-                ko: 'WikiTruth API: 제3자 애플리케이션 통합을 위한 데이터 개방' 
+                en: 'Evidence Market API: Opening data for third-party application integration', 
+                zh: 'Evidence Market API: 开放数据供第三方应用接入', 
+                ko: 'Evidence Market API: 제3자 애플리케이션 통합을 위한 데이터 개방' 
             },
             { 
                 en: 'Global Compliance: Exploring implementation in more jurisdictions', 

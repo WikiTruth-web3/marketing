@@ -1,4 +1,4 @@
-import type { LanguageItem } from "@/types/typesDapp/language";
+// import type { LanguageItem } from "@/types/typesDapp/language";
 
 export const homeProblem = {
     title: {

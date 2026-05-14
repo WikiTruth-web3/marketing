@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Features } from '@/components/sections/TechFeatures';
 import { TechComparison } from '@/components/sections/TechComparison';
 import { TechSecurity } from '@/components/sections/TechSecurity';

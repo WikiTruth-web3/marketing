@@ -4,8 +4,8 @@ export interface ProjectDataType {
 }
 
 export const projectDataStore: ProjectDataType = {
-    project: "Wiki Truth",
-    website: ["https://wikitruth.eth.limo/", "https://wikitruth.xyz/"],
+    project: "Evidence Market",
+    website: ["https://evidencemarket.org/", "https://evidencemarket.eth.limo/"],
 };
 
 

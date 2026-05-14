@@ -1,9 +1,10 @@
 {
-  "project": "Wiki Truth",
+  "project": "Evidence Market",
   "website": [
-    "https://wikitruth.eth.limo/"
+    "https://evidencemarket.org/",
+    "https://evidencemarket.eth.limo/"
   ],
-  "name": "Truth Box",
+  "name": "Evidence Box",
   "token_id": "",
   "type_of_crime": "Business Crime",
   "label": [

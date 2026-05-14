@@ -14,7 +14,7 @@ export interface CreateAndPublishArgsType{
     key_: string;
 }
 
-export type FunctionNameType_TruthBox = 
+export type FunctionNameType_EvidenceBox = 
 'create' |
 'createAndPublish' |
 'publishByMinter' | 

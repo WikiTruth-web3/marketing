@@ -1,6 +1,6 @@
 
 import Grid from '@/components/background/Grid';
-import React from 'react';
+// import React from 'react';
 import { TwoIncome } from '../components/sections/TwoIncome';
 import type { LanguageType } from '@/types/typesDapp/language';
 import { HowItWorks } from '@/components/sections/HowItWorks';

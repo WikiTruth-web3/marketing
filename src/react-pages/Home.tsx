@@ -1,11 +1,10 @@
-import React from 'react';
+// import React from 'react';
 
 import { HomeHero } from '@/components/sections/HomeHero';
 import { GlobalCrimeData } from '../components/sections/GlobalCrimeData';
 import { WhyWeWork } from '../components/sections/WhyWeWork';
 import { HomePartners } from '../components/sections/HomePartners';
 import Threads from '@/components/background/Threads/index';
-// import { Airdrop } from '@/components/sections/Airdrop';
 
 // New Sections from Content Planning
 import { HomeProblem } from '@/components/sections/HomeProblem';
@@ -36,9 +35,7 @@ export default function Home({ lang }: { lang: LanguageType }) {
             
             <HomeProblem lang={lang} />
             <HomeSolution lang={lang} />
-            
-            {/* <Airdrop lang={lang} /> */}
-            
+                        
             <HomeCoreFeatures lang={lang} />
             
             <HomeWhyThisMatters lang={lang} />

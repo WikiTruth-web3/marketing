@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '@/components/layout/Container';
-import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
+// import { BoxStatus } from '@/types/typesDapp/contracts/truthBox';
 import { Section } from '../layout/Section';
 import { useBoxSwapSimulation } from './useBoxSwapSimulation';
 
