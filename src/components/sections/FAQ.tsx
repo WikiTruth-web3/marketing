@@ -3,6 +3,7 @@ import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { Title } from '../base/title';
+import { Paragraph } from '../base/paragraph';
 import type { LanguageType } from '@/types/typesDapp/language';
 import { t } from '@/lib/i18nUtils';
 import type { FAQSectionI18n } from '@/content/i18n/faq-home';
@@ -49,7 +50,7 @@ export const FAQ: React.FC<FAQProps> = ({ data, lang, className }) => {
                                         onClick={() => toggleAccordion(index)}
                                         className="w-full px-6 py-5 flex items-center justify-between text-left group"
                                     >
-                                        <span className={`text-lg font-semibold transition-colors ${
+                                        <span className={`text-base md:text-lg font-semibold transition-colors ${
                                             isActive ? 'text-primary' : 'text-text-light group-hover:text-white'
                                         }`}>
                                             {t(faq.question, lang)}
@@ -64,9 +65,9 @@ export const FAQ: React.FC<FAQProps> = ({ data, lang, className }) => {
                                     <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
                                         isActive ? 'max-h-[500px] opacity-100 pb-6' : 'max-h-0 opacity-0'
                                     }`}>
-                                        <div className="px-6 pt-2 text-text-dim leading-relaxed border-t border-white/5 mt-2 pt-6">
+                                        <Paragraph size='sm' className="px-6 pt-2 text-text-dim leading-relaxed border-t border-white/5 mt-2 pt-6">
                                             {t(faq.answer, lang)}
-                                        </div>
+                                        </Paragraph>
                                     </div>
                                 </div>
                             );
