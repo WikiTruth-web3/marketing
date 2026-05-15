@@ -2,7 +2,7 @@
   <img width="1200" alt="Evidence Market Banner" src="https://github.com/WikiTruth-web3/project-resources/blob/main/image/banner.jpg" />
   
   <h1>Evidence Market</h1>
-  <p><strong>The world's first decentralized whistleblower bounty and crime evidence marketplace.</strong></p>
+  <p><strong>A decentralized intelligence marketplace that transforms “evidence of criminal activity” into tradable assets, a Web3 digital upgrade of the SEC Whistleblower Program, built on Oasis Sapphire (an EVM-compatible public chain with TEE privacy computing capabilities).</strong></p>
 
   <p>
     <a href="https://oasisprotocol.org/sapphire">
