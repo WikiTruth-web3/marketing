@@ -3,6 +3,7 @@ import { comparison } from '@/content/i18n/tech';
 import { Title } from '../base/title';
 import { Paragraph } from '../base/paragraph';
 import type { LanguageType } from '@/types/typesDapp/language';
+import { PROJECT_NAME } from '@/content/project';
 import { t } from '@/lib/i18nUtils';
 
 export const TechComparison: React.FC<{ lang: LanguageType }> = ({ lang }) => {
@@ -19,7 +20,7 @@ export const TechComparison: React.FC<{ lang: LanguageType }> = ({ lang }) => {
           <div className="grid grid-cols-12 bg-white/5 border-b border-white/10 p-3 md:p-6 text-sm uppercase tracking-widest text-white/50">
             <div className="col-span-4 pl-4">Feature</div>
             <div className="col-span-4 text-center">Traditional</div>
-            <div className="col-span-4 text-center text-primary font-bold">Wiki Truth</div>
+            <div className="col-span-4 text-center text-primary font-bold">{PROJECT_NAME.full}</div>
           </div>
 
           {/* Rows */}

@@ -38,7 +38,7 @@ export const HomeProblem: React.FC<{ lang: LanguageType }> = ({ lang }) => {
                     </Paragraph>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                     {homeProblem.points.map((point, index) => {
                         const Icon = pointIcons[index % pointIcons.length];
                         return (
