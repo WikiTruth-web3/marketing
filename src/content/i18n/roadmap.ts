@@ -50,9 +50,9 @@ export const roadmapPhases: RoadmapPhaseI18n[] = [
                 ko: '"비밀 유지 비용 증액" 수학적 모델 수립' 
             },
             { 
-                en: 'Evidence Box core state machine development', 
-                zh: 'Evidence Box 核心状态机开发', 
-                ko: 'Evidence Box 핵심 상태 머신 개발' 
+                en: 'Evidence Blind Box core state machine development', 
+                zh: 'Evidence Blind Box 核心状态机开发', 
+                ko: 'Evidence Blind Box 핵심 상태 머신 개발' 
             },
         ],
         icon: Rocket,
@@ -174,14 +174,14 @@ export const roadmapPhases: RoadmapPhaseI18n[] = [
                 ko: 'Oasis Sapphire 메인넷 배포' 
             },
             { 
-                en: 'Genesis Airdrop: Distributing WTRC to early contributors', 
-                zh: '创世空投: 向早期贡献者分发 WTRC', 
-                ko: '제네시스 에어드랍: 초기 기여자에게 WTRC 배포' 
+                en: 'Genesis Airdrop: Distributing EMC to early contributors', 
+                zh: '创世空投: 向早期贡献者分发 EMC', 
+                ko: '제네시스 에어드랍: 초기 기여자에게 EMC 배포' 
             },
             { 
-                en: 'Liquidity Mining: Launching WTRC/ROSE pair incentives', 
-                zh: '流动性挖矿: 开启 WTRC/ROSE 交易对激励', 
-                ko: '유동성 마이닝: WTRC/ROSE 페어 인센티브 런칭' 
+                en: 'Liquidity Mining: Launching EMC/ROSE pair incentives', 
+                zh: '流动性挖矿: 开启 EMC/ROSE 交易对激励', 
+                ko: '유동성 마이닝: EMC/ROSE 페어 인센티브 런칭' 
             },
             { 
                 en: 'Official testing of bounty features', 
@@ -251,9 +251,9 @@ export const roadmapPhases: RoadmapPhaseI18n[] = [
                 ko: 'AI 위조 감지: 딥페이크 감지를 위한 탈중앙화 AI 도입' 
             },
             { 
-                en: 'Bounty Marketplace: Launching "demand-driven" evidence mining', 
-                zh: '悬赏市场: 上线"需求端"驱动的证据挖掘', 
-                ko: '바운티 마켓플레이스: "수요 중심" 증거 마이닝 런칭' 
+                en: 'Bounty Token: Launching "demand-driven" evidence mining', 
+                zh: '悬赏令牌: 上线"需求端"驱动的证据挖掘', 
+                ko: '바운티 토큰: "수요 중심" 증거 마이닝 런칭' 
             },
         ],
         icon: Radio,

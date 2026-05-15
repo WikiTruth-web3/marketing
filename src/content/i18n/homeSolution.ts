@@ -7,16 +7,16 @@ export const homeSolution = {
         ko: '진실을 위한 새로운 인프라'
     },
     subtitle: {
-        en: 'Evidence Market creates a decentralized market where encrypted evidence can be safely managed.',
-        zh: 'Evidence Market 建立了一个去中心化市场，让加密证据能够得到安全管理。',
-        ko: 'Evidence Market은 암호화된 증거를 안전하게 관리할 수 있는 탈중앙화 시장을 만듭니다.'
+        en: 'Evidence Market creates a decentralized market where encrypted evidence can be safely stored, traded, and monetized.',
+        zh: 'Evidence Market 建立了一个去中心化市场，让加密证据能够得到安全存储、流通、变现。',
+        ko: 'Evidence Market은 암호화된 증거를 안전하게 보관, 유통, 현금화할 수 있는 탈중앙화 시장을 만듭니다.'
     },
     features: [
         { en: 'Submitted anonymously', zh: '匿名提交', ko: '익명 제출' },
-        { en: 'Locked inside secure Evidence Boxes', zh: '锁入安全的证据箱 (Evidence Boxes)', ko: '보안 증거 상자(Evidence Boxes)에 잠금' },
+        { en: 'Locked inside secure Evidence Blind Boxes', zh: '锁入安全的证据盲盒 (Evidence Blind Boxes)', ko: '보안 증거 블라인드 박스(Evidence Blind Boxes)에 잠금' },
         { en: 'Traded through smart contracts', zh: '通过智能合约交易', ko: '스마트 컨트랙트를 통한 거래' },
-        { en: 'Protected by delayed disclosure mechanisms', zh: '受延迟披露机制保护', ko: '지연 공개 메커니즘으로 보호' },
-        { en: 'Automatically revealed if suppression fails', zh: '若压制失败则自动公开', ko: '억압 실패 시 자동 공개' }
+        { en: 'Pay delay fees to extend the evidence public deadline', zh: '支付延迟费延迟证据公开时间', ko: '지불 지연 증거의 공개 시점' },
+        { en: 'Automatically revealed if unable to pay the fees', zh: '如果无力支付则自动公开证据', ko: '지연료 미납 시 증거 자동 공개' }
     ],
     authority: {
         title: {

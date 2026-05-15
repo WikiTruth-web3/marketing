@@ -1,14 +1,13 @@
-
 import Grid from '@/components/background/Grid';
 // import React from 'react';
 import { TwoIncome } from '../components/sections/TwoIncome';
 import type { LanguageType } from '@/types/typesDapp/language';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import BoxSwapDemo from '@/components/boxSwapDemo';
+import { FAQ } from '@/components/sections/FAQ';
+import { faqSection } from '@/content/i18n/faq-demo';
 
 export default function Demo({ lang }: { lang: LanguageType }) {
-
-
     return (
         <div className="relative min-h-screen">
             <div className="absolute inset-0 -z-10 pointer-events-none">
@@ -28,12 +27,9 @@ export default function Demo({ lang }: { lang: LanguageType }) {
                 />
             </div>
             <HowItWorks lang={lang} />
-
             <BoxSwapDemo lang={lang} />
             <TwoIncome lang={lang} />
-            
-
-
+            <FAQ data={faqSection} lang={lang} className="py-24 bg-background-dim/50" />
         </div>
     );
 };

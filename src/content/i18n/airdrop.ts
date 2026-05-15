@@ -18,9 +18,9 @@ export const airdropContent = {
         ko: 'Sapphire 테스트넷 · 제품 체험'
     },
     description: {
-        en: 'Use Oasis Sapphire testnet only. Grab TEST from the official faucet, then create a Truth Box and complete a trade. No verification and no staking — we have not published any additional rules yet.',
-        zh: '仅限 Oasis Sapphire 测试网。从官方水龙头领取 TEST 代币，然后创建一个真相盒子并完成一笔交易。无需验证，无需质押 —— 我们尚未发布任何额外规则。',
-        ko: 'Oasis Sapphire 테스트넷만 사용하십시오. 공식 수도꼭지에서 TEST를 받고 Truth Box를 생성하여 거래를 완료하십시오. 인증이나 스테이킹이 필요하지 않습니다. 아직 추가 규칙은 발표되지 않았습니다.'
+        en: 'Use Oasis Sapphire testnet only. Grab TEST from the official faucet, then create an Evidence Blind Box and complete a trade. No verification and no staking — we have not published any additional rules yet.',
+        zh: '仅限 Oasis Sapphire 测试网。从官方水龙头领取 TEST 代币，然后创建一个证据盲盒并完成一笔交易。无需验证，无需质押 —— 我们尚未发布任何额外规则。',
+        ko: 'Oasis Sapphire 테스트넷만 사용하십시오. 공식 수도꼭지에서 TEST를 받고 증거 블라인드 박스를 생성하여 거래를 완료하십시오. 인증이나 스테이킹이 필요하지 않습니다. 아직 추가 규칙은 발표되지 않았습니다.'
     },
     rules: [
         {
@@ -34,9 +34,9 @@ export const airdropContent = {
             ko: '누구나 참여할 수 있습니다.'
         },
         {
-            en: 'Claim Sapphire testnet TEST from the Oasis faucet, then create a Truth Box and complete a trade on the app.',
-            zh: '从 Oasis 水龙头领取 Sapphire 测试网 TEST 代币，然后在应用中创建真相盒子并完成交易。',
-            ko: 'Oasis 수도꼭지에서 Sapphire 테스트넷 TEST를 수령한 후, 앱에서 Truth Box를 생성하고 거래를 완료하세요.'
+            en: 'Claim Sapphire testnet TEST from the Oasis faucet, then create an Evidence Blind Box and complete a trade on the app.',
+            zh: '从 Oasis 水龙头领取 Sapphire 测试网 TEST 代币，然后在应用中创建证据盲盒并完成交易。',
+            ko: 'Oasis 수도꼭지에서 Sapphire 테스트넷 TEST를 수령한 후, 앱에서 증거 블라인드 박스를 생성하고 거래를 완료하세요.'
         }
     ],
     stats: [

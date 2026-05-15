@@ -10,12 +10,13 @@ import Threads from '@/components/background/Threads/index';
 import { HomeProblem } from '@/components/sections/HomeProblem';
 import { HomeSolution } from '@/components/sections/HomeSolution';
 import { HomeCoreFeatures } from '@/components/sections/HomeCoreFeatures';
-
 import { HomeWhyThisMatters } from '@/components/sections/HomeWhyThisMatters';
 import { HomeUseCases } from '@/components/sections/HomeUseCases';
 import { HomePhilosophy } from '@/components/sections/HomePhilosophy';
 import { HomeCoreProducts } from '@/components/sections/HomeCoreProducts';
-
+import { HomeCTA } from '@/components/sections/HomeCTA';
+import { FAQ } from '@/components/sections/FAQ';
+import { faqSection } from '@/content/i18n/faq-home';
 
 import type { LanguageType } from '@/types/typesDapp/language';
 
@@ -47,8 +48,8 @@ export default function Home({ lang }: { lang: LanguageType }) {
             <HomePhilosophy lang={lang} />
             <HomePartners lang={lang} />
 
-
+            <FAQ data={faqSection} lang={lang} className="py-24 bg-background-dim/50" />
+            <HomeCTA lang={lang} />
         </div>
-
     );
 }
