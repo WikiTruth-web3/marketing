@@ -20,11 +20,11 @@ export const coreProductsSection = {
     {
       id: 'evidence-market',
       icon: Box,
-      subtitle: { en: 'Evidence Box Market', zh: '证据箱市场', ko: '증거 상자 시장' },
+      subtitle: { en: 'Evidence Blind Box', zh: '证据盲盒', ko: '증거 블라인드 박스' },
       entry: [
         {
           description: { en: 'I have insider documents or evidence of crime.', zh: '我有内幕文件或犯罪证据。', ko: '나는 내부 문서나 범죄 증거를 가지고 있다.' },
-          ctaText: { en: 'Create Evidence Box', zh: '创建证据盒子', ko: '증거 상자 생성' },
+          ctaText: { en: 'Create Evidence Blind Box', zh: '创建证据盲盒', ko: '증거 블라인드 박스 생성' },
           ctaLink: routerLinks.createBox,
           disabled: false
         },
@@ -39,7 +39,7 @@ export const coreProductsSection = {
     {
       id: 'bounty-market',
       icon: Target,
-      subtitle: { en: 'Bounty Market', zh: '悬赏市场', ko: '바운티 시장' },
+      subtitle: { en: 'Bounty Token', zh: '悬赏令牌', ko: '바운티 토큰' },
       entry: [
         {
           description: { en: 'I need evidence or intelligence on a crime.', zh: '我需要犯罪证据/情报。', ko: '범죄 증거/정보가 필요하다.' },

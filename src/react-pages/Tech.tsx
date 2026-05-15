@@ -2,12 +2,13 @@
 import { Features } from '@/components/sections/TechFeatures';
 import { TechComparison } from '@/components/sections/TechComparison';
 import { TechSecurity } from '@/components/sections/TechSecurity';
+import { FAQ } from '@/components/sections/FAQ';
+import { faqSection } from '@/content/i18n/faq-tech';
 import CodeRain from '@/components/background/CodeRain';
 import type { LanguageType } from '@/types/typesDapp/language';
 
 export default function Tech({ lang = 'en' }: { lang?: LanguageType }) {
     return (
-
         <div className="relative">
             {/* Code Rain Background */}
             <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -30,9 +31,8 @@ export default function Tech({ lang = 'en' }: { lang?: LanguageType }) {
                 <TechSecurity lang={lang} />
                 <Features lang={lang} />
                 <TechComparison lang={lang} />
+                <FAQ data={faqSection} lang={lang} className="py-24 bg-background-dim/30" />
             </div>
         </div>
-
     );
 }
-

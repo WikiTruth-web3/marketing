@@ -18,11 +18,11 @@ export const homeHowItWorks = {
         },
         {
             number: '2',
-            title: { en: 'Evidence Box Creation', zh: '创建证据箱', ko: '증거 상자 생성' },
+            title: { en: 'Evidence Blind Box Creation', zh: '创建证据盲盒', ko: '증거 블라인드 박스 생성' },
             description: { 
-                en: 'The evidence is sealed inside an encrypted “Evidence Box.” Metadata and access are protected using Trusted Execution Environment (TEE) technology.', 
-                zh: '证据被密封在加密的“证据箱”中。元数据和访问受可信执行环境 (TEE) 技术保护。', 
-                ko: '증거는 암호화된 "증거 상자" 안에 봉인됩니다. 메타데이터와 액세스는 신뢰 실행 환경(TEE) 기술을 사용하여 보호됩니다.' 
+                en: 'The evidence is sealed inside an encrypted “Evidence Blind Box.” Metadata and access are protected using Trusted Execution Environment (TEE) technology.', 
+                zh: '证据被密封在加密的“证据盲盒”中。元数据和访问受可信执行环境 (TEE) 技术保护。', 
+                ko: '증거는 암호화된 "증거 블라인드 박스" 안에 봉인됩니다. 메타데이터와 액세스는 신뢰 실행 환경(TEE) 기술을 사용하여 보호됩니다.' 
             }
         },
         {

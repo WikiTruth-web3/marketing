@@ -2,15 +2,15 @@
 
 export const content = {
     title: {
-        en: 'Evidence Box Swap Demo',
-        zh: '证据盒子流转演示',
-        ko: '증거 상자 순환 데모'
+        en: 'Evidence Blind Box Trading Demo',
+        zh: '证据盲盒交易演示',
+        ko: '증거 상자 거래 데모'
     },
     viewer: {
-        boxId: { en: 'Box ID:', zh: '盒子 ID:', ko: '상자 ID:' },
+        boxId: { en: 'Blind Box ID:', zh: '盲盒 ID:', ko: '상자 ID:' },
         whistleblower: { en: 'Whistleblower:', zh: '吹哨人:', ko: '내부고발자:' },
         creationTime: { en: 'Creation Time:', zh: '创建时间:', ko: '생성 시간:' },
-        operationShadow: { en: 'Classified Evidence Box - Operation: Shadow', zh: '机密证据盒子 - 行动：暗影', ko: '기밀 증거 상자 - 작전명: 섀도우' },
+        operationShadow: { en: 'Classified Evidence Blind Box - Operation: Shadow', zh: '机密证据盲盒 - 行动：暗影', ko: '기밀 증거 상자 - 작전명: 섀도우' },
         description: {
             en: 'This is a highly secretive black box, containing undeniable criminal evidence. Once the countdown reaches zero, the smart contract will automatically execute irreversible operations to make it public. Unless... The criminal is willing to sell all his assets, pay a high delay fee to cover up the truth.',
             zh: '这是一个高度机密的黑匣子，包含着不可否认的犯罪证据。一旦倒计时归零，智能合约将自动执行不可逆的操作将其公开。除非... 犯罪分子愿意变卖所有资产，支付高昂的延时费来掩盖真相。',
@@ -21,13 +21,13 @@ export const content = {
         storing: {
             title: { en: 'First Act: You are a brave whistleblower', zh: '第一幕：你是一名吹哨人', ko: '제1막: 당신은 내부고발자입니다.' },
             desc: {
-                en: 'You holding a secret criminal evidence, and casting it into a Evidence Box. Now, it is securely stored on the blockchain, and you can choose to proceed:',
-                zh: '你手握秘密犯罪证据，并将其投进证据盒子。现在，它已安全地存储在区块链上，接下来你可以选择：',
+                en: 'You holding a secret criminal evidence, and casting it into a Evidence Blind Box. Now, it is securely stored on the blockchain, and you can choose to proceed:',
+                zh: '你手握秘密犯罪证据，并将其投进证据盲盒。现在，它已安全地存储在区块链上，接下来你可以选择：',
                 ko: '당신은 범죄에 대한 비밀 증거를 가지고 있으며, 이를 증거함에 넣습니다. 이제 증거는 블록체인에 안전하게 저장되며, 당신은 다음 단계를 진행할지 선택할 수 있습니다.'
             }
         },
         selling: {
-            title: { en: 'Second Act: Sell Evidence Box', zh: '第二幕：出售证据盒子', ko: '제2막: 증거 보관함 판매합니다' },
+            title: { en: 'Second Act: Sell Evidence Blind Box', zh: '第二幕：出售证据盲盒', ko: '제2막: 증거 보관함 판매합니다' },
             desc: {
                 en: 'You choose sell. The OpenClaw AI bot broadcast it to the entire network, black market buyer, intelligence agency, and even related criminals noticed this evidence. The first buyer to make an offer...',
                 zh: '你选择了出售，OpenClaw AI 机器人全网广播，黑市买家、情报机构，相关的犯罪分子都注意到了它。买家正准备购买它...',
@@ -37,7 +37,7 @@ export const content = {
             waiting: { en: 'waiting for buyers...', zh: '等待买家中...', ko: '구매자 대기 중...' }
         },
         auctioning: {
-            title: { en: 'Second Act: The Auction', zh: '第二幕：拍卖盒子', ko: '제2막: 경매' },
+            title: { en: 'Second Act: The Auction', zh: '第二幕：拍卖盲盒', ko: '제2막: 경매' },
             desc: {
                 en: 'You chosen to participate in the auction. Various parties begin bidding wildly, driving the price ever higher. Time is running out; the auction is about to end...',
                 zh: '你选择了拍卖。各方势力开始疯狂加价，价格不断攀升。时间紧迫，拍卖即将结束...',
@@ -48,8 +48,8 @@ export const content = {
         paid: {
             title: { en: 'Third Act: The Transaction Completed', zh: '第三幕：交易完成', ko: '제3막: 거래 완료' },
             desc: {
-                en: 'Ding! Your evidence box has been purchased by a mystery buyer. The payment is currently securely locked in a smart contract, awaiting the buyer  confirmation...',
-                zh: '叮！你的证据盒子被一位神秘买家买走，支付款目前安全地锁定在智能合约中，等待买家进行确认...',
+                en: 'Ding! Your evidence blind box has been purchased by a mystery buyer. The payment is currently securely locked in a smart contract, awaiting the buyer  confirmation...',
+                zh: '叮！你的证据盲盒被一位神秘买家买走，支付款目前安全地锁定在智能合约中，等待买家进行确认...',
                 ko: '딩! 귀하의 증거 보관함이 익명의 구매자에게 판매되었습니다. 결제 금액은 현재 스마트 계약에 안전하게 보관되어 있으며, 구매자의 확인을 기다리고 있습니다.'
             },
             completed: { en: 'Completed:', zh: '已完成：', ko: '완료됨:' },
@@ -68,8 +68,8 @@ export const content = {
         published: {
             title: { en: 'Fifth Act: The Evidence is Public', zh: '第五幕：证据公开', ko: '제5막: 진실이 밝혀지다' },
             desc: {
-                en: 'Finally, As delay fees escalated, the buyer became unable to pay, and the countdown reached zero. The smart contract automatically decrypted the evidence box. All encrypted criminal evidence was made public! The criminals were eventually arrested and brought to trial...',
-                zh: '最终，随着延时费变得越来越高，买家已无力支付，倒计时归零。智能合约自动解密证据盒子。所有加密的犯罪证据都向世界公开！犯罪分子最终被逮捕并受审...',
+                en: 'Finally, As delay fees escalated, the buyer became unable to pay, and the countdown reached zero. The smart contract automatically decrypted the evidence blind box. All encrypted criminal evidence was made public! The criminals were eventually arrested and brought to trial...',
+                zh: '最终，随着延时费变得越来越高，买家已无力支付，倒计时归零。智能合约自动解密证据盲盒。所有加密的犯罪证据都向世界公开！犯罪分子最终被逮捕并受审...',
                 ko: '마침내 연체료가 눈덩이처럼 불어나면서 구매자는 대금을 지불할 수 없게 되었고, 카운트다운은 0에 도달했습니다. 스마트 계약은 자동으로 증거 상자를 해독했습니다. 암호화된 모든 범죄 증거가 공개되었습니다! 결국 범죄자들은 ​​체포되어 재판에 회부되었습니다...'
             }
         }
@@ -84,7 +84,7 @@ export const content = {
         delayIncome: { en: 'Delay Income', zh: '延期收入', ko: '지연 수입' },
         serviceFee: { en: 'Service Fee (3%)', zh: '服务费 (3%)', ko: '서비스 수수료 (3%)' },
         netReward: { en: 'Total Net Reward', zh: '总计净奖励', ko: '총 순 보상' },
-        sellInfo: { en: 'We sell this box for:', zh: '我们将此盒子出售为：', ko: '이 상자를 다음 가격으로 판매합니다:' },
+        sellInfo: { en: 'We sell this blind box for:', zh: '我们将此盲盒出售为：', ko: '이 상자를 다음 가격으로 판매합니다:' },
         simulationMode: {
             title: { en: 'Storytelling Mode: ', zh: '故事模式：', ko: '스토리텔링 모드: ' },
             desc: {

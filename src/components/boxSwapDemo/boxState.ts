@@ -6,7 +6,7 @@ const testBox = {
     boxId: '9999',
     whistleblower: '0x...8902',
     typeOfCrime: 'Modular',
-    title: "Classified Evidence Box - Operation: Shadow",
+    title: "Classified Evidence Blind Box - Operation: Shadow",
     boxImage: '/nft/boxImage.png',
     nftImage: '/nft/nft-light-2.jpg',
     judgingImage: '/images/swapDemo/judging.jpg',
