@@ -2,6 +2,7 @@
 import { Features } from '@/components/sections/TechFeatures';
 import { TechComparison } from '@/components/sections/TechComparison';
 import { TechSecurity } from '@/components/sections/TechSecurity';
+import { TechPrivacy } from '@/components/sections/TechPrivacy';
 import { FAQ } from '@/components/sections/FAQ';
 import { faqSection } from '@/content/i18n/faq-tech';
 import CodeRain from '@/components/background/CodeRain';
@@ -28,6 +29,7 @@ export default function Tech({ lang = 'en' }: { lang?: LanguageType }) {
                 />
             </div>
             <div className="relative z-10">
+                <TechPrivacy lang={lang} />
                 <TechSecurity lang={lang} />
                 <Features lang={lang} />
                 <TechComparison lang={lang} />

@@ -20,7 +20,7 @@
 
   --color-surface-lowest: #0e0e0e;
   --color-surface-low: #181818ff;
-  --color-surface: #1f1f1f;
+  --color-surface: #161616;
   --color-surface-high: #2a2a2a;
   --color-surface-highest: #353535;
 
@@ -44,6 +44,8 @@
 @layer base {
   body {
     @apply bg-background text-text-body font-body antialiased;
+
+    /* color: #161616; */
   }
 }
 

@@ -3,9 +3,9 @@ import type { FAQSectionI18n } from "./faq-home";
 
 export const faqSection: FAQSectionI18n = {
   title: {
-    en: 'Testnet Demo Q&A',
-    zh: '测试网演示问答',
-    ko: '테스트넷 데모 Q&A'
+    en: 'Demo Q&A',
+    zh: '演示问答',
+    ko: '데모 Q&A'
   },
   faqs: [
     {

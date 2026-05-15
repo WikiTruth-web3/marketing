@@ -10,9 +10,9 @@ import { t } from '@/lib/i18nUtils';
 
 export const HomePhilosophy: React.FC<{ lang: LanguageType }> = ({ lang }) => {
     return (
-        <Section className="py-32 bg-background-dark overflow-hidden relative">
+        <Section className="py-32 ">
             {/* Massive Quote Decoration */}
-            <Quote className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/5 w-[800px] h-[800px] pointer-events-none" />
+            {/* <Quote className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/5 w-[800px] h-[800px] pointer-events-none" /> */}
             
             <Container className="relative z-10">
                 <div className="max-w-4xl mx-auto text-center">

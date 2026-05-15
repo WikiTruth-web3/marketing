@@ -42,7 +42,7 @@ export const FAQ: React.FC<FAQProps> = ({ data, lang, className }) => {
                                     className={`rounded-2xl border transition-all duration-300 ${
                                         isActive 
                                         ? 'bg-surface-low border-primary/30 shadow-[0_0_20px_rgba(184,246,0,0.05)]' 
-                                        : 'bg-surface-low/50 border-white/5 hover:border-white/10'
+                                        : 'bg-surface-low/70 border-white/5 hover:border-white/10'
                                     }`}
                                 >
                                     <button

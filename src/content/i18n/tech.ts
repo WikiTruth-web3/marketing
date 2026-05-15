@@ -3,22 +3,23 @@ import { PROJECT_NAME } from "../project";
 import type { LanguageItem } from "@/types/typesDapp/language";
 
 export const securityTitle: LanguageItem = {
-    en: 'Security & Privacy',
-    zh: '安全与隐私',
+    en: 'How to Ensure the Security of Evidence?',
+    zh: '如何保证证据的安全？',
     ko: '보안 및 프라이버시'
 };
 
 export const securityDescription: LanguageItem = {
-    en: 'Based on the Oasis Sapphire privacy blockchain, implementing storage, encryption, and private transactions to ensure your identity is never exposed.',
-    zh: '基于 Oasis Sapphire 隐私公链，实现存储、加密与隐私交易，确保你的身份永远不会暴露。',
-    ko: 'Oasis Sapphire 프라이버시 블록체인을 기반으로 저장, 암호화 및 프라이빗 트랜잭션을 구현하여 신원이 노출되지 않도록 보장합니다.'
+    en: 'Based on Oasis Sapphire\'s TEE (Trusted Execution Environment) and multi-layer encryption, ensuring that no one can decrypt, tamper with, or forcibly revoke evidence before conditions are met.',
+    zh: '基于 Oasis Sapphire 隐私公链的 TEE (可信执行环境) 以及多重加密技术，确保每一份证据在预定条件触发前，任何人都无法解密、篡改或强制撤销。',
+    ko: 'Oasis Sapphire 프라이버시 블록체인의 TEE(신뢰 실행 환경) 및 다중 암호화 기술을 기반으로 하여, 미리 정의된 조건이 충족되기 전에는 누구도 증거를 해독, 변조 또는 강제로 취소할 수 없도록 보장합니다.'
 };
+
 
 export const securityData = [
   {
     id: 'file-save',
     icon: File,
-    title: { en: 'File Shredding & Storage', zh: '文件粉碎与存储', ko: '파일 분쇄 및 저장' },
+    title: { en: 'File Shredding & Storage', zh: '文件粉碎与分散存储', ko: '파일 분쇄 및 저장' },
     description: { 
       en: 'Evidence files are first shredded and then uploaded to decentralized storage networks like IPFS and Arweave.', 
       zh: '证据文件首先会被粉碎处理，上传至 IPFS 和 Arweave 去中心化存储网络。', 
@@ -44,17 +45,6 @@ export const securityData = [
       zh: '机密数据存储在 Oasis Sapphire 网络 TEE（可信执行环境）中，基于英特尔的 SGX 技术，具备硬件级安全。', 
       ko: '기밀 데이터는 인텔 SGX 기술을 기반으로 한 하드웨어 수준의 보안인 Oasis Sapphire 네트워크의 TEE(신뢰 실행 환경)에 저장됩니다.' 
     },
-  },
-  {
-    id: 'anonymous-privacy',
-    icon: EyeOff,
-    title: { en: 'ERC2771 Meta Transactions', zh: 'ERC2771元交易', ko: 'ERC2771 메타 트랜잭션' },
-    description: { 
-      en: 'Through ERC2771 standard meta transactions, the relay proxy contract achieves on-chain non-record and untraceable status, ensuring the absolute anonymity and privacy of whistleblowers.', 
-      zh: '通过ERC2771标准元交易，中继代理合约实现链上无记录、不可追踪，保证吹哨人的绝对匿名和隐私。', 
-      ko: 'ERC2771 표준 메타 트랜잭션을 통해 릴레이 프록시 컨트랙트는 온체인 기록이 남지 않아 추적이 불가능한 상호작용을 가능하게 하여 제보자의 절대적인 익명성과 프라이버시를 보장합니다.' 
-    },
-    color: 'blue',
   },
 ];
 

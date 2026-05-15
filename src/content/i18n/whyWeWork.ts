@@ -37,26 +37,12 @@ export const whyWorkData: WhyWorkItemI18n[] = [
             ko: "악당들이 가장 두려워하는 것은 진실"
         },
         description: {
-            en: "No matter how powerful the bad guys are, they will become fragile in the face of truth.",
-            zh: "无论多么强大的坏人，在真相面前都会变得脆弱。",
-            ko: "악당들이 아무리 강력하더라도 진실 앞에서는 취약해집니다."
-        },
-        icon: EyeOff,
-        image: "/images/02.jpg"
-    },
-    {
-        title: {
-            en: "Absolute Zero",
-            zh: "证据即生命线",
-            ko: "증거는 곧 생명선"
-        },
-        description: {
             en: "The bad guys will go to any lengths to eliminate the evidence.",
             zh: "坏人会不惜一切代价消除证据。",
             ko: "악당들은 증거를 없애기 위해 어떤 수단도 가리지 않을 것입니다."
         },
         icon: Target,
-        image: "/images/03.jpg"
+        image: "/images/04.jpg"
     },
     {
         title: {
@@ -70,7 +56,7 @@ export const whyWorkData: WhyWorkItemI18n[] = [
             ko: `실명 제보는 보복을 의미합니다. Web3 암호기술을 사용하여 ${PROJECT_NAME.full}에 증거를 업로드하고 절대적인 익명성 속에서 보호를 받으세요.`
         },
         icon: AlertTriangle,
-        image: "/images/04.jpg"
+        image: "/images/02.jpg"
     },
     {
         title: {

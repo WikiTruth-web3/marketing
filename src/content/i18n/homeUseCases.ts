@@ -41,6 +41,14 @@ export const homeUseCases = {
                 en: 'Anonymous vulnerability disclosures and threat intelligence.', 
                 zh: '匿名漏洞披露和威胁情报。', 
                 ko: '익명 취약점 공개 및 위협 인텔리전스.' }
+        },
+        {
+            title: { en: 'Criminal & Conspiracy', zh: '犯罪与阴谋', ko: '범죄와 음모' },
+            description: { 
+                en: 'Exposing organized crime, hidden plots, and threats to public safety.', 
+                zh: '揭露有组织犯罪、深层政治阴谋以及对公共安全的潜在威胁。', 
+                ko: '조직 범죄, 숨겨진 음모 및 공공 안전에 대한 잠재적 위협을 폭로합니다.' }
         }
+
     ]
 };
