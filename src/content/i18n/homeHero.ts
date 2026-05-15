@@ -70,7 +70,7 @@ export const heroData: I18nHomeHero = {
     link: routerLinks.app
   },
   secondaryCta: {
-    text: { en: 'Learn more', zh: '了解更多', ko: '더 알아보기' },
-    link: socialLinks.mirror,
+    text: { en: 'Docs', zh: '阅读文档', ko: '기술 문서' },
+    link: routerLinks.docs,
   },
 }

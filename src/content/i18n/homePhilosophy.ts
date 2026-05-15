@@ -2,9 +2,9 @@
 
 export const homePhilosophy = {
     title: {
-        en: 'Truth Should Not Require Permission',
-        zh: '真相不应需要许可',
-        ko: '진실은 허가를 필요로 하지 않아야 합니다'
+        en: 'Truth Should Not Be Monopolized',
+        zh: '真相不应被垄断',
+        ko: '진실은 독점되어서는 안 됩니다'
     },
     subtitle: {
         en: 'Historically, truth depended on governments, media institutions, and corporations. Evidence Market introduces a different model.',

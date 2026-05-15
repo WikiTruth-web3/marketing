@@ -30,9 +30,9 @@ export const HomeWhyThisMatters: React.FC<{ lang: LanguageType }> = ({ lang }) =
                         {homeWhyMatters.content.map((text, index) => (
                             <div key={index} className="p-10 rounded-[2.5rem] bg-surface-low border border-white/5 relative group">
                                 <MessageSquareQuote className="absolute top-8 right-8 text-white/5 group-hover:text-primary/10 transition-colors" size={60} />
-                                <p className="text-xl md:text-2xl text-text-light font-light leading-relaxed relative z-10">
+                                <Paragraph size="lg" className="text-text-light font-light leading-relaxed relative z-10">
                                     {t(text, lang)}
-                                </p>
+                                </Paragraph>
                             </div>
                         ))}
                     </div>

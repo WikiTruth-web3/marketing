@@ -2,7 +2,6 @@
 
 import { HomeHero } from '@/components/sections/HomeHero';
 import { GlobalCrimeData } from '../components/sections/GlobalCrimeData';
-import { WhyWeWork } from '../components/sections/WhyWeWork';
 import { HomePartners } from '../components/sections/HomePartners';
 import Threads from '@/components/background/Threads/index';
 
@@ -14,7 +13,6 @@ import { HomeWhyThisMatters } from '@/components/sections/HomeWhyThisMatters';
 import { HomeUseCases } from '@/components/sections/HomeUseCases';
 import { HomePhilosophy } from '@/components/sections/HomePhilosophy';
 import { HomeCoreProducts } from '@/components/sections/HomeCoreProducts';
-import { HomeCTA } from '@/components/sections/HomeCTA';
 import { FAQ } from '@/components/sections/FAQ';
 import { faqSection } from '@/content/i18n/faq-home';
 
@@ -42,14 +40,12 @@ export default function Home({ lang }: { lang: LanguageType }) {
             <HomeWhyThisMatters lang={lang} />
             <HomeUseCases lang={lang} />
             
-            <WhyWeWork lang={lang} />
             <GlobalCrimeData lang={lang} />
             
             <HomePhilosophy lang={lang} />
             <HomePartners lang={lang} />
 
-            <FAQ data={faqSection} lang={lang} className="py-24 bg-background-dim/50" />
-            <HomeCTA lang={lang} />
+            <FAQ data={faqSection} lang={lang} className="py-24" />
         </div>
     );
 }
