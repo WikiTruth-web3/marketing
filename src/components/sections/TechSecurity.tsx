@@ -6,7 +6,7 @@ import { Paragraph } from '../base/paragraph';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
 import { LucideIcon } from 'lucide-react';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export interface securityTab {

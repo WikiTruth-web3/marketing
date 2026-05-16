@@ -5,7 +5,7 @@ import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
 import { Title } from '../base/title';
 import { LucideIcon } from 'lucide-react';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export interface WhyWorkItem {

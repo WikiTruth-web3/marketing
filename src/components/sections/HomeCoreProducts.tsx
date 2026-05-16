@@ -5,7 +5,7 @@ import { Title } from '../base/title';
 import { Paragraph } from '../base/paragraph';
 import { Button } from '../base/button';
 import { coreProductsSection } from '@/content/i18n/coreProducts';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const HomeCoreProducts: React.FC<{ lang: LanguageType }> = ({ lang }) => {

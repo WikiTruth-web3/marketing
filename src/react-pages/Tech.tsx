@@ -6,7 +6,7 @@ import { TechPrivacy } from '@/components/sections/TechPrivacy';
 import { FAQ } from '@/components/sections/FAQ';
 import { faqSection } from '@/content/i18n/faq-tech';
 import CodeRain from '@/components/background/CodeRain';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 
 export default function Tech({ lang = 'en' }: { lang?: LanguageType }) {
     return (

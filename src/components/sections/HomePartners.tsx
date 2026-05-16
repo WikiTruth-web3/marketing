@@ -2,7 +2,7 @@ import React from 'react';
 import { Title } from '../base/title';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 import { globalContent } from '@/content/i18n/global';
 

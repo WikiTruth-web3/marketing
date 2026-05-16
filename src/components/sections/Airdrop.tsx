@@ -7,7 +7,7 @@ import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
 import { Button } from '../base/button';
 import { airdropContent } from '@/content/i18n/airdrop';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 /** Official Oasis testnet faucet — choose “Sapphire” and request TEST. */

@@ -1,4 +1,4 @@
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export const CRIME_TYPES: LanguageItem[] = [
     { en: 'Homicide', zh: '他杀', ko: '살인' },

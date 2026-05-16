@@ -1,7 +1,7 @@
 import React from 'react';
 import { Network } from 'lucide-react';
 import { visionContent } from '@/content/i18n/vision';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const HomeVisionSection: React.FC<{ lang: LanguageType }> = ({ lang }) => {

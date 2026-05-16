@@ -4,7 +4,7 @@ import { teamRecruitment } from '@/content/i18n/team';
 import { Container } from "../layout/Container";
 import { Section } from "../layout/Section";
 import { Button } from '../base/button';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const JoinUs: React.FC<{ lang: LanguageType }> = ({ lang }) => {

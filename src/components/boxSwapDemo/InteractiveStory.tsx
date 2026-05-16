@@ -8,7 +8,7 @@ import { BoxStatus } from '@/types/typesDapp/contracts/evidenceBox';
 import TimerBar from './TimerBar';
 import { t } from '@/lib/i18nUtils';
 import { content } from '@/components/boxSwapDemo/content';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 
 
 interface InteractiveStoryProps {

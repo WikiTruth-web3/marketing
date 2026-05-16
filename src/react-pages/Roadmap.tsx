@@ -4,7 +4,7 @@ import { RoadmapTimeline } from '@/components/sections/RoadmapTimeline';
 import { RoadmapCTA } from '@/components/sections/RoadmapCTA';
 import { RoadmapHero } from '@/components/sections/RoadmapHero';
 import Particles from '@/components/background/Particles';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 
 export default function Roadmap({ lang = 'en' }: { lang?: LanguageType }) {
     return (

@@ -16,7 +16,7 @@ import { HomeCoreProducts } from '@/components/sections/HomeCoreProducts';
 import { FAQ } from '@/components/sections/FAQ';
 import { faqSection } from '@/content/i18n/faq-home';
 
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 
 export default function Home({ lang }: { lang: LanguageType }) {
     return (

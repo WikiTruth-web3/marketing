@@ -1,7 +1,7 @@
 import Grid from '@/components/background/Grid';
 // import React from 'react';
 import { TwoIncome } from '../components/sections/TwoIncome';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import BoxSwapDemo from '@/components/boxSwapDemo';
 import { FAQ } from '@/components/sections/FAQ';

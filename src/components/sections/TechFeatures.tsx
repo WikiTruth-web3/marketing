@@ -8,7 +8,7 @@ import { Section } from '../layout/Section';
 import { CardBorder } from '../base/cardBorder';
 import { CardPrimary } from '../base/cardPrimary';
 import { Card } from '../base/card';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export interface FeatureType {

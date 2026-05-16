@@ -1,28 +1,41 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
+import { Shield, Scale, FileText, Activity, Cpu, Globe, MessageSquare } from 'lucide-react';
 
 export interface BlogPost {
-  id: number;
+  id: number | string;
   title: string;
   excerpt: string;
   category: string;
   date: string;
   readTime: string;
   img: string;
-  icon: LucideIcon;
+  icon: string;
   href: string;
+  interlink?: boolean ; 
 }
+
+const IconMap: Record<string, any> = {
+  Shield,
+  Scale,
+  FileText,
+  Activity,
+  Cpu,
+  Globe,
+  MessageSquare
+};
 
 interface BlogCardProps {
   post: BlogPost;
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
+  const IconComponent = IconMap[post.icon] || FileText;
+
   return (
-    <a href={post.href} target="_blank" rel="noopener noreferrer">
+    <a href={post.href} target={post.interlink ? "_self" : "_blank"} rel="noopener noreferrer">
       <div className="
         group rounded-xl overflow-hidden 
-        bg-surface-low
+        bg-[#0A0A0A]
         border border-white/10 hover:border-primary/50 
         transition-all duration-300 flex flex-col h-full
       ">
@@ -52,7 +65,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
 
           <div className="pt-4 mt-auto border-t border-white/10 flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <post.icon size={14} />
+              <IconComponent size={14} />
             </div>
             <div className="flex items-center gap-2 text-[10px] text-white/40 uppercase tracking-widest">
               <span>{post.date}</span>

@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { PROJECT_NAME } from "../project";
 import { routerLinks, socialLinks } from "../links";
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export interface I18nCTA {
   text: LanguageItem

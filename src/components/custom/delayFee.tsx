@@ -5,7 +5,7 @@ import { BarChart } from '../base/barChart';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
 import { twMerge } from 'tailwind-merge';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 interface DelayFeeProps {

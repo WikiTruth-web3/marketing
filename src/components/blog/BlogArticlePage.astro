@@ -1,0 +1,201 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Header } from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { Paragraph } from "@/components/base/paragraph";
+import { Title } from "@/components/base/title";
+import Grid from "@/components/background/Grid";
+import { BlogCard } from "@/components/custom/blogCard";
+import { TableOfContents } from "@/components/custom/TableOfContents";
+import type { LanguageType } from "@/types/language";
+
+// Import data
+import * as outerlinkEn from "@/content-blog/content-en/outerlink";
+import * as outerlinkCn from "@/content-blog/content-cn/outerlink";
+
+interface Props {
+  lang: LanguageType;
+  blog: CollectionEntry<"blog">;
+}
+
+const { lang, blog } = Astro.props;
+const { Content, headings } = await render(blog);
+
+// Map recommendations based on language
+const recommendationsData = lang === "zh" ? outerlinkCn : outerlinkEn;
+const recommendations = [
+  ...recommendationsData.postsData,
+  ...recommendationsData.aiResearchData,
+  ...recommendationsData.news,
+].slice(0, 3);
+
+const currentId = blog.id.split("/").pop();
+const currentPath =
+  lang === "en"
+    ? `/blog/article/${currentId}`
+    : `/${lang}/blog/article/${currentId}`;
+---
+
+<Layout lang={lang} title={blog.data.title}>
+  <Header currentPath={currentPath} lang={lang} client:load />
+  <main class="relative min-h-screen pt-24 pb-20">
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+      <Grid
+        client:load
+        variant="dots"
+        color="rgba(62, 187, 78, 0.1)"
+        size={25}
+        lineWidth={1.5}
+        opacity={1}
+        enableMouseGlow
+        glowColor="rgba(102, 157, 58, 0.7)"
+        glowRadius={140}
+        glowFadePercent={80}
+        enableProjectionGlow
+        projectionBlur={5}
+        projectionOpacity={0.3}
+        projectionColor="rgba(55, 145, 45)"
+      />
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Main Content Area -->
+        <div class="lg:w-3/4 flex flex-col space-y-12">
+          <!-- Article Header -->
+          <div class="space-y-6">
+            <Title size="lg" className="text-white">
+              {blog.data.title}
+            </Title>
+            <Paragraph size="md" className="text-gray-400">
+              {blog.data.date} • {blog.data.author}
+            </Paragraph>
+            {
+              blog.data.coverImage && (
+                <div class="w-full h-64 md:h-96 rounded-xl overflow-hidden border border-white/10">
+                  <img
+                    src={blog.data.coverImage}
+                    alt={blog.data.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              )
+            }
+          </div>
+
+          <!-- Article Content -->
+          <div class="article-content max-w-none">
+            <Content />
+          </div>
+
+          <!-- Recommendations (Bottom) -->
+          <div class="pt-16 border-t border-white/10 mt-16">
+            <h3 class="text-2xl font-bold text-white mb-8">
+              {
+                lang === "zh"
+                  ? "推荐文章"
+                  : lang === "ko"
+                    ? "추천 기사"
+                    : "Recommended Articles"
+              }
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recommendations.map((post) => <BlogCard post={post} />)}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Sidebar - TOC -->
+        <div class="lg:w-1/4 hidden lg:block border-l border-white/10 pl-6">
+          <TableOfContents client:load headings={headings} lang={lang} />
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer client:visible />
+</Layout>
+
+<style is:global>
+  .article-content {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .article-content img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 3rem 0 !important;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.03);
+    object-fit: cover;
+  }
+
+  .article-content h1,
+  .article-content h2,
+  .article-content h3 {
+    color: white;
+    font-weight: 700;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 120px;
+  }
+
+  .article-content h2 {
+    font-size: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .article-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .article-content p {
+    margin-bottom: 1.8rem;
+  }
+
+  .article-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .article-content a:hover {
+    opacity: 0.8;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    margin-bottom: 1.8rem;
+    padding-left: 1.5rem;
+  }
+
+  .article-content ul {
+    list-style-type: disc;
+  }
+  .article-content ol {
+    list-style-type: decimal;
+  }
+  .article-content li {
+    margin-bottom: 0.6rem;
+  }
+
+  .article-content blockquote {
+    border-left: 4px solid var(--color-primary);
+    background: rgba(184, 246, 0, 0.05);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    border-radius: 0 0.75rem 0.75rem 0;
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+</style>

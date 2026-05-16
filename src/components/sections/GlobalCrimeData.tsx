@@ -5,7 +5,7 @@ import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
 import { ArrowRight, Globe as GlobeIcon } from 'lucide-react';
 import Globe from '@/components/globeCobe';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const GlobalCrimeData: React.FC<{ lang: LanguageType }> = ({ lang }) => {

@@ -1,6 +1,6 @@
 import { Rocket, ShieldCheck, Landmark, Globe, Zap, Users, Radio } from 'lucide-react';
 import { PROJECT_NAME } from '../project';
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export interface RoadmapPhaseI18n {
     phase: LanguageItem;

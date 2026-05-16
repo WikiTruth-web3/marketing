@@ -1,4 +1,4 @@
-import type { LanguageItem, LanguageType } from "@/types/typesDapp/language";
+import type { LanguageItem, LanguageType } from "@/types/language";
 
 /**
  * Get translation for a given language item.

@@ -1,5 +1,5 @@
 import { PROJECT_NAME } from "../project";
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export interface FAQItemI18n {
   question: LanguageItem;

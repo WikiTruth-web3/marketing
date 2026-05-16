@@ -2,7 +2,7 @@ import React from 'react';
 import { comparison } from '@/content/i18n/tech';
 import { Title } from '../base/title';
 import { Paragraph } from '../base/paragraph';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { PROJECT_NAME } from '@/content/project';
 import { t } from '@/lib/i18nUtils';
 

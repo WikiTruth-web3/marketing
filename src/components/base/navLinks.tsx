@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
-import type { LanguageType, LanguageItem } from '@/types/typesDapp/language';
+import type { LanguageType, LanguageItem } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 

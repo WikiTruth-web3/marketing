@@ -4,7 +4,7 @@ import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { Title } from '../base/title';
 import { homeUseCases } from '@/content/i18n/homeUseCases';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 const useCaseIcons = [

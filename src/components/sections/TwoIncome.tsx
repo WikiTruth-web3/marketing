@@ -4,7 +4,7 @@ import { Section } from '../layout/Section';
 import { Reward } from '../custom/reward';
 import { DelayFee } from '../custom/delayFee';
 import { Title } from '../base/title';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 import { globalContent } from '@/content/i18n/global';
 

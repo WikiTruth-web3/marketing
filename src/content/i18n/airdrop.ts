@@ -1,5 +1,5 @@
 import { Globe, ShieldOff, LockKeyholeOpen } from 'lucide-react';
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export const airdropContent = {
     tag: {

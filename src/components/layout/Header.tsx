@@ -5,7 +5,7 @@ import NavLinks from '@/components/base/navLinks';
 import { navLinks } from '@/content/i18n/navLinks';
 import { routerLinks } from '@/content/links';
 import { useScreen } from '@/hooks/screen';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 
 
 interface HeaderProps {

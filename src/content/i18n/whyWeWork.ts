@@ -1,6 +1,6 @@
 import { Shield, EyeOff, Target, AlertTriangle, DollarSign } from "lucide-react";
 import { PROJECT_NAME } from "../project";
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export interface WhyWorkItemI18n {
     title: LanguageItem;

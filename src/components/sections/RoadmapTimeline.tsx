@@ -3,7 +3,7 @@ import { RoadmapCard } from '@/components/custom/roadmapCard';
 import { roadmapPhases } from '@/content/i18n/roadmap';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const RoadmapTimeline: React.FC<{ lang: LanguageType }> = ({ lang }) => {

@@ -1,14 +1,18 @@
 import React from 'react';
+import type { CategoryKey, Language } from '@/types/filter';
+import { CATEGORY_META, getMetaLabel } from '@/types/filter';
 
 interface CategoryFilterProps {
-  categories: string[];
-  activeCategory: string;
-  onSelect: (category: string) => void;
+  categories: CategoryKey[];
+  activeCategory: CategoryKey;
+  language: Language;
+  onSelect: (category: CategoryKey) => void;
 }
 
 export const CategoryFilter: React.FC<CategoryFilterProps> = ({ 
   categories, 
-  activeCategory, 
+  activeCategory,
+  language,
   onSelect 
 }) => {
   return (
@@ -23,7 +27,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
               : 'bg-white/5 text-white/70 border-white/10 hover:bg-white/10'
           }`}
         >
-          {cat}
+          {getMetaLabel(CATEGORY_META, cat, language)}
         </button>
       ))}
     </div>

@@ -1,0 +1,93 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Header } from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { BlogHeader } from "@/components/sections/BlogHeader";
+import { BlogGrid } from "@/components/sections/BlogGrid";
+import Grid from "@/components/background/Grid";
+import { getCollection } from "astro:content";
+import type { LanguageType } from "@/types/language";
+
+// Import all data
+import * as outerlinkEn from "@/content-blog/content-en/outerlink";
+import * as outerlinkCn from "@/content-blog/content-cn/outerlink";
+import { blogData } from "@/content-blog/blog";
+
+interface Props {
+  lang: LanguageType;
+}
+
+const { lang } = Astro.props;
+
+// Map data based on LanguageType (fallback to EN if not available)
+const externalData = lang === "zh" ? outerlinkCn : outerlinkEn;
+
+// Fetch Markdown blogs for this LanguageType (fallback to EN for KO for now)
+const contentLang = lang === "ko" ? "en" : lang;
+const markdownBlogs = await getCollection("blog", ({ id }) => {
+  return id.startsWith(`${contentLang}/`);
+});
+
+const internalAsPosts = markdownBlogs.map((blog) => {
+  const id = blog.id.split("/").pop();
+  return {
+    id: `internal-${id}`,
+    title: blog.data.title,
+    excerpt: blog.data.excerpt,
+    category: blog.data.category,
+    date: blog.data.date,
+    readTime: blog.data.readTime,
+    img: blog.data.coverImage || "",
+    icon: "FileText",
+    href: lang === "en" ? `/blog/article/${id}` : `/${lang}/blog/article/${id}`,
+    interlink: true,
+  };
+});
+
+const externalPosts = [
+  ...externalData.postsData,
+  ...externalData.aiResearchData,
+  ...externalData.news,
+];
+const allBlogs = [...internalAsPosts, ...externalPosts];
+
+// Use the unified blogData with current language
+const displayHeaderData = {
+  title: blogData.title[lang],
+  subtitle: blogData.subtitle[lang],
+};
+
+const currentPath = lang === "en" ? "/blog" : `/${lang}/blog`;
+---
+
+<Layout lang={lang} title={displayHeaderData.title}>
+  <Header currentPath={currentPath} lang={lang} client:load />
+  <main class="relative min-h-screen">
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+      <Grid
+        client:load
+        variant="dots"
+        color="rgba(62, 187, 78, 0.1)"
+        size={30}
+        lineWidth={2}
+        opacity={1}
+        enableMouseGlow
+        glowColor="rgba(102, 157, 58, 0.7)"
+        glowRadius={140}
+        glowFadePercent={80}
+        enableProjectionGlow
+        projectionBlur={5}
+        projectionOpacity={0.3}
+        projectionColor="rgba(55, 145, 45)"
+      />
+    </div>
+
+    <BlogHeader
+      title={displayHeaderData.title}
+      subtitle={displayHeaderData.subtitle}
+    />
+
+    <BlogGrid client:load posts={allBlogs} language={lang} />
+  </main>
+  <Footer client:visible />
+</Layout>

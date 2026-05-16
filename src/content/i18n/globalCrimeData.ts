@@ -1,5 +1,5 @@
 import { DollarSign, Heart, Users, CreditCard } from "lucide-react";
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export const crimeDataTitle: LanguageItem = {
     en: 'Current Status of Crime Crisis',

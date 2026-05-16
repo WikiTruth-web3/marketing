@@ -6,7 +6,7 @@ import { Paragraph } from "../base/paragraph";
 import { introductionTeam, teamMembers } from "@/content/i18n/team";
 import Aurora from '@/components/background/Aurora/index';
 import { TeamMemberCard } from '../custom/teamMemberCard';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export function TeamHero({ lang }: { lang: LanguageType }) {

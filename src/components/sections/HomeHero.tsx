@@ -9,7 +9,7 @@ import { Section } from '../layout/Section';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
 import { mockBoxData } from '@/content/content-en/mockBoxData';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 

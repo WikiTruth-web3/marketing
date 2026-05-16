@@ -5,7 +5,7 @@ import { Section } from '../layout/Section';
 import { Paragraph } from '../base/paragraph';
 import { Subtitle } from '../base/subtitle';
 import { roadmapCTA } from '@/content/i18n/roadmap';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const RoadmapCTA: React.FC<{ lang: LanguageType }> = ({ lang }) => {

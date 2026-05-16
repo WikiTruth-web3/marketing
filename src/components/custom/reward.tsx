@@ -5,7 +5,7 @@ import { PieChart } from '../base/pieChart';
 import { twMerge } from 'tailwind-merge';
 import { Subtitle } from '../base/subtitle';
 import { Paragraph } from '../base/paragraph';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 interface RewardProps {

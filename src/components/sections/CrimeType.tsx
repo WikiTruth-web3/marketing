@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { CRIME_TYPES } from '@/content/i18n/crimeType';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 const renderRow = (types: string[], rowKey: string) => (

@@ -1,6 +1,6 @@
 import { File, Lock, ShieldCheck, EyeOff, Coins, DollarSign, Zap, TrendingUp, Eye, User } from "lucide-react";
 import { PROJECT_NAME } from "../project";
-import type { LanguageItem } from "@/types/typesDapp/language";
+import type { LanguageItem } from "@/types/language";
 
 export const privacyTitle: LanguageItem = {
     en: 'How to Ensure the Privacy and Security of Users?',

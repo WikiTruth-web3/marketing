@@ -9,7 +9,7 @@ import InteractiveStory from './InteractiveStory';
 import { Title } from '../base/title';
 // import { Subtitle } from '../base/subtitle';
 
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 
 import useBoxState from './boxState';
 import useStoryState from './storyState';

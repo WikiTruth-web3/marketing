@@ -1,0 +1,13 @@
+---
+import BlogListPage from '@/components/blog/BlogListPage.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'zh' } },
+    { params: { lang: 'ko' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: 'zh' | 'ko' };
+---
+<BlogListPage lang={lang} />

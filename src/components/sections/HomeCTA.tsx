@@ -6,7 +6,7 @@ import { Title } from '../base/title';
 import { Paragraph } from '../base/paragraph';
 import { Button } from '../base/button';
 import { homeCTA } from '@/content/i18n/homeCTA';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const HomeCTA: React.FC<{ lang: LanguageType }> = ({ lang }) => {

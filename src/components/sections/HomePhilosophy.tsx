@@ -5,7 +5,7 @@ import { Section } from '../layout/Section';
 import { Title } from '../base/title';
 import { Paragraph } from '../base/paragraph';
 import { homePhilosophy } from '@/content/i18n/homePhilosophy';
-import type { LanguageType } from '@/types/typesDapp/language';
+import type { LanguageType } from '@/types/language';
 import { t } from '@/lib/i18nUtils';
 
 export const HomePhilosophy: React.FC<{ lang: LanguageType }> = ({ lang }) => {
