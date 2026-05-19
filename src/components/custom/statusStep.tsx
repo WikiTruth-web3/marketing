@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { BoxStatus, } from '@/types/typesDapp/contracts/evidenceBox';
-import NFTWorkflowFlow from './nftWorkflowFlow/index';
+import WorkflowFlow from './workflowFlow/index';
 
 /**
  * The status step
@@ -64,7 +64,7 @@ const StatusStep: React.FC<StatusStepProps> = ({
 
     return (
         <div className={twMerge("w-full rounded-xl border border-white/20 bg-black", className)}>
-            <NFTWorkflowFlow activePath={getActivePath()} />
+            <WorkflowFlow activePath={getActivePath()} />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -13,7 +14,20 @@ const env = loadEnv(mode, '.', '');
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  site: 'https://evidencemarket.org',
+  integrations: [
+    react(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+          zh: 'zh',
+          ko: 'ko',
+        },
+      },
+    }),
+  ],
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh', 'ko'],

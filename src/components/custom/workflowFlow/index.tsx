@@ -141,13 +141,13 @@ function createRoundedPath(start: { x: number; y: number }, end: { x: number; y:
  * =========================================================
  */
 
-interface NFTWorkflowFlowProps {
+interface WorkflowFlowProps {
   activePath?: string[] // e.g. ["storing", "auctioning", "paid"]
 }
 
-export default function NFTWorkflowFlow({
+export default function WorkflowFlow({
   activePath = ["storing", "auctioning", "paid", "delaying", "published"],
-}: NFTWorkflowFlowProps) {
+}: WorkflowFlowProps) {
   // 1. Calculate active nodes
   const nodes = FLOW_SKELETON_NODES.map((node) => ({
     ...node,

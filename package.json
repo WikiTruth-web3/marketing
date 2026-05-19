@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev --port=3000 --host=0.0.0.0",
-    "build": "astro build",
+    "build": "astro build && node scripts/generate-secondary-sitemap.mjs",
     "preview": "astro preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.4",
+    "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/geist": "^5.2.8",
     "@google/genai": "^1.29.0",
     "@tailwindcss/vite": "^4.1.14",

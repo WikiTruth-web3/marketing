@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wikitruth.xyz/sitemap-wikitruth-index.xml
+Sitemap: https://evidencemarket.org/sitemap-index.xml
