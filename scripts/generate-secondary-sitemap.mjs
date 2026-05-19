@@ -10,7 +10,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const distDir = path.resolve(__dirname, '../dist');
+let distDir = path.resolve(__dirname, '../dist');
+
+// Cloudflare adapter in server mode outputs static files to dist/client
+if (fs.existsSync(path.join(distDir, 'client'))) {
+  distDir = path.join(distDir, 'client');
+}
 
 const PRIMARY_DOMAIN = 'https://evidencemarket.org';
 const SECONDARY_DOMAIN = 'https://wikitruth.xyz';
